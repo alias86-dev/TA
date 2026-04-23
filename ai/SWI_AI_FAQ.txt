@@ -1,0 +1,241 @@
+TA Computer AI fix
+Mostly Harmless ai version 13!
+By: David Sellick
+A>K<A:    Switeck
+email:    Switeck@hotmail.com
+
+** NOW with some support for TAUIP v3.0 units on all non-water maps!!! ***
+
+(AI stands for artificial intelligence. It refers to the computer-controlled players in skimish games AND multiplayer games with computer players added.)
+
+The ai in Total Annihilation was quite dismal in versions 1.0 and 1.1, and only slightly better in v1.2b1. With the v2.0b1 patch, the ai was improved but still not much of a threat in a 1 vs 1 ai game against a good player. Cavedog has considered improving the ai to be a low-priority goal in patches, and it's looking like the v2.0b1 patch may be the best ai that cavedog makes.
+
+In the absence of an offical Cavedog fix to the Ai problems, we can design our own AI profiles which influences many things that the computer does. The main AI problem is that over 20 units cannot be used by the ai in an intelligent manner. The ai will build 10+ radars right next to each other, or build metal makers when out of both metal AND energy.
+
+My AI profiles tries to fix the most obvious and worst of the problems by eliminating useless (to the Ai only!) units and building AND balancing the numbers of other units built as neccessary.
+
+NO LONGER will the ai try to flash rush you on a sea/island map!
+Unfortunately, no longer will the ai build nukes and antinukes since it never fired them anyway.
+
+Just by eliminating the useless units (to the ai only!) my ai should be a vast improvement over what cavedog has made.
+
+TO INSTALL THESE FILES:
+----------------------
+
+To use my ai profile text files you must place the text files in the AI directory.
+
+What! You don't have an AI directory? Create one!
+The AI directory goes under the TOTALA directory like so:
+C:\CAVEDOG\TOTALA\AI
+
+Nothing else is required to use this file.
+
+I'm constantly working on improvements and refinements on the AI's build strat, so the file I send you today probably won't be the one I use tommorrow.
+
+Different AI Profiles included in this Zip:
+------------------------------------------
+
+Acid		Acid map ai
+AirBattle	Aircraft-only ai
+AirWind	Aircraft-only ai that uses Windmills instead of solars
+Blank		Used to make a new ai profile (all limits are set to 0)
+Default	Standard Nonmetal Land map ai that is used on *MOST* maps in TA
+empty		Simple Land map ai which limits units the ai should not build
+Hover		Standard Hover map ai
+Krogoth	Special ai used for the Krogoth Encounter Campaign mission (makes the ai tougher in the late-game!)
+LowMetal	Land map ai specially for land maps with few (but some) metal spots
+Metal		Standard Metal Land map ai
+Missions	Ai for use while playing campaign missions (makes campaigns harder!)
+NoMetal	Special ai for land maps with NO metal spots (needs 2k energy to get started)
+SeaBattle	Standard Water map ai
+SeaMetal	Special Ai for Metal/Water maps like Metal Isles and Seven Isles
+ThePass	Ai specially designed to play on The Pass
+Urban		Air,Hover,Sea City/Water Map ai
+Wind		Nonmetal Map ai which uses Windmills instead of solars
+WindMet	Metal Map ai which uses Windmills instead of solars
+
+
+Some of these ai profiles are *NOT* used by any maps in TA, TA:CC, and TA:BT - but *should* be.
+To set them up so they are, you must rename them to the ai profile names the TA maps use.
+Read the Ais_by_Map.txt file to determine which TA maps use which TA ai profile.
+
+NOTE:
+----
+
+
+** THE DIFFICULTY SETTING FOR MULTIPLAYER AI'S USES THE DIFFICULTY SETTING IN SKIRMISH! **
+* The ai on the HOST COMPUTER in a multiplayer game is *ALWAYS* set to HARD, regardless of Skirmish setting.
+To make the multiplayer ai use the hard setting, go into skirmish and set the difficulty to the hard setting. Then, you must actually start a skirmish mission (and self-destruct to end the skirmish) with those settings before TA will remember them.
+
+There are some Cavedog maps that use an inappropriate AI profile for the map - such as Hundred Isles using Default!
+The ai on the easy setting should prove less challenging than on hard.
+This ai presumes a map with SOME resources on it, and max unit limit of at least 150.
+If the ai has less than 1000 starting resources, it may not build anything.
+On maps with very limited building space, the ai will build slowly if at all.
+The ai doesn't think about building locatioins - and may wall itself in on accident!
+The ai is not equipped to defend against raids or rushes very early in the game.
+(Most players aren't, why should the ai be any different?)
+
+I DO NOT CLAIM THAT THIS AI IS A SUPER-UNBEATABLE OPPONENT!
+It is an improvement over the original ai, not the answer to all the world's problems.
+
+Also, please notice that some of the ai profiles may/may not have different version numbers. Ussually, the different ai profiles are all made from either Default (land battle ai) or SeaBattle (naval ai) and the version number tells which version of Default/SeaBattle ai that the other ai profiles were made from.
+
+
+Changes to the ai profiles: (if not mentioned, for default only)
+0.1 copied ai files in TOTALA1.HPI and removed the metal makers
+ NOTE: never actually existed except in concept!
+I knew metal makers were the major ai problem because I only played metal maps, at first.
+0.5 This ai profile is patterned like a friend (who won most games) of mine played
+ NOTE: This file was originally called Ken.txt, it has not been tested. It only uses weights.
+1.0 eliminated a great many units and greatly limited others
+2.0 copied my seabattle ai and started over, which was considerably advanced over the others
+2.5 removed the weight level2 and level3 lines because of the problems they caused
+2.8 balanced every factory individually
+3.0 reduced the max number of buildings to prevent large base but no army problem at unit max
+3.3 tried to get all the attack units weighted and limited
+3.4 trying to find the proper weights and limits for each factory and c-unit types
+ NOTE: total removal of naval units in Default ai! Also, first ai to have a version #.
+3.5 modest changes on almost everything the ai makes - should prove interesting...
+4.0 total about-face on my ai once it (v3.5) lost to earlier version (3.4)
+4.1 rebalancing of factories and the like.
+4.2 rearranged my Default.Txt file on the assumption that the order affects weights.
+4.3 rearranged ALL ai profiles on the assumption that the order affects weights.
+5.0 Same as v4.3 with all the weights placed before limits on units. Some other little changes.
+5.1 v5.0 built 7 solars and 7 metal extractors before a factory, That should be fixed in v5.1!
+5.2 minor changes, barely meriting a new version #...
+5.3 just by increasing the weight on the factories, the ai seemed more aggressive
+5.4 still has the slow-start problem v5.0 had (but not nearly as bad) - no early factories!
+6.0 represents the first conversion of the ai to TA:CC
+6.1 almost every unit is limited now, since total unit types is greater than unit max!
+6.2 more modest changes in unit limits and weights.
+6.5 flash rush ai for ARM, removing both kbot labs and aircraft plants
+6.6 flash rush ai modified to include aircraft plants and even kbot labs on nonmetal maps
+6.7 more modest changes in unit limits and weights.
+6.8 more modest changes in unit limits and weights.
+7.0 The commander-only early build strategy didn't work so well, so early c-units added back.
+7.1 Forgot to put a weight on Moho Metal Makers. No wonder the ai's attacks slowed!
+7.2 - 7.9 weight/limit problems on solars, metal extractors, factorys, and C-units.
+8.0 Is v7.1 reworked to use metal makers (max of 4).
+8.1 lowered the number of base buildings that can be built (was always out of metal).
+8.2 further reduced the number of base buildings that can be built (was STILL out of metal).
+8.7c added specific weights on aircraft as well.
+9.2  first ai to separate the weights on aircraft for easy readability
+9.9  default weight of 0.2 put on all non-specified Arm and Core units.
+10   simplified the easy/medium/hard sections by moving repeated limit 0 lines to top.
+10.1 first to have different max limits of superweapons depending on skill setting.
+10.6 divided up the weights section into different parts based on class - building/unit/level1,2,3
+10.6 Altered the entire weight system so the lowest weights were 0 and 0.05 and the highest is 1
+11   divided up the weights section for attack units into different parts based on class - kbot/tank/level1,2,3
+12   Added 3rd party units support for TAUIP v3.0 units
+13   Added ARM FARK, added very low limits for semi-useful units, moved c-unit weights in the same group as the c-unit's type
+	(this makes determining which unit is most prevalent out of a factory easier)
+13.2 Added CORE NECRO, disabled all TAUIP ressurrection units (they weren't as good.)
+
+SETBACKS: (basically which versions are better or worse)
+v2.5 was obviously better than the original ai in v2.0b1
+v3.4 was really good, and I didn't realize that later versions were just watering it down.
+v4.2 and v4.3 might be even better than v3.4
+v5.1 looks promising, once I sort out what weights my factories and metal extractors needs
+v5.2 is better than v3.4 or v4.3
+v5.3 seems an improvement over v5.2
+v6.0 was considerably weaker than even v3.4 (first for TA:CC)
+v6.1 and v6.2 are better than v6.0
+v6.5 made an earlier attack, but a very simple one (Flashes and Samsons)
+v6.6 const. aircraft act as a booster for production for low cost, about as good as v5.3
+v6.7 better than all the above
+v7.0 represents probably the first default ai to give me any sort of challenge
+v7.1 considerably better than all the above!
+v7.2 - v7.9 were all setbacks, I'd lost which ai seemed to have the best build strats
+v8.0 surprisingly, the ai can use small numbers of metal makers in the v3.1 patch!
+v8.1 is good on attack but still poor on ground defense.
+v8.2 is at least as good as v7.1
+v8.7 slightly better than v8.2
+v9.3 is considered the best of the whole lot to that point
+v9.4-v12 throw a lot of ideas around, none seem to end up creating a better ai.
+v12.6 was pretty good on Painted Desert 1k/1k...
+v13 should beat all previous versions on average (at least for default!)
+
+All you wanted to know about ai's but were afraid to ask:
+
+    What has improve since v3.4?
+I haven't improved much, just trying to find ways for the ai to get attack units out a few seconds earlier. BUT without having to hit 0 metal doing it. got to have early metal extractors but not build them then forget to build factories. cannot neglect solars. and have to have early construction units to keep the production increasing. And everyone thinks flash rushes is just flash tanks! My goal is to make the ai more focused, using fewer unit types which are better for a particular map type. This may make the ai more boring, but more effective.
+
+    There seems to be 3 units whose weight and limit must be carefully balanced. These are: solar panel, metal extractor, and the vehicle plant. These 3 units are the gateway to getting ALL other units, and must be built as early as possible.
+
+    Most maps fall under the standard general categories of Default, SeaBattle, AirBattle, and Metal - but the really interesting ones need specific ai profiles made just for them. An extreme example is an all-water map with very little land. Seabattle assumes that there is land to build a good sized land base on, particularly solars, metal extractors, hovercraft and aircraft plants. Lacking that, the ai will build very slowly - if at all - and will be easily beaten. The basic ai profiles categories are too vague to cover many types of maps. In the mapmaking process, things to consider when choosing an ai profile type (even if it doesn't exist!) are:
+1.How large is the map? (can't flash rush effectively on a 30 x 30 land map)
+2.How much water (by percent) is the map? (possibly a naval ai map?)
+3.Is the land and water alternating making either form of attack difficult or impossible?
+4.How plentiful is metal on this map?
+5.Is there any geothermal vents on the map?
+6.How flat/hilly is the map?
+7.Are trees so thick that they must be reclaimed to have room to build?
+8.Is there lots of reclaimable rocks around?
+9.Does the map have consistantly high winds or gusty winds?
+10.Because of some feature on the map, does one particular unit (or type) have a significant advantage over the others? (such as narrow land passes, steep slopes, or thick trees)
+
+1.An example of a large map that isn't a typical default ai profile is Greenhaven. It's TOO big for a flash rush to reach an enemy base early enough to make winning easy. Such a map may require the ai to build slightly more base defenses than usual and rely on long-ranged attack types (Merls, Berthas, aircraft) to effectively destroy the enemy base.
+2.Gods of War is a good example of a some-land, lot-water map that's well suited for a naval ai.
+3.The best examples of this is Over Crude Water (a metal map) or Evad River Confluence. Both maps have water acting as a barrier to large land attacks. Neither a land attack or naval attack can easily reach the enemy base. This forces relying on hovercraft and aircraft to strike the enemy base. So they're both air battle ai's.
+4.Some maps have so little metal - such as Painted Desert - that the ai either must spread out all over the map or build metal makers. And the ai cannot manage metal makers very well, always wanting to build way more metal makers than it has energy to run. Also, its construction units will suicidally wander into enemy bases trying to build a metal extractor on unused metal spots.
+5.Geothermal plants are vital stepping stones to getting fusion reactors for players, but for the ai who shouldn't build such an energy-hungry base they are even MORE vital. An ai can have a large base totaling 50 buildings and only need 15 solars and 2 geo's to run it. On nonmetal maps, where only 1 geo can be built on a vent, the ai should have a max limit of 2 to 6 geothermal plants (depending on the total number of vents on the map) so that it doesn't wastefully and suicidally send its construction units into the enemy territory to build a geo on thermal vents there. On metal maps, the max limit on geos can be as high as 10 without any problems, because up to 4 geothermal plants can be built on each vent. C-airs seem more willing to wander far to build on thermal vents.
+6.A very hilly map makes for lots of killzones and choke points that by the middle of the game render ground forces useless. Plus a hilly map may have very little room to build a base. A few short-ranged LLT's and guardians are best as base defenses because line-of-sight is so restrictive. The guardians can shoot over some of the hills, and the LLT's can guard passes and enterances to bases.
+7.Maps with wall-to-wall trees make big bulky units less useful, so often the level 1 kbots and aircraft are the only units that can get around effectively.
+8.Unless there's so many rocks that they are in the way, this has little effect on an ai. However once the commander goes into repair and reclaim patrol mode, the rocks may be the only thing that keeps the ai's factories producing more units.
+9.Wind generators should be used instead of solars if the wind is consistantly strong, or half solars half wind generators if the wind gusts are strong enough (like +20 or more energy).
+10.Metal Isles has large islands with very tall defensive walls. Although a huge naval force may take control of the water around the island, it will be unable to shoot into the middle of the island with cruisers and battleships because of the size of the island and the high walls. Missile frigates are more useful for attacking such bases, but cannot be made the bulk of the naval force or it will surely lose to a naval force made primarily of cruisers and battleships. Also, since the map is rather large, significant amounts of anti-aircraft ships are needed with the naval force.
+The flash tank excels on Metal Heck - it is fast and cheap, allowing for early base attacks. Plus it is small, making it hard to hit and better able to move around debris.
+
+
+    With the addition of TA:CC, all the new units that CAN be built tend to "water down" the ai. A BIG problem is the unit count, with 70+ new units it is impossible for the ai to build a reasonable number of any particular unit. As my SETBACKS section suggests, every time I eliminate units so the ai no longer builds them, the ai generally gets better. V6.0 was my first attempt to build a proper ai for TA:CC. It was only halfway a success and built very slowly with its first attack occuring later and being smaller than similar ai's made for TA v2.0b1.
+
+    The unit max in a game is typically 250 (with the v2.0b1 patch and v3.0). This is a major ai limitation, because once the ai reaches 250 units (and it used to do so somewhere between the 20 and 30 min mark, if not beaten senseless) it becomes stupid. As it loses units, for every 3 mobile units it loses, it tends to replace them with 1-3 new buildings. This causes the total available mobile units to decrease and its base to grow larger and larger. Eventually, the ai gets where it doesn't want to fight at all - because it has VERY FEW potiential attacking units. Lowering the unit max causes this to happen earlier and be more severe, where a unit max of around 40 or less might prevent the ai from ever attacking. Raising the unit max helps, but at 500 unit max the ai doesn't build a base as LARGE as a player might at 500 unit max. The ai doesn't know what the unit max is, NOR does it reclaim its less-useful units to prevent hitting the limit, NOR does it start building or stop building ANYTHING just because it is near unit max. This is why EVERY base building the ai CAN build must have a max limit.
+
+    Back in v2.5, I removed the weight LEVEL2 6 and weight LEVEL3 3 lines from the ai profiles. It SEEMED like a good idea to have them in there, BUT these lines were totally ruining the ai. This is because almost everything is either level 1, 2, or 3. So if an unit didn't have a weight on it was given a very high weight because of these blanket values. (covering ALL level2 and level3 units!)
+
+    There *IS* some building strategies built directly into the executable that runs TA. Even when an ai profile is blank, the ai will still follow some criteria:
+
+1.Starting out, regardless of ai profile settings, the ai STRONGLY wants to build some metal extractors and solar panels. This can be to the ai's detriment on metal maps with 10k resources, since most players build a factory first with such excessive resources.
+2.If the ai stays low on energy or metal, it will (eventually) try to build some units to fix that problem. Unfortunately, it thinks that metal makers will fix its problem when at 0 energy and all its metal extractors (and other metal makers) quit working. The ai at that point sees the problem as a lack of metal production instead of a lack of energy.
+3.The ai builds its buildings along an invisible grid, with buildings clumped together separated by empty areas or "roads" between them. This is MOST noticeable on open metal maps, like Metal Heck or Metal Isles. If a thermal vent falls on a "road", chances are the ai won't build a geo on it.
+4.The ai's commander is only thought of as a construction unit until its first or second construction unit is built. After that, the commander walks around in a loop (on patrol), occassionaly assisting any nearby building projects it runs accross. It also repairs damaged units and reclaims any handy metal or energy laying around near its path. It has not, as some have suggested, just "gone dumb" and started walking around in circles. This is done to prevent the massive resource drain the commander can cause by constantly building, while still allowing him to be useful occassionally. It also prevents the ai's wandering commander from going on an accidental c-rush on medium and larger maps.
+5.If energy drops below 100, metal extractors and metal makers (this includes the moho metal makers) quit producing metal but do NOT quit draining energy! This is why the ai must be restricted from building metal makers, since if it has more metal makers than it can sustain, it will stay near 0 energy. It will be unable to d-gun, use its lasers, and it will USSUALLY not start new building projects that require a lot of energy.
+6.The ai actually shuts off the moho metal makers (and perhaps the metal makers as well) if it is full of metal and is still making more than it needs. This often happens when the ai reaches unit max, and can actually be benificial since it lets energy build back up - to be used to finish building energy-expensive units and so it can fire energy-draining weapons (such as berthas) more rapidly.
+7.The ai attacks with its ground units when it gets around 6 or more ground units. Sometimes this number is as low as 5, other times it's as high as 20. The ai's attack force is ussually in 1 group, and attacks until no more than 5 units are left. Then the attack force retreats to base until it can be rebuilt.
+8.The ai's ground attack force (this seems to include hovercraft) try to stay together, so this means if the ai has *ANY* non-amphibious units in the attack force then the amphibious units will wander around in the water waiting for other units to catch up. (even though they can't!) Ships and aircraft are handled in a separate group and can move independantly of the ground units. I call this the "Wait for me!" bug where the attacking units turn around to let a newly-created unit catch up with the attack force. Once the attack force is committed to combat (ie - shooting at something), normally this doesn't happen. Underwater targets, which the ai's attack force may not be able to deal with cause the same wandering in circles problem.
+9.The ai's Aircraft wander the map aimlessly in a loose group until they find something to kill. Then they ussually continue attacking the one target until they or it are destroyed. After that, they continue wandering aimlessly. This is actually a very large patrol path, and as such if the aircraft get severely damaged, they often seek an air repair pad or light carrier to repair themselves on. Once repaired, they rejoin the group.
+10.How spread out the ai's base is depends on the terrain. Mainly, it's how far the construction units have to wander to find metal extractors. This also means that metal extractors often get some defenses around them and factories built near them. On a metal map like Metal Heck, the ai makes a small, tightly-packed base. On Greenhaven, the ai's base is considerably more spread out. On Painted Desert (where metal spots are often over 1 screen apart), the ai's base looks like little patches all over the map if given enough time to build it.
+11.The ai is aqua-phobic, and if it doesn't start right on the water's edge it is VERY slow about building a shipyard even if the shipyard is weighted VERY high! Construction Aircraft aren't as afraid of the water as other construction units, this is probably because of their high speed - the water isn't as far away from them. (Also maybe it's because they don't worry about getting wet?)
+12.Because of the map, the ai may LAUNCH an attack early (like the 5 min mark) but take a large amount of time to reach an enemy's base. In earlier versions of TA (like v1.2), the best example of this was when it tried to send its ground forces to your base on a water map.
+
+
+
+My intentions behind ai weights and limits used in my ai profiles:
+-----------------------------------------------------------------
+
+Geothermals, Solars, and energy storage are weighted extremely high to decrease the odds of the ai running out of energy.
+Metal extractors should have a high, but not extremely high, weight to ensure the ai is interested in aquiring metal.
+Metal makers (if used, which isn't recommended on most maps) should be weighted 0.05 to 0.2 because otherwise the ai will build these in preferance to metal extractors, thinking that they're cheaper. (and stupidly thinking cheaper = better!)
+
+Vehicle plants and kbot labs should have a considerable differance in weight to ensure the ai doesn't want to build 1 of each in a row.
+Aircraft plants need a LOW weight to ensure they're not ussually the first plants built.
+Hover plants, guardians, punishers, and advanced air plants should have a very low weight since they're such a metal hog.
+
+Only one advanced plant type should have a weight in the average range -- it is TOO big of a metal drain to be building adv. plants of different types at the same time. This will also decrease the numbers of advanced c-units running around early on trying to build many expensive level3 buildings.
+
+Moho Metal makers should have a weight of 0.03 to 0.1 -- the ai loves them TOO much!
+Fusions should have a high weight so the ai will overcome its "won't build expensive items."
+Ai-only nuke silos can be weighted very high because their metal drain is very low.
+Base defenses should be weighted very low to medium -- depending on costs.
+Missile towers should be weighted very high to give the ai a token base defense early on.
+
+My AirBattle, SeaBattle, and Waterwrld are similar, but by no means identical.
+(Seabattle goes for BIG navys, AirBattle more for aircraft and hovers. And Waterwrld just tries to make a navy out of floating metal makers!)
+AirBattle became the new Hover -- which now has very few naval units.
+My Acid and Hover ai's used to be identical, but now Acid is Hover MINUS all naval units -- acid would eat them up!
+The new AirBattle is strictly aircraft and AA only -- there is NO ground-based base defenses, naval units, or hovercraft. Presumeably, this is for maps like Ooooweeee where almost the only forms of attack is by aircraft and berthas.
+Urban and Default *USED* to be very similar, but then I noticed the importance of water on most Urban maps. Also, Urban requires more metal makers than Default - just for the ai to survive.
+Now Urban and Hover are very similar, with Urban having some underwater metal extractors and storage included -- to make room for reclaimed buildings.
+Metal and Default are similar, except metal uses moho mines instead of metal makers and moho metal makers -- plus it has higher unit maximums, presuming (naturally) that more metal is available on metal maps.
+Krogoth and Metal *used* to be identical, but since the Krogoth Encounter has so much water on it -- I figured the ai for it should include some naval units. Basically, Krogoth ai became the ai to do EVERYTHING -- but only if unit max is at *LEAST* 250 and preferably 400 or 500. Unfortunately, the ai hasn't proved very effective when trying to do everything at once!

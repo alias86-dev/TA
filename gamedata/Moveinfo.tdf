@@ -1,0 +1,254 @@
+[CLASS0]
+	{
+	Name=KBOTSS2;
+	FootprintX=2;
+	FootprintZ=2;
+	MaxWaterDepth=12;
+	MaxSlope=32;
+	}
+[CLASS1]
+	{
+	Name=KBOTSF2;
+	FootprintX=2;
+	FootprintZ=2;
+	MaxWaterDepth=12;
+	MaxSlope=11;
+	}
+[CLASS2]
+	{
+	Name=TANKDS2;
+	FootprintX=2;
+	FootprintZ=2;
+	MaxWaterDepth=100;
+	MaxSlope=32;
+	}
+[CLASS3]
+	{
+	Name=TANKDH3;
+	FootprintX=3;
+	FootprintZ=3;
+	MaxWaterDepth=100;
+	MaxWaterSlope=30;
+    MaxSlope=30;
+	}
+[CLASS4]
+	{
+	Name=TANKSH3;
+	FootprintX=3;
+	FootprintZ=3;
+	MaxWaterDepth=12;
+	MaxSlope=15;
+	}
+[CLASS5]
+	{
+	Name=TANKSH2;
+	FootprintX=2;
+	FootprintZ=2;
+	MaxWaterDepth=12;
+	MaxSlope=15;
+	}
+[CLASS6]
+	{
+	Name=BOATD3;
+	FootprintX=3;
+	FootprintZ=3;
+	MinWaterDepth=15;
+	}
+[CLASS7]
+	{
+	Name=BOATS5;
+	FootprintX=5;
+	FootprintZ=5;
+	MinWaterDepth=3;
+	}
+[CLASS8]
+	{
+	Name=BOATD6;
+	FootprintX=6;
+	FootprintZ=6;
+	MinWaterDepth=15;
+	}
+[CLASS9]
+	{
+	Name=BOATS4;
+	FootprintX=4;
+	FootprintZ=4;
+	MinWaterDepth=3;
+	}
+[CLASS10]
+	{
+	Name=BOATS6;
+	FootprintX=6;
+	FootprintZ=6;
+	MinWaterDepth=3;
+	}
+[CLASS11]
+	{
+	Name=SPID3;
+	FootprintX=3;
+	FootprintZ=3;
+	MaxWaterDepth=16;
+	}
+[CLASS12]
+	{
+	Name=TANKBH3;
+	FootprintX=3;
+	FootprintZ=3;
+	MaxWaterDepth=23;
+	MaxSlope=15;
+	}
+[CLASS13]
+	{
+	Name=TANKHOVER4;
+	FootprintX=4;
+	FootprintZ=4;
+	MaxSlope=12;
+	BadSlope=12;
+	MaxWaterSlope=255;
+	BadWaterSlope=255;
+	}
+[CLASS14]
+	{
+	Name=TANKHOVER3;
+	FootprintX=3;
+	FootprintZ=3;
+	MaxSlope=12;
+	BadSlope=12;
+	MaxWaterSlope=255;
+	BadWaterSlope=255;
+	}
+[CLASS15]
+	{
+	Name=TANKHOVER5;
+	FootprintX=5;
+	FootprintZ=5;
+	MaxSlope=14;
+	BadSlope=14;
+	MaxWaterSlope=255;
+	BadWaterSlope=255;
+	}
+[CLASS16]
+	{
+	Name=TANKHOVER6;
+	FootprintX=6;
+	FootprintZ=6;
+	MaxSlope=16;
+	BadSlope=16;
+	MaxWaterSlope=255;
+	BadWaterSlope=255;
+	}
+[CLASS17]
+	{
+	Name=KBOTSH3;
+	FootprintX=3;
+	FootprintZ=3;
+	MaxWaterDepth=14;
+	MaxSlope=13;
+	}
+[CLASS18]
+	{
+	Name=KBOTSH4;
+	FootprintX=4;
+	FootprintZ=4;
+	MaxWaterDepth=16;
+	MaxSlope=16;
+	}
+[CLASS19]
+	{
+	Name=TANKDH5;
+	FootprintX=5;
+	FootprintZ=5;
+	MaxWaterDepth=100;
+	MaxWaterSlope=31;
+	MaxSlope=17;
+	}
+[CLASS20]
+	{
+	Name=TANKDH6;
+	FootprintX=6;
+	FootprintZ=6;
+	MaxWaterDepth=100;
+	MaxWaterSlope=32;
+	MaxSlope=19;
+	}
+[CLASS21]
+	{
+	Name=TANKSH4;
+	FootprintX=4;
+	FootprintZ=4;
+	MaxWaterDepth=12;
+	MaxSlope=22;
+	}
+[CLASS22]
+	{
+	Name=TANKSH5;
+	FootprintX=5;
+	FootprintZ=5;
+	MaxWaterDepth=20;
+	MaxSlope=26;
+	}
+[CLASS23]
+	{
+	Name=TANKSH6;
+	FootprintX=6;
+	FootprintZ=6;
+	MaxWaterDepth=14;
+	MaxSlope=28;
+	}
+[CLASS24]
+	{
+	Name=SPID4;
+	FootprintX=4;
+	FootprintZ=4;
+	MaxWaterDepth=18;
+	}
+[CLASS25]
+	{
+	Name=SPID5;
+	FootprintX=5;
+	FootprintZ=5;
+	MaxWaterDepth=20;
+	}
+[CLASS26]
+	{
+	Name=SPID6;
+	FootprintX=6;
+	FootprintZ=6;
+	MaxWaterDepth=22;
+	}
+[CLASS27]
+	{
+	Name=SPID1;
+	FootprintX=1;
+	FootprintZ=1;
+	MaxWaterDepth=50;
+	}
+[CLASS28]
+	{
+	Name=SPID2;
+	FootprintX=2;
+	FootprintZ=2;
+	MaxWaterDepth=100;
+	}
+[CLASS29]
+	{
+	Name=KRISPY;
+	FootprintX=4;
+	FootprintZ=4;
+	MaxSlope=12;
+	MaxWaterDepth=23;
+	}
+[CLASS30]
+	{
+	Name=BOATD5;
+	FootprintX=5;
+	FootprintZ=5;
+	MinWaterDepth=15;
+	}
+[CLASS31]
+	{
+	Name=BOATS3;
+	FootprintX=3;
+	FootprintZ=3;
+	MinWaterDepth=3;
+	}

@@ -1,0 +1,85 @@
+// No-Brainer ai
+// These units are BEST left limited to 0!
+Limit ARMATLAS 0
+Limit ARMAWAC 0
+Limit ARMLANCE 0
+Limit ARMPEEP 0
+Limit ARMPNIX 0
+Limit ARMTHUND 0
+Limit ARMTHOVR 0
+Limit ARMASER 0
+Limit ARMMARK 0
+Limit ARMSEER 0
+Limit ARMSPY 0
+Limit ARMVADER 0
+Limit ARMJAM 0
+Limit ARMFAV 0
+Limit ARMFLEA 0
+Limit ARMMLV 0
+Limit ARMSCAB 0
+Limit ARMAMD 0
+Limit ARMARAD 0
+Limit ARMCKFUS 0
+Limit ARMDRAG 0
+Limit ARMEMP 0
+Limit ARMFORT 0
+Limit ARMMAKR 0
+Limit ARMLLT 0
+Limit ARMRAD 0
+Limit ARMSILO 0
+Limit ARMTARG 0
+Limit ARMVULC 0
+Limit ARMWIN 0
+Limit ARMFDRAG 0
+Limit ARMFHLT 0
+Limit ARMFMKR 0
+Limit ARMFRT 0
+Limit ARMSONAR 0
+Limit ARMTIDE 0
+Limit ARMTL 0
+Limit ARMUWES 0
+Limit ARMUWMEX 0
+Limit ARMUWMS 0
+Limit ARMSY 0
+
+Limit ARMMMKR 1
+
+Limit CORAWAC 0
+Limit CORFINK 0
+Limit CORHURC 0
+Limit CORSHAD 0
+Limit CORTITAN 0
+Limit CORVALK 0
+Limit CORROACH 0
+Limit CORSPEC 0
+Limit CORSPY 0
+Limit CORVOYR 0
+Limit CORTHOVR 0
+Limit CORETER 0
+Limit CORMABM 0
+Limit CORMLV 0
+Limit CORVRAD 0
+Limit CORARAD 0
+Limit CORCKFUS 0
+Limit CORDRAG 0
+Limit CORFMD 0
+Limit CORFORT 0
+Limit CORMAKR 0
+Limit CORLLT 0
+Limit CORPLAS 0
+Limit CORRAD 0
+Limit CORSILO 0
+Limit CORTARG 0
+Limit CORTRON 0
+Limit CORWIN 0
+
+Limit CORMMKR 1
+
+Weight plant 1
+Weight constr 0.5
+Weight LEVEL2 1
+Limit plant 10
+Limit constr 10
+
+// Weight ARM 0.1
+// Weight CORE 0.1

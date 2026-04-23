@@ -1,0 +1,28 @@
+// BANZAI Profile - This profile is set with few limits
+
+plan easy
+weight CONSTR 5
+weight PLANT 4
+weight SPECIAL 1
+weight WEAPON 2
+
+limit SPECIAL 5
+limit PLANT 6
+limit CONSTR 6
+
+plan medium
+weight CONSTR 6
+weight PLANT 4
+weight SPECIAL 1
+weight WEAPON 3
+
+limit SPECIAL 6
+limit PLANT 12
+limit CONSTR 10
+
+plan hard
+weight CONSTR 6
+weight PLANT 4
+weight SPECIAL 1
+
+limit CONSTR 30

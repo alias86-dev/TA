@@ -1,0 +1,1527 @@
+Total Annihilation Core Contingency v3.1 Bug Fix patch
+Dated: June 3, 2002
+Version: 1.6 FINAL
+LITE INSTALL VERSION!
+
+If you're having trouble with TA Bugfix, email me at Switeck@hotmail.com!
+
+Purpose of this patch:
+---------------------
+TA Bugfix is nothing short of a major attempt to fix the many bugs in TA. Some of which are so glaring (Pelican bug, EMG lag, Core Necro bugs, and Adv. C-Kbot bugs) as to nearly kill TA as a "fair" game worth playing...
+
+Originally, TA has referances to nonexistant files, paradoxical causalty loops, characters where numbers are expected, garbage strings, and data that cannot possibly be correct. Although supposedly none of these problems will crash TA, the long list of DEFINITE bugs in TA puts its reliability in doubt. That alone should be justification for this patch -- which attempts to fix as much as possible.
+
+TA Bugfix attempts to reduce overall game micromanagement without sacrificing gameplay. TA has a very steep learning curve not just because the interface is complex (but streamlined) but also because many units don't behave in a predictable or sensible manner. Enemy units may be in range of your units but yours won't fire because they're busy moving -- even though they should be able to fire while moving. This includes a Commander who has been told to d-gun a fast-moving ground unit and tracks it without firing. Or a Cruiser that insists on beaching itself while trying to destroy an inland guardian. (It almost qualifies as exploiting a unit if a player can get the unit to hold position and shoot reliably at enemy units as they come into range.) Or a Destroyer that refuses to depth-charge an enemy's underwater metal extractor even when ordered to because +SHOOTALL is not enabled. Or how close-up structures are no tougher when closed -- despite what the game manual says!
+
+TA Bugfix is intended to give units a little more common sense so you don't have to babysit them with micromanagement so much.
+
+This is what the patch contains: (table of contents)
+-------------------------------
+New Control Options!
+	Fixed Defenses Gain Guard Ability
+Map Changes
+	Map Features Changes
+	Single-player Mission Changes
+Speed Benifits
+File Changes in GAMEDATA dir (in REV31.GP3)
+
+AI fixes
+	Ai profile Changes
+	SIDEDATA.TDF Changes
+
+Unit Changes
+	Build Menu Changes
+	Unit Category Changes
+	Unit COB Script File Changes
+	Unit ID Number Changes
+	Unit Mobility Changes
+	Unit Name Changes
+	Unit Sound Fixes
+	Antinuke Silo Bugfix
+	Arm Pelican Bugfix
+	Arm Penetrator Bugfix
+	Arm/Core Spy Changes
+	Core Krogoth and Krogoth Gantry Changes
+	Core Necro Changes
+	Crawling Bomb Changes
+	Hovercraft Bugfix
+	LRPC Changes
+	Minelayer and Landmines Changes
+	Mobile Radars, Jammers, Spies, and Mobile Flakkers Changes
+	Naval Unit Changes
+		Advanced Construction Sub Changes
+		Arm Fibber Sub Changes
+		Arm/Core Sub Changes
+		Core Leviathan Super-Sub Changes
+		Naval Defensive Structures Bugfix
+		Naval Dragons Teeth Bugfix
+		Cruiser and Destroyer Changes
+		Light Carrier Changes
+		Missile Frigate Changes
+		Sea Serpent Changes
+
+Corpse Changes
+	Corpse Value Changes
+	Accumulating scars bug
+
+Weapons Changes
+	Weapon ID Number Changes
+	Target Fixation on Weapons Fix
+	Zero-tolerance Weapon Bug
+	Advanced Bombers Laser Change
+	Anti-Aircraft Missiles Change
+	Flakker Weapon Changes
+	EMG weapon Changes
+	Core Pyro Weapon Changes
+	"Slow Light" Laser Weapon Changes
+	Arm Stunner EMP silo weapon Changes
+	Torpedo Weapon Changes
+
+3rd party units don't work with Bugfix?
+
+Unfinished work?
+	Why I didn't go further
+	How this file works
+Legalese
+Credits
+
+(To quickly jump to each part, do a FIND on the section name.)
+
+New Control Options!
+-------------------
+These new CTRL hotkey shortcuts are designed to eliminate some of the micromanagement in controlling all your units:
+
+CTRL+G - ground units (armed ground units only)
+CTRL+H - hovercraft (armed hovercraft only) (Hovercraft are NOT selected with CTRL+G)
+CTRL+L - Laser towers + other fixed defenses (but not AA towers!)
+CTRL+N - Naval units (armed ships only)
+CTRL+Q - AA towers (Missile Towers, Flakkers, Naval Missile Towers)
+CTRL+T - Torpedo Launchers (fixed versions only)
+CTRL+X - "X-weapons" superweapons such as antinukes, nuke silos, and berthas (LRPC's)
+
+NOTE: Pelicans are selecetable with both CTRL+G and CTRL+H.
+NOTE: The crawling bombs cannot be selected with CTRL+G, because their "weapon" is their death.
+NOTE: Decoy commanders are not selectable with either CTRL+G or CTRL+W, but are selectable with CTRL+B.
+NOTE: Minelayers, Arm FARK, and Core Necro are selectable with CTRL+B.
+
+
+Factories and c-units now allow you to press q,w,e,r,f, and v (I think) for each build menu button. Q would be the build position 0 (top left), w for 1 (top right), e for 2 (middle left), r is for 3 (middle right), f is for 4 (bottom left), and v is for 5 (bottom right).
+(Kudos to BSR for the key choices.)
+
+Nuke/antinuke silos now use the "Q" key for queing up nukes, because it is the first (and only) picture on the menu. The "Q" key is now a hotkey shortcut for nuke silos and antinuke silos build menus. It will repeat the last mouse build command for that silo - to either build 1 missile or to remove 1 missile from the build que. It can be used with the shift key to build/remove 5 missiles at a time - hold down shift+"X" to queue up many missiles quickly.
+
+The Arm Annihilator and Core Doomsday Machine now have an On/Off switch. When set to "Off", the turrets act as normal - opening as neccessary when an enemy comes into range. When set to "On", the turret remains in an always open state. Changing from "On" to "Off" causes the turret to stop what it is doing and begin its close-up sequence. The turrets need to be set to "HOLD FIRE" to remain closed and "OFF".
+
+Also, the Core Viper, Core Toaster, and Arm Ambusher gain an On/Off switch just like the Arm Annihilator's.
+
+Also added to the Core Doomsday Machine is the "D-Gun" option. This does NOT fire a D-gun but instead fires the Core Doomsday Machine's 3rd weapon -- its red (LLT) laser. By using "Attack" in combination with the "D" key (using shift), the DDM can fire at multiple targets at once using different weapons on each.
+
+The Core Krogoth also has the "D-Gun" option to fire its 3rd weapon, its arm-mounted Gauss Guns. These CAN fire automatically on their own, but because of the 3-weapon bug in TA ussually don't.
+
+Both side's Torpedo Seaplanes have the "D-Gun" option to individually tarrget and fire their missiles separately from their torpedoes. THIS WAS REMOVED DUE TO PROBLEMS -- it simply didn't work!
+
+MOST 2-weapon and 3-weapon units now use the "D-Gun" option to individually fire their secondary weapon. This MAY cause some confusion on ships, because their 'main' gun is now weapon #3 so their depth-charge weapon WILL target Fibbers!
+
+On/Off switches can be toggled using "X" on the keyboard while unit/s are selected! (This existed in OTA as well, it just wasn't well-documented.)
+
+Fixed Defenses Gain Guard Ability:
+---------------------------------
+Guard ability has been added to all fixed defenses EXCEPT for bertha weapons, nuke silos, and flakkers. This was done to give the expensive base defenses the same ability that even the lowly AK or Peewee has at no extra cost: the ability to return fire on a unit shooting at another even if it's out of sight. Although possessing the POTENTIAL for abuse, this was done to cut down on the micromanagement costs that previously were rendering MOST base defenses (other than massed missile towers) useless -- or at least not worth their cost. Poor and even typical use of this new ability will often prove of little value, as the gun turrets still have to turn to fire and will NOT do so until AFTER the unit they're told to guard has been hit. Also, it could result in base defenses being 'distracted' by a minor enemy (the leading edge of an enemy attack force is often made up of fast level 1 units) while the more serious enemy (like merls) remain untargetted and free to do their worst. Unless you're willing to let your front edge of your base defenses take hits, guarding 1 base defense with others is of limited value. Chances are, if the enemy ground force is firing at a turret then the turret probably has LOS on them -- so all base defenses that can should already be firing at the enemies. This might not be true if your opponent is radar-targetting their troops from their max weapons ranges -- like the ai does sometimes. But if that's the case, you'd be better off radar-targetting and/or scouting the enemy as well -- otherwise you could be losing base defenses to massed volleys of enemy fire while your base defenses only target the single enemy that inflicted the 'killing blow' on each defensive structure. Also important is NOTHING in TA can guard more than 1 unit at a time. A 'Guard queue' of multiple guard commands strung together using the shift key only results in the 1st guard order being the only one in effect until the 1st unit being guarded is destroyed. Only after the 1st guarded unit is destroyed will the guarding units attempt to guard the 2nd guarded unit. The 2nd and later guard commands may even be ignored till the guarding units destroy the enemy that damaged/destroyed the 1st guarded unit! So, in short, having a whole field of HLTs, LLTs, or missile towers guard one another can be completely useless except to give your computer's cpu more calculations to do, possibly causing you gametime to lag behind in a multiplayer game or to slow down the game in skirmish.
+
+The reason why this ability was not given to bertha weapons, nuke silos, and flakkers is simple: methods for abuse are too great. Guard is supposed to make base defenses better able to do their job to DEFEND, but these weapons (with exception of the flakkers) are designed mainly for attack. You'll need scouts to plan your attacks, as it should be. (Although I do a lot of radar-targetting with my berthas myself.)
+
+Flakkers were not given this ability because of the flakker guard bug which will result in flakkers firing at ground units despite being air-only weapons. "Tricking" a flakker into shredding a Goliath tank is equivalent of a built-in game bug.
+
+Lastly, it's worth mentioning that ground units and buildings cannot guard aircraft in the air. It's a game limitation -- and it prevents guarding a peeper with base guns or ground troops so they will automatically kill whatever kills the peeper -- if in range, that is. If it's not in range, and the guarding units are mobile, they will attempt to take the shortest route to the offending enemy unit -- possibly running blindly into other enemies in the process.
+
+
+Map Changes:
+-----------
+The CHANGE MAP selection screen has been made much larger -- now it will be easier to examine a map's minimap before selecting it. This required a GUI change for VIEWMAP.GUI and SELMAP.GUI, and a bitmap change for DSelectmap2.pcx and Dviewmap.pcx. Thanks to Dark Rain for this change!
+
+I moved around a few of the starting locations on some maps because of conflicts -- either the commander starts out "stuck" on/in the scenery, or starts very close to other commanders.
+
+I did this on these maps:
+Evad River Confluence (tidal strength has been increased from 0 to 15 -- this is supposedly a river isn't it?)
+Painted Desert (w/ more than a 4 player start, players 1 and 5 were close together. Player 5 is now in the center -- more metal but more vulnerable.)
+Polar Range (Hailstorms are now not as frequent, but cover a greater area with fewer hailstones per screen.)
+Town and Country (one player starts out embedded in a car!)
+Moon Quartet has its starting locations moved slightly to offer more equal starts. The poorer bottom center position is now player #4's starting location instead of player #2's -- however, it has been shifted to the right about 1,000 pixels so it's almost on top of a good metal spot. Having to walk a whole screenlength just to get to the nearest metal spot was very unfair. Now, it's not the case.
+Slate Gordon's start locations have been moved around -- player #1 now starts on the mainland instead of the island. The only start on the island now is player #7. Odd player numbers start on the left side of the mountain ridge on the map, even player numbers start on the right. Although maybe still not a purely fair match-up now for metal spots per player, it is FAR fairer than having 1 player start out on the small island while the other started out on the mainland.
+Lava Run's start locations have been moved around -- in 1 vs 1 or 2 vs 2 (left versis right), players start at or near opposite ends of the map. No more early wins thanks to radar-targetting missiles or guardians! (This change may bother some people as the map wasn't technically 'broken' -- which Moon Quartet and Slate Gordon practically are -- but the original starting setup really limited gameplay.)
+
+Map Features Changes:
+--------------------
+AcidMetal03, the largest metal deposits on Acid Maps such as Gasplant Plain have been increased in size from a 3x3 footprint to a 3x4 footprint. They are now taller than they are wide. This was done to more accurately reflect their graphical appearance which implied a bigger metal spot than the game treated them as. It now means that 2 metal extractors have to be built one above the other to effectively recover all the metal (yielding +1.4m/sec from each of the 2 mexs, or +2m/sec from 1 and +0.8m/s from the other) from each such metal spot. Also, a moho extractor built on these metal spots will now make about +8.4m/sec instead of +6.2m/sec like originally.
+
+DryMetal03, the largest metal deposits (the streaked lower-level metal spots) on Desert maps such as Painted Desert and Desert Triad have been increased in size from a 3x3 footprint to a 4x3 footprint. They are now wider than they are tall. It now means that 2 metal extractors have to be built side-by-side to effectively recover all the metal (yielding +1.4m/sec from each of the 2 mexs, or +2m/sec from 1 and +0.8m/s from the other) from each such metal spot.
+
+SlateMetal6, the long, narrow metal deposits on Slate (air/clouds) maps have been increased in size from a 6x3 footprint to a 7x3 footprint. It is now longer. (from left to right)
+
+SlateMetal10, the y-shaped metal deposits on Slate (air/clouds) maps have been increased in size from a 3x3 footprint to a 4x3 footprint. It is now wider. (from left to right)
+
+WaterAquaOre2, the medium underwater metal deposits found on waterworlds have been increased in size from a 3x3 footprint to a 4x3 footprint. It is now wider. (from left to right)
+
+WaterAquaOre3, the medium underwater metal deposits found on waterworlds have been increased in size from a 3x3 footprint to a 5x3 footprint. It is now wider. (from left to right)
+
+Single-player Mission Changes:
+-----------------------------
+Some single-player maps have been altered so they can be used as multiplayer maps as well, HOWEVER the big totala4.hpi file on the TA Mission CD MUST be copied to the TA directory on the harddrive in order to run.
+
+Also, a small and currently incomplete Arm campaign has been added as well. It takes place at about the same time as the missions in TA and TA:CC.
+
+The missions will play better if ai profiles are added to augment them! SOME of them have been set up to use these special ai profiles:
+SeaMMiss.txt for Sea Metal maps
+Sea_Miss.txt for Sea maps
+
+The Krogoth Campaign has been altered so the original hard setting is now only the medium setting. The new hard setting removes most of the waittimes placed on the enemy units allowing the ai to attack earlier and with greater strength, and to resupply its attack force quicker. For those that find either version too hard, an easy version has been added as well - but it's not a complete cakewalk. Also, unit max on the mission has been increased from 400 to 500. (I thought about making it 1,000 unit max, but decided it wouldn't help the ai too much to have that many units nor could people with slow computers play the mission anymore.)
+
+
+Speed Benifits:
+--------------
+A side benifit of removing all duplicate and erroneous files is an increase in gamespeed - at least one speed notch from regular TA. Also, the game will load a new mission faster because it shuffles through fewer files.
+
+Because of the decrease of EMG lag as well as the removal of many categories for units, internet games and LAN games should lag less.
+
+File Changes in GAMEDATA dir (in REV31.GP3):
+-------------------------------------------
+Category.tdf file has been altered to reflect the reduced number of different Categories actually used in the game.
+
+Help.TDF is the help file viewed from inside the game. Some of the new commands added are now listed in the help menu. Page 3's last line should tell if TA Bugfix is installed or not and what version TA Bugfix is installed.
+
+The LOS.TDF (the Line of Sight tables) file has been altered to include entries out to 640 pixels -- so now far-seeing units such as the Leviathan will reveal what is in the outer edges of their sight radius.
+
+Meteor.tdf (in the Gamedata dir, NOT in the weapons dir) has been replaced with a modified meteor file. This is the data used when the +METEOR cheat is used in skirmish. It has been made a little more dangerous and now affects a much larger area.
+
+Moveinfo.TDF contains the mobility attributes of all the units in the game. A couple minor typos were fixed in it.
+
+The Sidedata.tdf file stores the ai's build menus, which has been corrected. (See AI fixes section for more details.)
+Also changed in the SIDEDATA.TDF file is the thickness of the metal and energy bars displayed at the top of the screen. This will make it easier to spot at a glance whether you are out of resources or not. Thanks to Dark Rain for this change!
+
+Sound.TDF stores the list of soundfiles used by various units.
+
+Weapons.tdf (in the Gamedata dir, NOT in the weapons dir) has been replaced with a zero-length file to mask the one in the old Gamedata dir.
+
+
+AI fixes:
+--------
+Another bug fixed by this patch is making map OTA's use a better ai profile. Original pre-TA:CC maps were particularly bad about their choice of ai profiles that they used. This should make the ai's at least slightly more effective on those maps than originally.
+
+Map OTA               Did use    Now uses
+-------               -------    --------
+Acid Foursome         Acid       Default
+Acid Pools            Hover      Wind
+Assault on Suburbia   Hover      HoverWin
+Checker Ponds         Acid       Default
+Crystal Cracked       SeaBattle  Hover
+East Indeez           SeaBattle  SeaWind
+Eastside Westside     Urban      UrbanWin
+Etorrep Glacier       Default    Wind
+Evad River Confluence*AirBattle  Hover
+Flooded Glaciers      SeaBattle  UrbanWin
+Gasplant Plain        Default    Wind
+Hundred Isles         Default    SeaBattle
+Higher Ground        *AirBattle  Wind
+Ice Scream            Hover      HoverWin
+John's Pass           Hover      HoverWin
+Kill the Middle      *AirBattle  Wind
+Lake Shore            Default    UrbanWin
+Lava Mania            Default    Wind
+Long Lakes**          Default    UrbanWin
+Metal Heck            Default    Metal
+Metal Isles           Default    SeaMetal
+Over Crude Water     *AirBattle  Krogoth
+Pillopeens            SeaBattle  SeaWind
+Ring Atoll            Default    Hover
+Sail Away             SeaBattle  SeaWind
+Seven Islands         Default    SeaMetal
+Shore to Shore        Seabattle  Hover
+Show Down             Default    Wind
+Surface Meltdown      Acid       Default
+Temblorian Mist      *AirBattle  Wind
+The Barrier Reef      SeaBattle  SeaWind
+The Cold Place        Default    Wind
+The Pass              Default    ThePass
+Trout Farm            Default    UrbanWin
+Two Continents       *AirBattle  Hover
+
+*NOTE: AirBattle is now strictly aircraft-only maps.
+**NOTE: Stand-alone map by Cavedog, not found in TA, TA:CC, or TA:BT
+
+Ai profile Changes:
+------------------
+There are NO ai profiles in ][BF15.org or later versions of TA Bugfix! TA Bugfix uses the ai profile files found in the old Rev31.gp3 file (renamed Rev31.ccx or incorporated into totala1.hpi) instead. I did not include my ai profiles (that is found on other websites) with this patch. Also, ai profiles are something that typically get changed often like maps do - which is much easier to do if the ai files are in an AI directory instead of buried inside of a ufo file.
+
+If you want an IMPROVED TA ai, many are available at
+Quitch(y)'s AI Central - Home of the Queller AI
+URL:
+http://www.planetannihilation.com/taec/queller/armframe.htm
+
+Descriptions of AI Profile types:
+(this is what they probably should be, not what they are...)
+
+Acid.txt
+    Presumes that each player is separated by acid, so ships and ground troops cannot (safely) get from one island to another. This means the ai should build aircraft and hovercraft (and Pelicans).
+
+AirBattle.txt
+    Presumes that each player is separated by impassable terrain (clouds, lava, etc) that even hovercraft cannot cross. This means the ai should only build aircraft for mobile attack. Generally, wind generators are a better deal than solars on these maps as wind is ussually high.
+
+Default.txt
+    Presumes a big land map that all units can cross. Presumeably no water is on the map, so making ships is pointless. So the ai should build everything but ships.
+
+Hover.txt
+    Presumes a water map with lots of land to build many factories on. This allows the ai to build many aircraft plants as well as hovercraft platforms. Ships aren't neglected, but have low limits.
+
+Krogoth.txt
+    For a metal map that has water as well as land. Ground troops presumeably can travel from almost any part of the map to any other part. Ships aren't neglected, but have low limits.
+
+Metal.txt
+    Strictly a metal map with little or no water and no obstructions to ground units. So the ai should build everything but ships and metal makers.
+
+SeaBattle.txt
+    Presumes a water map with limited land to build factories on. Ships are the main form of attack or defense, but small numbers of air plants and hovercraft platforms might be built.
+
+SeaMetal.txt    (Does not normally exist in the game!)
+    A metal water map, presumeably with lots of land to build many factories on. This allows the ai to build many aircraft plants as well as hovercraft platforms. Ships are still a major form of attack but by no means the only one. Actually, this is just a metal form of the Hover.txt ai -- with the exception that the ai shouldn't make metal makers.
+
+ThePass.txt     (Does not normally exist in the game!)
+    A special map ai, designed specifically for The Pass map. It builds very few factories or base defenses to conserve its very limited build space, nor does it build many metal extractors.
+
+Waterwrld.txt
+    Presumes an entirely water map. Ships are the only form of attack or defense, with seaplane platforms as the only other factory type. The ai should not try to build any land-based factories.
+
+Wind.txt        (Does not normally exist in the game!)
+    Presumes a big land map that all units can cross. Presumeably no water is on the map, so making ships is pointless. So the ai should build everything but ships and solars. However the ai's primary early energy source is wind generators instead of solars.
+
+Urban.txt
+    Presumes a water map with lots of land to build many factories on. This allows the ai to build many aircraft plants as well as hovercraft platforms. Ships aren't neglected, but have low limits. Also, this map is low on resources but may have reclaimable objects (buildings, rocks, and trees) to make up for this lack. Also presumes there is underwater metal spots.
+
+SIDEDATA.TDF Changes:
+--------------------
+The ai's build menus are pretty messed up:
+(this is stored in the SIDEDATA.TDF file in the GAMEDATA dir.)
+
+FIXED: Core is unable to build seaplane platforms and advanced construction subs!
+FIXED: Arm's seaplane platforms sometimes quit building for no reason!
+ADDED: All the TA:CC units that were missing, plus the 6 post-v3.1 patch units.
+I left the ability of the ai's construction hovercraft to build advanced vehicle plants. (They are hover tanks...)
+I removed the ability of the ai's construction seaplanes to build advanced k-bot labs and replaced it with the ability to build advanced air plants. (After all, they are aircraft...) 
+These last 2 changes offer only a small advantage for the ai -- and the ai needs that (and more!) to compete with good players.
+
+
+Unit Changes:
+------------
+Sortbias=0; and downloadable=1; and ovradjust=1; lines have been removed from EVERY Cavedog unit in TA.
+
+The units Torpedo Seaplane/s (ARMSEAP and CORSEAP), Seaplane Fighter/s (ARMSFIG and CORSFIG), Arm Escort (ARMSJAM), Core Phantom (CORSJAM), Core Adv. Torpedo Launcher (CORATL), and Core Leveler (CORLEVLR) all use: ExplodeAs=MEDIUM_UNITEX;
+But MEDIUM_UNITEX is a nonexistant weapon and does no damage to nearby units when they die.
+This has been changed to: ExplodeAs=BIG_UNITEX;
+The replaced explosion does 1/5th the damage in nearly the same radius as the self-destruct for the above units.
+
+Arm's Moho Metal Maker (ARMMMKR) and Core's Moho Metal Maker (CORMMKR) uses:
+ExplodeAs=BIG_BUILDINGEX;
+SelfDestructAs=BIG_BUILDING;
+
+But both are nonexistant weapons and do no damage to nearby units when they die.
+(Because these units have nonexistant weapons for their explosions, a weapon of the same name could be created and used to cheat!)
+This has been changed to:
+ExplodeAs=LARGE_BUILDINGEX;
+SelfDestructAs=ESTOR_BUILDINGEX;
+
+Core Toaster (CORTOAST): ExplodeAs=lARGE_BUILDINGEX;
+(probably still works, but just to be safe...)
+
+armthover.fbi typo:
+ARMTHOVER has a brakerate of 0.0018, BUT CORTHOVER has a brakerate of 0.017!
+Therefore, ARMTHOVER has a typo in it - an extra 0 that wasn't intended.
+
+armaser.fbi typo:
+ARMASER has a brakerate of 1, BUT the Core equivalent has a brakerate of 0.12!
+Therefore, ARMASER almost certainly has a typo in it - so I reduced its brakerate to 0.2!
+
+The missions-only unit ARMSCORP has a goof-up in its FBI file:
+ItalianDescription=;Scorpione
+This has been changed to:
+ItalianDescription=Scorpione;
+
+Pop-up turrets scripts are fixed.
+
+Construction kbots and advanced kbots now turn their turrets while opening to begin nanolathing. Previously they opened their nanolather THEN turned their turrets. This minor change saves as much as 1/2 second in start-up times.
+
+The Arm Energy Storage has an error in its yardmap. It is a 4 x 4 unit with a yardmap of:
+YardMap=o;
+instead of:
+YardMap=oooooooooooooooo;
+like Arm Metal Storage - which is also a 4 x 4 unit. This was a simple cut-and-paste fix.
+
+Arm's Advanced Construction Sub now has 100 Energy and 100 Metal storage, just like Core's Advanced Construction Sub -- and like all other advanced c-units.
+
+The Core Advanced Vehicle Plant's build platform no longer spins while building units. This is to compensate for it having only 1 exit, unlike Arm's Advanced Vehicle Plant.
+
+The Core Gimp now uses the same movement class (MovementClass=TANKDS2;) as the Core Commander. Previously, it was set to use the TANKHOVER3 movement class -- even though it is defined as a 2x2 footprint unit (in its FBI and corpse file) and it's NOT a hovercraft!
+
+All the aircraft plants (basic and advanced) have altered yardmaps so ground c-units don't block production as badly (but can still occur!) while guarding them.
+
+I added y to the yardmaps of all factories that appeared to have empty space in their footprints. This will help especially well with Core factories, so slightly more c-units can guard the factories.
+
+Likewise, aircraft have an altered footprint so they don't jam the air plants that can build them -- the problem was the worst with the Arm Seaplant Platform which could build only 5x5 footprint units at largest -- but the Lancet had a 6x6 footprint! I changed the Lancet's footprint to 3x3, the same as other large aircraft.
+
+Individual unit _gadget.gaf build menu picture files have been added to the Amins directory for many units that lacked them.
+Cursor.gaf in the Amins directory now have a better unload animation. (Thank BSR for this one!)
+Help menu pictures (gotten by pressing F1 while the cursor is on them) have been added to the Arm Scorpion, the Core Sea Serpent, and the Core Hydration Plant.
+
+Build Menu Changes:
+------------------
+Both Arm and Core's AWACs (Arm Eagle and Core Vulture) have been moved from page 3, position 0 of the Adv. Air Plant to page 2, position 5. This puts ALL Cavedog advanced aircraft on one build menu.
+
+The Arm Panther has been moved from page 4, position 0 of the Arm Adv. Vehicle plant to page 3, position 5. Previously, it was needlessly on a menu page by itself.
+
+Nuclear Mines (which can now be built underwater) have been added to the Advanced Construction Sub build menu. (Page 3, position 5)
+
+The Seaplane Platform is now buildable on the Advanced Construction Aircraft build menu at Page 4, position 4. (This is the same build position used by the Core Advanced Construction Kbot to build the Krogoth Gantry, another Level 3 factory.) Because the Seaplane Platform is an advanced factory that builds aircraft, some type of construction aircraft should be able to build it. (This follows the general build rule that advanced factories are built by less-advanced construction units of the same type.) Since the Seaplane Platform is a Level 3 factory, the Advanced Construction Aircraft (a Level 2 unit) should build it because the Advanced Construction Aircraft is the only construction aircraft capable of building Level 3 buildings. This change was to allow a land-locked player to directly build seaplane platforms without having to build ships first, so they might eventually retake the sea if driven out of it. Considering a single well-placed Skeeter or sub can prevent seaplane platforms from being built, the difficulties of exploiting this new build link are not as great as might seem.
+
+Unit Category Changes:
+---------------------
+Morty is now treated as a LEVEL2 unit in its FBI file.
+Both the Arm Samson and Core Slasher are now LEVEL1 units -- not LEVEL2 like they were.
+Thuds can no longer be selected with CTRL+P.
+Most/all units have ALTERED category information in their FBI.
+Any units with radar, sonar, or jamming ability are now selectable with CTRL+R.
+The Targetting Facility can now be selected with CTRL+R.
+ALL Underwater units now have the UNDERWATER category in their FBI.
+These categories have been totally removed:
+ANTISUB, BEACON, BOMB, CARRY, defensive, DEV, extractor, HOVER, JAM, KAMIKAZE, KBOT, LEVEL, LEVEL10, MINE, MINELAYER, PARAL, PHIB, RAD, REPAIRPAD, SCORP, SHIP, SONAR, SPECIAL, SPY, STEALTH, STORAGE, strategic, TANK, TPORT, VTOL
+
+Although this seems excessive, the categories tell the ai what category each unit is in. Since this information was not used by the ai (or did not appear to be used), it was removed.
+
+These categories have been added: CTRL_G, CTRL_H, CTRL_L, CTRL_N, CTRL_Q, CTRL_T, CTRL_X, MOBILE
+CONSTR and PLANT were added back because ai profiles DESPERATELY needs this information!
+
+TORP now takes the place of ANTISUB
+CTRL_H now takes the place of HOVER
+CTRL_G now takes the place of KBOT -- selects all ground units with weapons
+CTRL_G now takes the place of TANK -- selects all ground units with weapons
+CTRL_L now takes the place of DEFENSIVE -- selects all Laser towers + other fixed defenses
+CTRL_M now takes the place of MINE
+CTRL_N now takes the place of SHIP -- selects all naval ships with weapons
+CTRL_Q now takes the place of SPECIAL -- selects all AA towers
+CTRL_R now takes the place of JAM
+CTRL_R now takes the place of RAD
+CTRL_R now takes the place of SONAR
+CTRL_T now takes the place of TORP -- selects torpedo launchers
+CTRL_V now takes the place of VTOL
+CTRL_X now takes the place of strategic -- and selects antinukes, nuke silos, and bertha weapons.
+Because the remaining categories make decent substitutions, the originals are not needed.
+
+Units ai behavior is improved with appropriate badtarget lines in their FBI.
+
+Both Light Carriers have an added "ENERGY" line in their categories in their FBI file.
+
+The Geothermal Plant, Energy Storage, Underwater Energy Storage, Fusion Reactor, and Underwater Fusion Reactor have an added "METAL" line in their categories in their FBI file. Although this is incorrect, it should encourage the ai to build them more often and will have no effect on the player. Also, the Moho Metal Makers no longer have the "METAL" line in their categories in their FBI file. This is to partially overcome the ai's tendancy to build moho metal makers when it has nothing but solars to power it and will also have no effect on the player.
+
+"Mobile" category tag has been removed from both Commander, Decoy Commander, and Krogoth. This way, ai berthas will target them by default -- even at a preferance over other units, as a player might. (The ai berthas will target decoy comms as well because it can't tell a differance!)
+
+Core Slinger (CORAH) had BadTargetCategory=VTOL;
+Arm Swatter (ARMAH) had BadTargetCategory=VTOL;
+even though they're ANTI-Aircraft hovercraft!
+
+Core Thunderbolt, Floating Heavy Laser Tower (CORFHLT) had BadTargetCategory=NOTAIR;
+but it's HARDLY an AA weapon!
+
+Core Shadow (CORSHAD) had NoChaseCategory=UNDERWATER;
+but it's very unlikely that it'd ever find an underwater target to chase in the first place.
+(All bombers have this line!)
+
+Note that +SHOOTALL overrides the bad target settings, allowing units to autotarget resources and the like.
+Also, bad target setting have been changed so units don't shoot at c-units and factories by default.
+
+The BadTargetCategory= line seems to be "overall" for ALL the weapons on the unit. (But is sometimes ignored!)
+The NoChaseCategory= line seems to be for whether the unit will chase a unit it's told to attack if it moves out of range.
+The wpri_BadTargetCategory= line seems to disallow the FIRST weapon of that unit from targetting certain enemy types. It is the GREATEST deciding factor on what the unit will target quickly and what it will ignore if other units are around.
+
+For missile weapons with AA uses, what seemed to work best was:
+wpri_BadTargetCategory=NOTAIR;
+BadTargetCategory=NOWEAPON;
+This means firstly, it would ignore units not flying (NOTAIR) and out of the flying units it would prefer units with weapons. The other way around made them too likely to shoot at anything with a weapon -- whether it was flying or not!
+
+Unit COB Script File Changes:
+----------------------------
+(there's a couple 3do file changes here as well...)
+
+The Core Spy no longer "runs" while being built.
+Both sides' Construction Kbots (both Basic and Advanced), Core Necro, and Arm FARK should almost never have guarding and building problems now.
+All c-units should work correctly, but some have minor animations goof-ups. I fixed them as best I could.
+
+Almost ALL buildings that can open and close were not becoming armored when closed - DESPITE having a damage modifier line in their FBI file that says that they should be! This bug occurs on the Arm Annihilator, Arm Advanced Radar (although it lacks a damagemodifier line, since it's closed it should be slightly tougher - so I added a damamgemodifier of 0.5, this will have little effect because it is so fragile), the Core Doomsday Machine, the Moho Metal Makers, both side's Targeting Facilities, and both side's antinukes. All were previously NOT more resistant to damage while in a closed state. Antinuke silos are fragile and easy to kill because of this bug. THIS has been fixed!
+
+To make matters worse about this failure to armor bug, the Arm Advanced Radar, both side's solars, both side's sonars, and both side's moho metal makers incorrectly OPEN and activate when shot -- even when not COMPLETELY BUILT! This makes them easier to kill. This has been fixed as well. On TOP of that problem, these same buildings OPEN and activate when shot even if they were turned OFF beforehand. So, it is possible to turn on an opponent's MMM just by shooting it and not destroying it.
+
+The Core Viper pop-up HLT had a scripting error that caused it to not leave a corpse, this has been corrected. The corpse metal value has also been reduced to less than the metal cost of the Viper.
+
+Guardian aiming point needs to be more accurate. <-- DONE! Rex222 sent me a guardian 3do file that allowed it slightly better targetting.
+
+A few multi-weapon units have an either-or approach to using their weapon. The Arm Warrior for instance will fire either its cannon OR its EMG but seldom both.
+
+The fixed Arm Warrior attempts to use both weapons at once, if in range. Even with the original unit, this could be done by using "Hold Position" and "Fire at Will" and ordering the Warrior to move near an enemy instead of ordering it to attack the enemy - this fix just removes the micromanagement involved. This was done with a COB fix.
+
+Both side's Flakker ships have lost their second missile weapon, leaving them with 2 weapons -
+weapon 1: their first missile weapon
+weapon 3: their flakker weapon
+The flakker weapon had to be made weapon 3 instead of weapon 2, or it would be force-fireable (which would make it able to destroy almost any unit not strictly immune very quickly.)
+This means the flakker ships should shoot their flakkers more often. This was done with a COB fix and an FBI change. The reload time on the remaining missile weapon used on Arm Flakker ships (and also reused on Core's Flakker ships as well) has been halved, thus making it roughly equal to the 2 original missile weapons it replaces.
+
+The Core amphibious K-Bot, the Gimp, should now use both of its weapons at the same time. Just like the Arm Warrior, the Gimp could use both of its weapons at once - but only if not ordered to attack a specific target. This should help make the Core Gimp more effective against the Arm Pelican without requiring changes on either of their stats. This was done with a COB fix.
+
+The Arm Maverick and Arm Zeus will now take considerably longer (about 10 seconds) to put their guns away -- this will decrease the likelyhood that they are "disarmed" during intermittent fighting.
+
+The Arm Zeus had minor problems with its animation script (unit script) -- its gun appears and disappears when it shouldn't. Correcting it and adding an increased delay between holstering the gun after each combat neccessitated editing the script. I subtracted from sleeptimes elsewhere in the script so the time the Zeus takes to ready his gun remains very close to the same amount of time as before.
+
+The Core Battleship's laser turret animation has been corrected so the 3rd barrel rotates into position correctly.
+
+The Arm Wind Generator's blades have now been changed to spin in opposite direction from the originals. This better matches the wind direction as seen by which way smoke blows.
+
+The Arm Wind Generator never leaves a complete corpse -- only a heap because of a missing return (0); in its unit script. And the Core Wind Generator's corpse has over 1,400 armor -- might make them worth putting around fragile buildings then killing them on purpose because they're so tall... Anyhow, it's a bug, and I gotta kill it. What I was WANTING to learn was a way to make the Wind Gens lag less. I'm still searching for how to do that... with help from others who will look into the 3do file...
+
+Wind Generators and Tidals now have On/Off switches. This is so they will WORK when captured or resurrected!
+Wind Generators cause major slowdowns due to poor unit script and complex textured model.
+The Wind Generators COB scripts have been simplified slightly to reduce lag.
+ARMWIN never leaves a "whole" corpse. CORWIN's corpse and heap is 10 TIMES tougher that reasonable. (It has 10 times the armor of the ARMWIN corpse!)
+
+Solars, Metal Extractors, Moho Mines, and Wind Generators COB scripts have been simplified slightly to reduce lag.
+
+The Arm Jethro, Arm Pelican, Arm Phalanx, Arm Samson, Core Copperhead, and Core Slasher have modified unit COB scripts to make them less likely to ignore enemy aicraft flying past them.
+
+The Arm and Core Scorpion has a simplified COB script to fix their weapons jam bug.
+The Arm and Core Sea Serpent has a simplified COB script to fix their weapons jam bug.
+
+Almost all Hovercraft have modified unit COB scripts, so they won't leave blocking wreckage in the water. Instead, they will leave passable wreckage. While on land, they can still leave blocking wreckage. SOME of the hovercraft scripts also have corrected explosions.
+
+Arm Stunner EMP silo and Core Nuke silo both have a COB script modification to prevent the problem the ai has when using this silo. Previously when the ai used these launchers, conditions could occur which caused the missile to explode inside the silo instead of launching!
+
+If I included a COB file in TA Bugfix, it definitely makes some changes over the original. Even ALL 6 extra Cavedog units have modified COBs from Cavedog's versions. Enough cannot be emphasized on the problems with the original COBs or the complexity and difficulty I had fixing them. The number of problems I fixed in the COBs is legion -- often the same or very similar problems occured on many similar unit scripts (such as the open-when-shot bug that's found on solars.) And many times the COBs I ended up using still have problems, but to a lesser degree than the originals.
+
+Unit ID Number Changes:
+----------------------
+20 Cavedog units share the same unit id #:
+
+ Unit       Name                   Description               id#                    new id#
+------   ----------------         -----------               ---                    -------
+ARMCA    Construction Aircraft     Tech Level 1               18                      18
+ARMCSA   Construction Seaplane     Tech Level 1               18 *CONFLICT: ARMCA    400 *
+CORCA    Construction Aircraft     Tech Level 1               90                      90
+CORCSA   Construction Seaplane     Tech Level 1               90 *CONFLICT: CORCA    403 *
+ARMDECOM Decoy Commander           Decoy Commander           232                     232
+CORDECOM Decoy Commander           Decoy Commander           232 *CONFLICT: ARMDECOM 404 *
+ARMPLAT  Seaplane Platform         Builds Seaplanes          242                     242
+CORPLAT  Seaplane Platform         Builds Seaplanes          242 *CONFLICT: ARMPLAT  405 *
+ARMMANNI Penetrator                Mobile Energy Weapon      269                     401 *
+CORSUMO  Sumo                      Adv. Armored Assault Kbot 269 *CONFLICT: ARMMANNI 269
+CORSS    Sea Serpent               Indigenous Lifeform       277                     406 *
+CORSSUB  Leviathan                 Battle Sub                277 *CONFLICT: CORSS    277
+CORUWES  Underwater Energy Storage Increases Energy Storage  293                     293
+CORUWMS  Underwater Metal Storage  Increases Metal Storage   293 *CONFLICT: CORUWES  407 *
+ARMUWES  Underwater Energy Storage Increases Energy Storage  298                     298
+ARMUWMS  Underwater Metal Storage  Increases Metal Storage   298 *CONFLICT: ARMUWES  402 *
+ARMEMP   Stunner                   EMP Missile Launcher      322                     322
+CORMABM  Hedgehog                  Mobile Missile Defense    322 *CONFLICT: ARMEMP   408 *
+CORPUN   Punisher                  Plasma Battery            124                     124
+CORPLAS  Immolator                 Plasma Tower              124 *CONFLICT: CORPUN   409 *
+
+The * (asterick) means changed.
+
+ALL FIXED -- by moving the conflicting units to different unit id #'s, starting at 400 and going to 409. This should be safe so long as Cavedog doesn't create nearly 100 new units. According to Cavedog, this bug has no effect on gameplay - but since I'm removing other bugs, I'm removing this bug as well!
+
+Unit Mobility Changes:
+---------------------
+The Arm Triton (ARMCROC) and Core Crock (CORSEAL) now has climbing ability out of the water (maxslope=30) equal to their in-water climbing ability (maxunderwaterslope=30) -- this is for metal maps like Over Crude Water, where they would often get stuck going in and out of the water.
+
+The Arm Zipper and Core Freaker now has climbing ability identical to most other kbots. (maxslope=15) Previously they could climb only gentle slopes.
+
+The Core Krogoth has been given climbing ability identical to the Arm Bulldog tank. This will allow it to wade into shallow pools of water but will not let it snorkle accross deep bodies of water like fully amphibous units.
+
+Fire Standing Orders and Fire Moving Orders for mobile units have been changed so most mobile units are set to Fire at Will MOST of the time.
+
+Unit Name Changes:
+-----------------
+The Decoy Commanders have been renamed "Commander" so you don't see "Decoy Commander" when you move your cursor over top them in skirmish. You can still use F1 to see a difference. I did not change the Commander build cost to the same as the Decoy Commanders because of a gamecheat which makes Commanders buildable - if Commanders cost no more than Decoy Commanders, it would be more tempting to use that cheat.
+The Arm Millenium has been renamed "Millennium". (See dictionary for correct spelling of word :p)
+The Core Mobile Artillery has been renamed "Pillager".
+The Core Missile Frigate has been renamed "Hydra".
+The Core Ressurrection Kbot has been renammed "Necro".
+
+Unit Sound Fixes:
+----------------
+These units either were using NONEXISTANT sound categories (can we say "file not found error"?) or were using common ones when specific sound categories for that unit existed:
+CORFAST
+CORFHLT
+CORMEX
+CORPUN
+CORSENT
+CORSPY
+CORSSUB
+CORUWMS
+ARMUWMS
+ARMFHLT
+
+I fixed them all.
+
+The missile firing sounds (particularly for Hawks and Vamps) has been shortened to reduce soundcard 'lag' when 10+ fire at once.
+The EMG firing sounds have also been shortened slightly.
+Certain large explosion sounds also taper off quicker than originally.
+All this is nearly impossible to notice in-game because sounds tend to cover each other up when there's lots of action.
+
+Antinuke Silo Bugfix:
+--------------------
+I've added a weapons line "toaironly=1;" to the antinuke missiles for the Arm AMD/Protector and Scarab and Core FMD and Hedgehog so that they will not open and attempt to shoot at anything other than aircraft that hit them. This negated their 0.5 damage modifier they gained for being closed and made them TWICE as easy to destroy. Sadly, they still open stupidly when aircraft shoot them - but I could find no weapons-modifying line that could tell them to ignore attacks by aircraft. So I settled for the partial fix instead of none at all. I also made it so antinuke silos should only stay open for 10 seconds after firing a missile or attempting to attack aircraft. This keeps the "window of opportunity" to destroy them while they're open and more vulnerable reasonably small without interfering with their standard operations.
+
+Antinuke weapon turnrates have been increased to 63,000 -- the same turnrate as the Krogoth Rockets have -- and given a 120 second (from 60 seconds) flighttime. This is to combat the "trick" of shooting nukes at an enemy unit inside the enemy's antinuke protection zone, then killing the enemy unit -- resulting in the nuke missile flying around in a tight circle while antinuke after antinuke missile hopelessly tries to shoot down the single confused nuke missile. This was a cheap way of exploiting a bug to deplete the already buggy antinuke silo of missiles.
+
+Originally, if the Core Antinuke silo (CORFMD) is ever nuke-flooded -- and the silo survives -- the silo locks up and refuses to ever fire at nuke missiles again even if it has missiles in it.
+
+BEFORE my changes, ALL antinuke silos can temporarily overload and quit firing if 5 or more nukes are fired at them at once. (This is what "nuke-flooded" means.) Once ALL nukes have impacted or are shot down, they might resume firing at the NEXT wave of incoming nukes. The antinuke's animation scripts cannot keep up with how fast the antinuke fires, causing the antinuke to refuse to fire until it resets its variables when there are no more incoming nukes. A "workaround" for the problem is to put the antinuke on hold fire, which resets its script, then back on fire at will -- which should cause it to resume firing.
+
+To get the antinuke silo's animations to match their actions, I had to slow down their rate-of-fire slightly and both speed up and simplify their animations, especially for Arm's antinuke.
+
+Arm's antinuke silo's rotary launcher was much too slow for the rate-of-fire needed in the event of a nuke-flood, and did not match its apparent rate-of-fire. Originally, it ignored the position of the rotary launcher and fired multiple antinukes almost instantaneously, while the rotary launcher would continue to rotate erratically -- sometimes even reversing direction! Now, Arm's antinuke silo loads 3 antinuke missiles on 3 separate launch rails (in a triangular configuration) and has to close and rearm after every 3 shots. It does this quickly enough to seldom cause problems.
+
+Core's antinuke silo has to close and rearm after EVERY shot, but it rearms faster than Arm's antinuke silo so both should be balanced yet still retain originality.
+
+The mobile antinukes needed only a firerate reduction (in their unit scripts) to remove most of their problems.
+
+After all the antinuke changes, the fixed antinuke silos can fire slightly quicker than their mobile counterparts. This should make fixed antinukes worthwhile versis their mobile counterparts which cost the same.
+
+Arm Pelican Bugfix:
+------------------
+Despite the many and much heated debates about the Pelican being too powerful in TA, I still prefer to think of the Pelican (and Flash as well, but that's a different story) as a legitimate unit in TA. However, missiles aimed at the pelican when it is on the water tend to hit the water instead of the Pelican unless fired from nearly point-blank range. This is a bug or is at least unintentional on the designers part. All ships are targetted correctly by missiles, SO if pelicans are in fact meant to be a ship (but then why the Floater=0; line? -- all ships have a Floater=1; line!), subs should be able to target them. However, subs cannot target them. (But subs can force-fire past them, hitting the Pelicans. The same trick can be done to all Hovers.) Pelicans also have a canhover=1; line which ALL other hovercraft have as well - which proves that Pelicans are hovercraft and not ships. Pelicans currently use waterline=9; which is ODD because all hovercraft lack a waterline=9; in their unit FBI file -- which due to its absence defaults to 0. So obviously, part of the Pelican is hiding below the waterline -- which is where missiles are aiming in their attempt to hit them. However 2 other facts remain which causes the behavoir of even partially underwater Pelicans to not make any sense:
+1.Pelicans take NO DAMAGE from acid on acid maps!
+2.ALL other units slow down when they go underwater or even partially underwater, but Pelicans are no slower on water than on land.
+
+As such, there is a simple fix for the WHOLE problem: set the pelican's waterline to 0 so it isn't partially underwater.
+
+Pelicans may appear to be hovering over the water with this fix when viewed at 640 x 480. I couldn't tell any differance myself except that missiles hit the modified Pelicans more reliably. HOWEVER, any missiles fired from at or near max range that might miss an ordinary hovercraft could well miss the Pelican as well. This change does nothing else to the Pelican's unit stats, nor does it change how any other weapon is fired at them. It only allows missiles and direct-fire rockets to hit Pelicans as they would any ship or hovercraft in the same conditions.
+
+Arm Penetrator Bugfix:
+---------------------
+Originally, Penetrators could recenter their turret quicker than the turret turns to aim! It's also the slowest-turning mobile turret in the game. Why not aim the turret as fast as it can recenter in the first place? It won't be around to recenter if it can't acquire the target! So, the Penetrator's turret has been changed to a faster-turning (but still slow) turret with the same turret speed as its larger counterpart, the Arm Annihilator. The Penetrator's weapon lacks the range and damage of the Arm Annihilator and costs nearly as much energy to fire -- these characteristics I have not changed.
+
+Arm/Core Spy Changes:
+--------------------
+Presumeably, spies are level 2 scouting units. But both sides' spies had terrible LOS ranges. A Core Crasher's LOS range is 42 units greater than the Core Spy -- and Core Crashers aren't even "scout" units! An Arm Jethro's LOS range is 10 units greater than Arm's Spy. Even Arm's Stumpy had the same sight range as the Core Spy -- and it's a half-blind tank! Without the very expensive cloaking ability, the spies are LESS effective than their much cheaper level 1 counterparts. (the scouting kbots, which even have weapons.) What good is a nearly blind spy? Like many other typos, this was probably an oversight or minor mistake. So, both spys now have their sight range increased by 100 units - to 380 and 350 respectfully. This is the same as the ARM HLT and Core HLT - level 2 defensive lasers. Even after the change, since most base defenses have a sight range of 350, it is almost impossible for a Spy to sneak up on them if not cloaked. By the time the Spy can see them, they can see the Spy! Any rough terrain on True LOS (Greenhaven anyone?) will negate most of the Spy's extra seeing range. Also, since the spy is NOT as mobile as a Thud or Spider it cannot as easily find a high spot to get a better view.
+
+Core Krogoth and Krogoth Gantry Changes:
+---------------------------------------
+Krogoth Duplication Bug:
+
+When a healthy vetran krogoth is captured, self-d'ed, or traded, the krogoth (being captured, self-d'ed, or traded) has 30,000 damage done to it which is LESS than its total health. So the original krogoth (that was captured, self-d'ed, or traded) lives, barely; and a NEW healthy duplicate is created as well. By repeating this cheat, krogoths can be created for free! This fix reduces the krogoth's health to half (to 14,959 which is half of 29,918) and adds a damagemodifier=0.5; line in its FBI file, which makes the krogoth have 1/2 the health but take 1/2 damage all the time. A COB file fix was also needed which set the Krogoth to the always armored state.
+
+When the modified krogoth is captured, self-d'ed, or traded the 30,000 damage ignores the damagemodifier=0.5; in its FBI file. So, the original is removed when the copy is created. This prevents the appearance of extra, but badly damaged, krogoths. One small but extra benifit is Krogoths can be repaired at double their original rate - so it'll take a construction aircraft about 5 minutes to repair a badly damaged krogoth instead of 10 minutes.
+
+Also to maximize the krogoth's damage potential in combat, its 3 weapons have been moved around. Since the krogoth tends to use its primary weapon over its secondary weapons, it makes good sense to make its primary weapon one it can use in MOST situations.
+
+The weapons are swaped around to:
+Weapon1=CORKROG_HEAD;
+Weapon2=CORKROG_ROCKET;
+Weapon3=CORKROG_FIRE;
+
+The bad target categories are changed to:
+
+wpri_BadTargetCategory=LEVEL1;
+wsec_BadTargetCategory=NOTAIR;
+wspe_BadTargetCategory=CTRL_V;
+BadTargetCategory=NOWEAPON;
+NoChaseCategory=CTRL_V;
+
+The weapons will still fire at bad targets, but only if ordered or if no other targets are available.
+
+Also added to the Krogoth is the "D-Gun" option. This does NOT fire a D-gun but instead fires the Krogoth's Gauss guns on its arms. When "Attack" is used in conjuction with the "D-Gun" option (via the shift key), the Krogoth can be made to fire all its weapons at once -- possibly even at different targets! When using "Attack" alone, the Krogoth will only try to get within range of its head-mounted Blue Laser (700 pixel range) from the target.
+
+The Krogoth can now be selected to built in the Krogoth Gantry using the "Q" key when the Gantry is selected and the Krogoth is showing on the menu. The buildpic for the Krogoth is now a huge picture on the the first build menu page. (Page #2 as a keyboard shortcut -- the actual 1st page is the fire orders page.) The now-missing 5 other unit build buttons are hidden in the title and description bars next to the Krogoth build picture and are still accessable through keyboard shortcuts.
+
+The Core Krogoth Gantry will consistantly stay open between each Krogoth it builds in sequence. It also builds at 2x its original OTA rate. This means that without assistance and without nanostall a Krogoth will take about 16.5 minutes to complete. Each extra c-unit will NOT decrease the Krogoth buildtime as much as they did in OTA.
+
+Core Necro Changes:
+------------------
+Changes made from the original Necro:
+1.Name change from "Ressurrection Kbot" to "Necro".
+2.Added builddistance=30; to the necro.tdf file, so it doesn't have to be touching units and wreckage to repair them.
+3.Removed bogus attack button information in the necro.tdf file.
+4.Fixed necro's unit script so that the guard factory bug (where the necro gets "STUCK" repairing units built by the plant even after they've left the plant) happens less frequently. (Total elimination of this bug is nearly impossible though, because what triggers the bug seems to be the interaction of many scripts at once: factory, necro, and unit being built.) This bug ALSO affects any repetitious nanolathe animations, even back-to-back ressurrections that don't require movement.
+
+Why I made these changes to the Necro:
+
+1.The Necro, which was obviously found and released as it, has the bug of not even being called the Necro.
+2.The Necro could not reliably repair units because of a missing "builddistance=###;" in its cornecro.fbi file. Any number between 20 and 100 could be used for builddistance, but I chose 30 after talking with Boneyards sysops about how the Core Necro affects game balance. If I gave it a value of 60, like the Arm FARK, it could be abused by making it possible to guard a single adv. air plant with 10 or more Necros!
+3.And to further confuse matters, the Necro has bogus attack information in its cornecro.fbi file!
+4.The Core Necro has the same build/assist scripting problems as the Core Adv. C-Kbot -- which means in OTA (other than the Decoy Commander which is a very weak construction unit) Core does not have a reliable construction unit that is built by its Advanced K-Bot lab.
+
+The results of these Changes:
+
+With a too-large builddistance, the Necro would be able to do everything the Arm FARK could AND ressurrect units as well! I tried to avoid this by making the Necro's builddistance tiny -- even shorter than most Level 1 construction units (which normally have a builddistance of 40.)
+
+Core's Necro is still only a so-so Arm FARK counter. Although it costs less metal than the FARK, it costs 3 times as much energy, is built 40% slower, has far less armor (paper thin, in fact), makes no resources (the FARK makes +0.5m/s and +17e/s), would assist factories at a slower rate than the FARK, cannot be used to MASS-assist a single factory like the FARK can, and moves slower. But at least with this fix, it can ressurect and repair correctly unlike the original. And if you don't have any wreckage around to rez, it can even reclaim rocks and trees (while on Patrol) and repair already-living units (while on Patrol or ordered to repair) -- which is something it previously had trouble doing! Only 1-3 Necros can get close enough to a single factory to assist in building mobile units, and then they would block the factory's exit. After all these changes, the Necro goes from being a micromanagement pain to use (because it was always failing to complete orders and would sit idle) to easy and FUN to use. This gives Core a workable counter for the Arm FARK. (in my opinion)
+
+Crawling Bomb Changes:
+---------------------
+Crawling bombs have their self-d countdown reduced to 2, the same as landmines. This will NOT speed up the countdown of a flying bomb so it should have little effect on the game. Also crawling bombs' kamakazi distance (how far they have to be from an enemy unit before they'll self-destruct on their own) has been changed up to the limits of their line of sight. This will make them more likely to self-destruct before they are destroyed, thus creating a far larger more deadly explosion. This allows crawling bombs on the ground to be a slightly more viable tactic without changing a variety of their statistics. Just as before, a crawling bomb can be told to attack the ground just in front of it to cause an instant explosion without the 2 (or 5) second self-d delay! Also, a crawling bomb can be put on hold fire to ignore its kamakazi distance -- and then manually detonated either with self-d (and a 2 second delay) or by attacking a spot.
+
+Hovercraft Bugfix:
+-----------------
+(This idea was taken straight from BSR's UH.)
+Hovercraft leave passabled debris when destroyed on the water. (That is IF they leave debris!) The debris created is also left on land IF the hovercraft is badly destroyed. The debris is equally valuable and as tough as the "shell" wreckage is.
+
+This required a new COB script for every hovercraft in TA, as well as changes to the 4 corpse files. Unfortunately, this could not be done for the hover transports, due to the complexity of their script.
+
+LRPC Changes:
+------------
+All the LRPC's (Arm Big Bertha, Arm Vulcan, Core Buzzsaw, Core Intimidator) have been modified so the direction they point when built isn't always straight down. Now, they can be pointed to the left, down, or to the right. I tried making them so they could point up also, but something caused them to be unable to fire when they were built facing up.
+
+I added an On/Off switch to the Arm Vulcan and Core Buzzsaw. Consider it a single-shot sniper mode/full auto spray fire switch. While On, these big guns fires at their superfast drain-your-energy-dry rate. While Off, the Vulcan fires at the same rate as an Arm Bertha -- making it likely to be mistaken as one by its rate-of-fire and its sound. The Buzzsaw fires at the same rate as a Core Intimidator -- but will sound a little different. These guns don't require 8+ fusions to sustain firing while in single-shot sniper mode. Worth noting is they also don't lose targetting information (about what to shoot next) whenever it is turned On/Off -- this allows you to get over an energy stall without resorting to stopping your big guns from firing.
+
+Unfortunately, ARM Vulcan (ARMVULC) and Core Buzzsaw (CORBUZZ) don't always single-fire correctly, they sometime double. I think it's caused by vet status, as it seems to happen more often as they get more kills.
+
+The Core Buzzsaw, because of its odd 6-barrel rotating configuration, allowed me to retool its script so that it aims from the first gun barrel. This causes it to shoot short or long for all shots except every 6th one even at vetran status. (The first barrel aims from the proper aiming point.) This prevents the problem that the Buzzsaw has when it reaches 100 kills or more -- it would shoot at one spot only instead of spraying the damage around. There was no point in that because Arm doesn't have a single mobile land unit that can survive more than 2 direct hits. By spreading out the shots in a line extending away from the Buzzsaw, it can better counter hordes of enemy units charging straight at your base. While in single-shot mode, the Core Buzzsaw will not spread the shots out in a line.
+
+I tried to do the same to the Vulcan, but the resulting Vulcan would stop to reaim between shots because its aiming point changed too drastically. At 100+ kills an Arm Vulcan will tend to put its shots in a small area -- perfect for chewing up Core Krogoths charging your base.
+
+(Ideas taken from BSR's UH:)
+Aiming point changes have been given to the Arm Vulcan and Core Intimidator to make them more likely to hit their target once they reach 1,000+ kills. Originally, their aiming point choice resulted in them consistently shooting over their intended targets (by over 1/2 a screenlength at max range for a high-kill vet Vulcan!) yet almost always hitting in the same place -- off target. This meant that as their kills increased both the Core Intimidator and Arm Vulcan became progressively LESS likely to hit a tiny, short stationary target! As many have noticed the HARD way, the Arm Bertha doesn't have this problem.
+
+Minelayer and Landmines Changes:
+-------------------------------
+Minelayers are now selectable with CTRL+B (as Constructors) and now have patrol, repair, and reclaim abilities! They are still considerably slower than C-vehicles, nearly as costly, do not make (or store) resources on their own, plus they have only landmines on their build menu - but now at least they can clean up the messes their minefields can make! They can now clean up messes, repair units, and even assist in construction projects when specifically ordered. Minelayers do NOT have guard ability, so they cannot act as level-1 FARKs to mass guard factories and c-units.
+
+Landmines can now all have their fire orders changed to HOLD FIRE, RETURN FIRE, and FIRE AT WILL. Why a player would want to is questionable, but since they qualify as a weapon - it makes sense that they have a "safety" feature too. The Nuclear Mines default to HOLD FIRE, but all others default to FIRE AT WILL. While a landmine is set on Hold Fire, it can be manually detonated for maximum damage effect. Or, landmines can be used as cloaked spotters. (However their poor LOS range, cloaking cost, and lack of armor makes landmines poor spotters.)
+
+Originally, landmines were only resistant to damage caused by landmines of the exact same kind. This has been changed so that all landmines of one side are resistant to other mine's damages of the same side. The only exception is the nuclear mine's explosion which kills ALL landmines nearby -- and just about everything else too! Arm mines affect Core mines and vice-versa just fine. This is done to encourage the use of dissimilar mine types in a tightly packed minefield.
+
+Previously, the Arm Precision Mine (ARMMINE5) had 2,000 armor while ALL other mines had only 100 or 200 armor. Because the mine is extremely tough for such a cheap price (which is unbalanced), I presume an extra unintended 0 was inadvertently put there. The armor has been reduced to 200 -- still TWICE as much as all other Arm mines. (Sorry Arm players, there goes your "killer" strat.)
+
+Both side's Nuclear Mines can now be built underwater. However, since the minelayers can drive only into shallow water, a naval construction unit is required to build them in deep water. So, Nuclear Mines have been added to the Advanced Construction Sub's build menu. (Page 3, position 5) This should be useful as a naval defense against Fibbed subs, Pelicans, and Leviathans, which previously lacked good counters. Nuclear Mines have a tiny LOS radius, no sonar, damage both friendly and enemy units, are one-shots, and cost a considerable amount of resources -- making this change difficult to abuse.
+
+Landmines now have an On/Off switch. When "ON", they are "primed for destruction" -- it sets their damage resistance to only 1/10th normal, making them very easy to destroy -- not that they were very tough to begin with. The main purpose of this is to allow landmines out front to be set to hold fire and ON while the ones at the rear are set to fire at will and OFF. That means they won't detonate till enemy units pass near the landmines at the rear -- which will detonate all the landmines turned on, causing much more destruction with minimal micromanagement. (The idea came from UberHack, but since it decreases micromanagement so much I decided it made sense as a new control option to add it to TA Bugfix.)
+
+See also Landmine Explosion Changes...
+
+Mobile Radars, Jammers, Spies, and Mobile Flakkers Changes:
+----------------------------------------------------------
+The mobile radars and radar jammers now use fake merl rockets to make them act like an attack unit and will cause them to close to max merl rocket range (just outside most weapons range) and stay there. It has been added to the mobile radars, mobile jammers, mobile flakkers, and spys. This will allow them to travel with your attack group without requiring constant move orders, since previously they didn't move when told to attack with a group. As they near your chosen target, they will only approach barely into their fake weapon range -- about 700-800 pixels away from the target. This will allow them to cover attacking/retreating forces without them charging in like suicidal flash tanks.
+
+The now-known trick of having mobile flakkers guard attack units so the flakkers will fire at ground targets has been removed in TA Bugfix by redesigning the mobile flakkers so their flak weapon is weapon #3 instead of weapon #1. Weapon #1 is now a fake Missile Frigate Rocket so the mobile flakkers will follow the attack force around when told to attack ground targets -- without getting too close.
+
+NOTE: The Fake Laser (used in v1.5betas) has been removed from mobile radars and jammers, and has been replaced with non-firing versions of regular weapons already found in the game. This saves a weapon id number.
+
+NOTE: The mobile radars and radar jammers now use fake Merl v-launch rockets instead of fake lasers to trick them into attacking like other units. This will make them more likely to hide behind covering terrain.
+
+Mobile radar tanks (ARMSEER and CORVRAD) didn't stop spinning their radars when turned off -- now fixed!
+
+
+Naval Unit Changes:
+
+Advanced Construction Sub Changes:
+---------------------------------
+I did a footprint decreases for the adv. c-subs. They used a 6x6 footprint, which I changed to a 3x3 footprint. This should decrease their pathfinding problems while also making it possible to cram slightly more around naval building projects.
+
+Arm Fibber Sub Changes:
+----------------------
+The Arm Fibber in OTA is one unfair unit because of the way sonar jamming works. Sonar jamming gives the equivalent to underwater cloaking on ALL units within the jamming radius, and in the case of the Fibber this costs NO energy! (Even mincloakdistance=100; does not negate this cloaking-like effect.)
+
+Now, if the Fibber somehow takes damage, its sonar jamming effect is temporarily disabled for up to 10 seconds. This is no different than a radar that turns off briefly when hit, and should help make anti-Fibber wars winnable, with difficulty.
+
+Fibbers now have a fake weapon that acts as a fake torpedo. It does 0 damage, but has a large area of effect -- almost as big as a crawling bomb explosion. Fire orders have been disabled, so the Fibber is stuck permanently in Fire at Will mode. If a targetable enemy unit gets within 200 pixels of the Fibber, the Fibber will fire on it. And when the Fibber fires, it turns off its sonar jamming for up to 10 seconds. Also, if an enemy destroyer or sub is hit, they WILL return fire! With the fibber weapon's large area of effect, it is possible that more than 1 enemy unit will be affected by it -- so return fire may be significant. Net result: Fibbers now turn off their sonar jamming IF an enemy unit gets within 200 pixels of them (and presumeably has them in their LOS.)
+
+However, because the Fibber's OWN LOS is less than 200 pixels, when the Fibber travels alone it has to get closer than 200 pixels to an enemy unit before it will open fire with its fake torpedo. Also, the Fibber will NOT fire at unarmed buildings unless +SHOOTALL has been enabled. Fibbers probably won't fire at aircraft or hovercraft in any case, since regular sub torpedoes and destroyer depth-charges also won't shoot at aircraft and hovercraft. This means overflying aircraft and hovercraft WON'T unmask your underwater base. But they still will see unidentifed dots on radar within the aircraft's LOS as it passes. (This was already true even with OTA.)
+
+Keep Fibbers at the back of the pack and they'll work just fine -- use them as spotters against anti-submarine defenses and you'll lose them. Which is fair and makes sense, I think.
+
+Arm/Core Sub Changes:
+--------------------
+"upright=1;" has been added to all sub FBI files to combat their tendancy to breach the water's surface in shallow water. It only helps a LITTLE for the massive Leviathan, so just remember to keep them in DEEP water!
+
+Core Leviathan Super-Sub Changes:
+--------------------------------
+SoundCategory=ARM_SUB;
+has been changed to:
+SoundCategory=CORE_SUB;
+since it is after all a CORE sub!
+
+Naval Defensive Structures Bugfix:
+---------------------------------
+Both side's floating HLT's and Core's floating missile tower's waterlines have been changed from 3 and 4 respectively to 0.3 -- this will allow them to better shoot over naval dragon's teeth while still allowing subs to target them. It will also allow guided missiles targetted at them to hit them from a longer range, previously the missiles would hit the water like the Pelican bug (see below). The Core naval HLT has also been made slightly taller (in the 3do file) to better allow it to shoot over naval DT.
+
+Naval Dragons Teeth Bugfix:
+--------------------------
+Naval Dragons Teeth water depth has been altered to allow naval HLT's and naval missile towers to shoot over them but missiles and lasers from other sources cannot. Originally, naval HLT's and naval missile towers could not do so reliably -- which made countering Pelicans all the more difficult! Naval DT can also act as torpedo netting against subs.
+
+Cruiser and Destroyer Changes:
+-----------------------------
+Although previously changed in TA Bugfix before v1.6, Destroyers and Cruisers have their Depth Charge weapons set from Weapon #3 back to Weapon #2. The earlier change caused them to be unable to chase subs -- if you ordered them to attack a sub outside their depth charge's current range, they wouldn't try to move in range to fire! However, if you have radar coverage of an area, you can put your ships on hold position and radar-target the dots -- IF the ships are already in gun range (and stopped and set to hold position) when you tell them to do this, they won't try to get into Depth Charge range. Unfortunately, Fire at Will AND +shootall has to be activated before they will shoot at weaponless underwater buildings.
+
+Light Carrier Changes:
+---------------------
+Carrier radars should quit spinning when turned off. This will allow opponents to know if an enemy is using their carriers for their radars and repair pads or just as energy sources -- allowing them to target them accordingly.
+
+Carrier roam radius has been increased to reduce the constant turning in circles behavior of ai carriers -- which makes them almost unuseable as air repair facilities.
+
+Missile Frigate Changes:
+-----------------------
+These units have less than 1/3 the armor of the cheaper cruisers made by the same factory, yet prove less useful in almost every case. The only semi-useful task they can perform is base bombardment, but because they are terribly slow, unmanueverable, and poorly armored the only base they're likely to bombard is your own when they attempt to shoot down enemy aircraft with their heavy rockets.
+
+To combat the lack of armor, I did not change the ship's armor stat but rather looked at the ship's design. Because the heavy rocket launcher occupies about 1/2 the ship's length, I gave the missile frigates a 1/2 damage modifier when it is closed and not exposing the ship's innards and live heavy rockets on the launcher. This makes them barely half as tough as a cruiser when closed.
+
+To combat the friendly fire problems caused by the heavy rockets, I added an On/Off switch to these ships which controls whether or not the heavy rockets will fire. On Core's Missile Frigate, this also has the unfortunate effect of turning off its radar, so I made the radar quit spinning while off as well. While set to the "Off" state, the missile frigates will still fire their AA missiles at enemies if any are in range.
+
+The default state for the Missile Frigates is "On", so it can use its heavy rockets by default.
+
+Sea Serpent Changes:
+-------------------
+These little nasties are found in the first couple TA:CC missions. The ARMSS/CORSS waterline changed from 3 to 0.3 -- to make them more suseptable to missiles and rockets while still leaving them vulnerable to torpedoes. Previously missiles would hit the water like the Pelican bug (see above).
+
+
+Corpse Changes:
+--------------
+All corpses and heaps (in alphabetical order by unit abbreviation) are in 4 master files (Arm corpses, Arm heaps, Core corpses, Core heaps) -- this would also aid in discovering unit conflicts.  The other files are of zero-length to force TA to forget all the incorrect and redundant entries in ccdata.ccx and totala1.hpi.
+
+Land-based metal maker corpses have been made worth 1 metal so c-units on patrol will automatically reclaim them if low on metal -- previously, their wreckage would block passage but would never be automatically reclaimed. 1 metal is a neglegible amount and not exploitable as a cheat because the energy to metal conversion ratio of this "cheat" is nearly 700e to 1m! (Over 10 times worse than using an equivalent amount of energy to power metal makers.)
+
+FIXED: The Core Fortitude Missile Defense (CORFMD) incorrectly uses Arm's Anti Missile Defense's (AMD's) corpse (armamd_dead) instead of its own corpse (corfmd_dead) which is in TA. This isn't too big a deal, unless you're using ressurrector units - in which case corpses don't always turn back into the unit that they came from!
+
+FIXED: The Core Goliath (CORGOL) uses the Core Diplomat's (corvroc_dead) corpse. This was why previously a dead goliath was worth less metal than a dead Reaper! This has been replaced by the considerably more valuable goliath corpse (corgol_dead), which is also in the game.
+
+FIXED: The Arm Retaliator nuke silo's corpse was worth 1,700 more metal than it cost to build the silo. This has been changed to 80% the value of the silo.
+
+FIXED: The Core Viper (CORVIPE) corpse was worth over 2 times as much metal as it costs to build a Core Viper. This has been reduced to less than the cost of the Core Viper. The Viper heap has also been reduced to half the corpse's value. This was never noticed as Core Vipers previously didn't leave a corpse at all!
+
+FIXED: The Arm Seer (ARMSEER) and the Core Informer (CORVRAD) used the same corpse as the Arm Jammer, (ARMJAM) this has been changed to ARMSEER's corpse and CORVRAD's corpse, respectfully.
+
+Better dead Merl picture added. Thanks to the UH crew for this one!
+Better dead Core MMM picture added. Thanks to the UH crew for this one!
+
+The Arm Cruiser and Arm Carrier corpses have been given a blocking 2x2 footprint to simulate their tall parts sticking up.
+
+Unit Footprints, Corpses, and Heaps have been changed so that they are the same size, what few units this affects have had their corpses reduced by a small amount. About the only effect this may have on the game is slightly more corpses can be packed into an area without overlap -- meaning that a few extra corpses will be left behind after a battle that would otherwise have been covered up and unreclaimable. (This makes the Core Necro and Arm FARK more useful for when they go on ressurrection and reclaim patrols!) For some reason, the Lancet had a 6x6 unit footprint!
+
+Corpse Value Changes:
+--------------------
+
+The Corpse damage capacity and metal value is calculated using these formulas:
+unit corpse health and metal value = 80% (4/5) the original unit's value
+unit heap health and metal value = 40% (2/5) the original unit's value
+
+Most of Cavedog's units followed those formulas exactly, and few deviated from that by much.
+
+HOWEVER, I deviated on the health value on naval unit corpses (making them just as tough as the units that created them because they're underwater), on super-expensive but fragile buildings (making them just as tough as the units that created them to slightly improve the change of them being reclaimed -- instead of being destroyed), on pop-up open/close turrets (making them just as tough as the units that created them to simulate their armored state even as a corpse), and on hovercraft heaps (because they also get left on the water.)
+
+I deviated from the corpse metal formula on pop-up open/close turrets (making their secondary corpse just as valuable as their regular corpses to simulate their armored state even as a corpse), on the hovercraft heaps (because they also get left on the water), and on galactic gates (because they exceeded the maximum value accepted by TA!)
+
+# = valuable (or underwater) corpses have damage set to live unit damage value
+!!! = 2's compliment forces the use of a number smaller than 65535!
+* = 1-point metal change
+% = Hover/Amphibious unit special heap which appears INSTEAD of regular corpse when on water. (This is so the water doesn't clog up with with corpses that block both ship and hover units passage. Previously, hovers had NO heaps at all -- they were either a solid corpse or nothing!)
+ _______
+|Corpses|
+---------
+		Orig Metal	New Metal	Orig Damage	New Damage
+ARMAMB#						1326		1658
+ARMAMB2#		801		1202		663		1658
+ARMAMD#		991		1150		624		780
+ARMAMPH		204				640		320
+ARMANAC		105		218		464		704
+ARMARAD		36		100		44		96
+ARMASER		48		59		144		244
+ARMASON#						256		320
+ARMASY#						24000		2820
+ARMATL#		643		1410		1160		520
+ARMATLAS		95		86
+ARMBATS#						24000		5720
+ARMBRAWL		287		251		960		736
+ARMBRTHA		4147		3347
+ARMCARRY#						24000		3390
+ARMCRUS#						24000		4050
+ARMCS#						24000		1150
+ARMEMP*		1441		1442		2048		1840
+ARMFHLT#		446		419		1108		1325
+ARMFIG		126		79		160		157
+ARMFLEA						53		60
+ARMFRT#		56.8		57		202		252
+ARMGATE!!!#		171172	65127		2301		2876
+ARMGUARD						2302		1982
+ARMHAWK		174		203		400		408
+ARMHP*		1605		1606
+ARMJETH		111		102		484		376
+ARMLANCE		126		303		160		296
+ARMLATNK		262		283		794		880
+ARMMAKR*		0		1
+ARMMAV		310		394		376		696
+ARMMEX						1700		136
+ARMMSHIP#						24000		1200
+ARMPEEP		38		32
+ARMPNIX		161		167		240		376
+ARMPT#						24000		560
+ARMRAD		15		39
+ARMROCK		103		94		576		488
+ARMROY#						24000		2870
+ARMSAM		114		96		739		520
+ARMSCORP		4698(energy)12528(energy)
+ARMSCRAM#		326		236		256		450
+ARMSILO		2734		808
+ARMSJAM#		104.8		105		408		510
+ARMSNIPE						400		256
+ARMSONAR#						24000		50
+ARMSPY						794		216
+ARMSS#		1316(energy)3508(energy)342		420
+ARMSUB#						24000		610
+ARMSUBK#						24000		290
+ARMSY#						24000		2490
+ARMTARG#						1160		1900
+ARMTHUND		161		104		240		256
+ARMTIDE#						24000		256
+ARMTL#		723		643		24000		1450
+ARMTSHIP#						24000		2000
+ARMUWES#						1158		1447
+ARMUWFUS#						985		1231
+ARMUWMEX#						264		330
+ARMVULC#						1120		1400
+ARMYORK						256		497
+
+CORAMPH		227		259		656		920
+CORAPE		287		235		960		752
+CORARAD		34		98		40		104
+CORARCH#						1960		2450
+CORASY#						24000		2760
+CORATL#		1006		1406		450		562
+CORAVP						2060		2064
+CORBATS#						24000		6140
+CORBUILD		145		176		1400		1449
+CORBUZZ#		22569		28211		1360		1700
+CORCARRY#						24000		3500
+CORCRASH		113		103		496		384
+CORCRUS#						24000		4170
+CORCS#						24000		1150
+CORFINK		42		29
+CORFLAK		855		874		1219		1324
+CORFMD#		991		1206		624		780
+CORFMKR						88		96
+CORFRT*		57		58
+CORGATE!!!#		157988	62735		1975		2469
+CORHLT						950		960
+CORHRK		301		310		950		496
+CORHURC		161		176		240		384
+CORINT		4267		3462
+CORKROG						11967		23934
+CORLEVLR*		233		234
+CORMABM		991		1206
+CORMAKR*		0		1
+CORMIST		114		93		794		524
+CORMSHIP#						24000		1250
+CORNECRO		132		301		794		376
+CORPLAS		132		257		794		674
+CORPT#						24000		570
+CORPUN						2352		2032
+CORRAD		15		40
+CORROY#						24000		3150
+CORSCORP		4698(energy)12528(energy)
+CORSENT						2280		548
+CORSHAD		161		105		240		252
+CORSHARK#						221		276
+CORSNAP						480		680
+CORSOLAR		116		113		261		256
+CORSONAR#						2000		52
+CORSPEC		48		56		144		248
+CORSS#		1316(energy)3508(energy)342		420
+CORSSUB#		1652		3080		794		3052
+CORSTORM		103		94		592		496
+CORSUB#		903		959		24000		590
+CORSUMO*		674		675		3280		3960
+CORSY#						24000		2490
+CORTARG#						2240		1800
+CORTIDE#						24000		253
+CORTITAN		126		291		160		300
+CORTL#		745		665		24000		1520
+CORTOAST#		1160		1717		1172		1502
+CORTOAST2#		1160		1288		1172		1502
+CORTRON						2048		1680
+CORTRUCK		710		174		24000		2627
+CORTSHIP#						24000		2120
+CORUWES#						1217		1521
+CORUWFUS#						1140		1425
+CORUWMEX#						284		355
+CORUWMS#						1400		1750
+CORVALK		95		92		120		128	
+CORVAMP		174		206		400		392
+CORVENG		126		81		160		162
+CORVIPE#		1717		514		1502		988
+CORVRAD		72		69		400		408
+CORWIN						1430		143
+ _____
+|HEAPS|
+-------
+ARMACV*		192		193
+ARMAH%		N/A		96		N/A		300
+ARMAMB#		496		801		663		664
+ARMAMD#		496		575		312		390
+ARMAMPH%#		102		204		320		640
+ARMANAC%		N/A		218		N/A		707
+ARMARAD		18		50
+ARMASER		24		29
+ARMATLAS		48		43
+ARMBEAC*		2085		2086
+ARMBRAWL		144		126
+ARMBRTHA		2074		1674
+ARMCH%		N/A		317
+ARMFIG		63		40
+ARMGATE!!!#		85586		45586		1151		1438
+ARMGUARD*		778		779
+ARMHAM*		60		61
+ARMHAWK		87		102
+ARMHP*		802		803
+ARMLANCE		63		151
+ARMLATNK		66		131
+ARMMANNI*		1041		1042
+ARMMAV		155		197
+ARMMH%		N/A		260		N/A		360
+ARMPEEP		19		16
+ARMPNIX		80		84
+ARMRAD		7		20
+ARMROCK		52		47
+ARMSAM		57		46
+ARMSEER*		34		35
+ARMSH%		N/A		61		N/A		160
+ARMSILO		1367		404		1840		920
+ARMTHUND		80		52
+ARMUWES		113		114
+ARMVADER		32		25
+ARMVULC#						560		700
+
+CORAAP*		876		877
+CORACA*		92		93
+CORAH%		N/A		92		N/A		316
+CORAK*		22		23
+CORAMPH%		114		259
+CORAPE		143		118
+CORARAD		17		49
+CORBEAC*		2085		2086
+CORBUILD		72		88
+CORBUZZ		11285		14106
+CORCRASH		56		52
+CORFINK		21		15
+CORFLAK		428		437
+CORFMD#		496		603		312		390
+CORGATE!!!#		78994		43915
+CORHRK		122		155
+CORHURC		81		88
+CORINT		2133		1731
+CORKROG*		11795		11796
+CORLEVLR*		116		117
+CORMABM		575		603
+CORMART*		100		101
+CORMEX*		20		21
+CORMH%		N/A		254		N/A		368
+CORMIST		57		47
+CORNECRO		66		151		794		188
+CORPLAS		66		129		794		337
+CORPUN						2352		1016
+CORRAD		8		20
+CORSENT*		354		355
+CORSH%		N/A		58		N/A		160
+CORSHAD		80		53
+CORSNAP%		N/A		224		N/A		680
+CORSPEC		24		28
+CORSTORM		52		46
+CORSUMO		417		338
+CORTITAN		63		146
+CORTOAST#		580		859		1172		751
+CORTRUCK		109		87
+CORUWES#						609		761
+CORUWFUS#						570		713
+CORUWMS#						700		875
+CORVALK*		47		46
+CORVAMP		87		103
+CORVENG		63		41
+CORVIPE#		859		257		751		494
+CORWIN						1430		72
+
+Accumulating scars bug:
+----------------------
+After many hours of battling on a map, many of the map features are either removed or destroyed - such as trees or recycleable rocks - leaving behind a "damaged terrain" scar. This is also true of dead units and dragon's teeth which are recycled. The accumulation of many of these scars causes some slowdown in the game. In the case of dragon's teeth, the slowdown could well be excessive - plus revealing where dragon's teeth walls once were to all players. Currently, I've left the other scars but removed the "dead" dragon teeth scars.
+
+Also, it was strange that although there is no way to destroy a scar - many scars have a scar corpse as well! All scar corpses have been removed. ALL the remaining scars do NOT have a corpse.
+
+Weapons Changes:
+---------------
+Arm's Hawk's 2nd missile has an error in its data, it has:
+weaponacceleration=13O;
+instead of:
+weaponacceleration=130;
+(notice the "O" instead of a "0")
+This has been corrected (but now only affects the old weapons file.)
+
+I removed "propeller=1;" from all nuke weapons.
+
+All "metal=##;", "energy=###;", "burstrate=##;", (on non-burst weapons) "soundtrigger=1;", (on non-burst weapons) "startsmoke=1;", (on all missile weapons and any fast-firing weapons) and all "// comment" sections have been removed from ALL weapons in TA Bugfix. These either do nothing, have no visible results, or have such a minor effect that they were removed to speed the game up.
+
+Interestingly, both "startsmoke=0;" and "endsmoke=0;" are DEFAULT settings for weapons -- that's why I no longer include them on various weapons that need those settings.
+
+Immolator (CORPLAS) weapon now does 20 default damage instead of 10. It will now be able to kill a Jeffy with 4-6 direct hits instead of 8-12 direct hits. :) It also does 80 damage per shot versis Brawlers, (the same as it does to Peewees) since they ALSO carry EMG weapons. Still against anything BUT Flashes, Peewees, and Warriors, Immolators are far less effective than the less expensive LLT.
+
+All EMGs now use a 3do file instead of a bitmap hack.
+
+ALL Blue Lasers of Death (BLoD) now have a 16 pixel Area of Effect instead of their previous 8 pixel area. This is to reduce the chance of them passing completely through a target without doing any damage because of their high shot velocity (now at 1,000 -- see slow light for more details.)
+
+Edgeeffectiveness=1; added to all point-damage weapons (like gauss and lasers) and torpedoes and depth charges to ensure that hits with these weapons do damage.
+
+I removed the COMMANDER_BLAST weapon's special damage to other commanders, there's no need for it.
+
+COMMANDER_BLAST has been altered to be a nuclear missile weapon that has a 5 minute buildtime with a massive cost - 2x the metal and 3x the energy as the regular nuke weapon. This will have NO effect on the game, but allows for the design of 3rd party units with this "new" oddball weapon.
+CRAWL_BLAST has been altered to be a medium-ranged mini nuclear missile weapon with a cost slightly greater than the Arm Stunner missile weapon. This will have NO effect on the game, but allows for the design of 3rd party units with this "new" oddball weapon.
+ARM_DISINTEGRATOR will no longer start fires (firestarter=0;) -- the D-gun should destroy trees, not burn them!
+Both the COMMANDER_BLAST and the CRAWL_BLAST will also destroy trees (firestarter=0;) instead of setting them on fire. This will make the Crawling Bombs good for clearing trees -- and almost nothing should survive a commander explosion!
+
+ALL nuclear missiles have reduced flighttimes -- previously they had flighttimes of 400 seconds, now they only have a flighttime of 120 seconds. This will make nukes that are flying around in circles run out of fuel and fall faster than previously, making them even LESS likely to drain multiple antinuke missiles.
+
+5 explosion weapons have been turned into true weapons:
+
+  Weapon                               Area of    Cost          Reload
+ID   Name                 Range Damage Effect Metal Energy Path  Time
+----------------------------------------------------------------------	Special note	Used by:
+BEFORE:
+110  MEDIUM_UNIT            480   250      95    -     -     B   3.6				Medium Unit self-d
+185  ARMMINE2(Area)         480   600(30) 200    -     -     B   3.6   5% edge effect	Arm Mine #2
+204  SMALL_UNIT             480   200      75    -     -     B   3.6				Small Unit self-d
+207  MEDIUM_BUILDINGEX      480   100     105    -     -     B   3.6				Medium Building explosion
+213  COMMANDER_BLAST        380  9999     950    -     -     B   3.6  75% edge effect	Commander explosion
+214  CRAWL_BLAST            480  2500     556    -     -     B   3.6				Crawling Bomb self-d
+
+AFTER:
+110  MEDIUM_UNIT           2400   250      95    -     -     L   2				Dragon
+185  ARMMINE2(Area)        2100   600(30) 200    -     -     L  10     5% edge effect	ADVSAM
+204  SMALL_UNIT             850   200      75    -     -     B   2.8				ARM_MORTAR
+207  MEDIUM_BUILDINGEX      600   100     105    -     -     L   1				dart
+213  COMMANDER_BLAST      32700  9999     950 6000 600000    V 300    75% edge effect	Super-nuke?
+214  CRAWL_BLAST           4000  2500     556 1300  52000    V 130		Medium-range Mini-nukes?
+(Path V= Vertical Launch)
+
+These weapons will still retain their original ability as explosions, but can also be used as weapons on 3rd party units.
+
+ADDED 3do and sound files:
+
+[ARM_MORTAR]
+	model=mortarshell;
+	soundstart=Mortar1;
+[Dragon]
+	model=Dragon_miss;
+
+[ADVSAM]
+	model=ADVSAM;
+	soundstart=launch;
+
+[dart]
+	model=dart;
+
+[CRAWL_BLAST]
+	model=advmiss;
+
+After I add the appropriate sounds and 3do files to TA Bugfix, everything needed to use these weapons has been included.
+
+Admittedly, it may seem a little strange for a unit to fire SMALL_UNIT, MEDIUM_UNIT, MEDIUM_BUILDINGEX, or ARMMINE2. But confusion is the price to pay for saving 6 weapons id's.
+
+The 6 weapons conversions plus extra 3do and sound files adds less than 100kb to the total filesize.
+
+
+Weapon ID Number Changes:
+------------------------
+All of the Cavedog weapon id's (in numerical order) are in 1 MASTER weapons.tdf file in the weapons dir (in REV31.GP3) instead of divided up among many little files of only a weapon or 2 each. The other files are of zero-length to force TA to forget all the incorrect and redundant entries in ccdata.ccx and totala1.hpi.
+
+Although there is only 255 weapon id #'s to work with, Cavedog has quite a few weapons id #'s that have unused weapons in them. Plus there is quite a few duplicates among Cavedog's weapons. I don't mean just similar - I mean identical down to the picture, speed, turn rate, and even acceleration speed of the weapon. Although it's a lot of work, it's just going through the unit FBI files and referring them to the same weapon id and going through weapons id #'s and deleting the unused ones. The problem is, getting TA both to recognize the changes and ignore the old id's. To do that, I have to change around a lot of stuff in REV31.GP3 -- it's the only file that overrides other files containing identical FBI's and weapons id's. For old weapons id #'s to be ignored, I have made empty files of the same name and put the whole weapon id #'s list in a single WEAPONS.TDF file.
+
+With my tests so far, it all seems to work -- even units with 2 identical weapons such as the Seaplanes and Stealth Fighters seem to work correctly.
+
+Cavedog IDENTICAL and UNUSED weapon id's!
+
+  Weapon                               Area of    Cost          Reload
+ID   Name                 Range Damage Effect Metal Energy Path  Time
+----------------------------------------------------------------------
+7    MINDGUN                500   100      16    -     -     L   1    unused! *
+8    SBMISSILE              300    80      16    -     -     L   1.6  unused! *
+19   VTOL_EMG2 (unused!)    510    12       8    -     -     L    .6  burst=3 burst rate=.1 *
+
+22   ARM_DISINTEGRATOR      240 30000      48    -   400     L   1.2
+23   CORE_DISINTEGRATOR     240 30000      48    -   400     L   1.2          *
+
+30   AMD_ROCKET           32000   500      96  200 10000     L 120
+117  ARMSCAB_WEAPON       27000   500      96  200 10000     L 120		* -- see NOTE #1
+
+32   FMD_ROCKET           32000   500      96  200 10000     L 120
+118  CORMABM_WEAPON       22000   500      96  200 10000     L 120		* -- see NOTE #1
+
+38   ARMAMPH_WEAPON2        700    46(97)  48    -     -     L   2            *
+106  ARMRL_MISSILE          700    46(97)  48    -     -     L   2
+
+43   CORFLAK_GUN            750   146     125    -     -     B    .7  Flak
+79   ARMAAS_WEAPON3         750   146     125    -     -     B    .7  Flak    *
+180  CORARCH_WEAPON3        750   146     125    -     -     B    .7  Flak    *
+
+50   ARM_LIGHTCANNON        240    50      32    -     -     B   1.53
+51   CORE_LIGHTCANNON       240    50      32    -     -     B   1.53         *
+
+55   CORE_THUD              230    80      48    -     -     B   1.9
+159  CORAMPH_WEAPON1        230    80      48    -     -     B   1.9          *
+
+75   ARMSFIG_WEAPON         510    50(140) 48    -     -     L   3
+76   CORSFIG_WEAPON         510    50(140) 48    -     -     L   3            *
+96   ARMSFIG_WEAPON2        510    50(140) 48    -     -     L   3            *
+97   CORSFIG_WEAPON2        510    50(140) 48    -     -     L   3            *
+
+77   ARMAAS_WEAPON1         710    57(108) 48    -     -     L   2              -- see NOTE #2
+78   ARMAAS_WEAPON2         710    57(108) 48    -     -     L   2            *
+103  ARMSHIP_MISSILE        710    57(108) 48    -     -     L   2
+178  CORARCH_WEAPON1        710    57(108) 48    -     -     L   2            *
+179  CORARCH_WEAPON2        710    57(108) 48    -     -     L   2            *
+
+80   ARM_LIGHTLASER         300    60       8    -    10     L    .52		  -- see NOTE #3
+81   CORE_LIGHTLASER        300    60       8    -    10     L    .52		*
+
+82   ARM_LASER              180    30       8    -     -     L    .865        *
+88   CORE_LASER             180    30       8    -     -     L    .865
+
+95   ARMSEAP_WEAPON3        510    44(130) 48    -     -     L   3            *
+98   CORSEAP_WEAPON3        510    44(130) 48    -     -     L   3            *
+108  ARMVTOL_MISSILE        510    44(130) 48    -     -     L   3
+
+107  CORRL_MISSILE          700    45(95)  48    -     -     L   2
+148  CORFRT_MISSILE         700    45(95)  48    -     -     L   2            *
+
+112  ARMVTOL_ADVMISSILE     659    70(150) 48    -     -     L   3
+115  ARMVTOL_ADVMISSILE2    659    70(150) 48    -     -     L   3            * -- see NOTE #4
+
+113  CORVTOL_ADVMISSILE     650    68(155) 48    -     -     L   3
+114  CORVTOL_ADVMISSILE2    650    68(155) 48    -     -     L   3            *
+
+135  VTOL_ROCKET            450   125      48    -     -     L   2		  -- see NOTE #5
+136  VTOL_ROCKET2           450   125      48    -     -     L   2		*
+
+146  ARMSEAP_WEAPON1        300   400      16    -     -     L   6
+152  CORSEAP_WEAPON1        300   400      16    -     -     L   6            *
+193  ARMSEAP_WEAPON2        300   400      16    -     -     L   6            *
+194  CORSEAP_WEAPON2        300   400      16    -     -     L   6            *
+
+145  ARMSCORP_WEAPON        320   400       8    -     -     L   1.2          *
+181  CORSCORP_WEAPON        320   400       8    -     -     L   1.2
+
+143  ARMFRT_MISSILE         700    46(97)  48    -     -     L   2    unused! *
+157  ARMFARK_WEAPON         320   112      48    -     -     B   1.8  unused!	*
+
+158  ARMSCRAM_WEAPON        320   112      48    -     -     B   1.8  unused! *
+148  ARMSCRAM_WEAPON        200   0       420    -     -     L   2		  -- see NOTE #6
+
+162  CORHUNT_WEAPON         320   112      48    -     -     B   1.8  unused! *
+164  ARMSEHAK_WEAPON        320   112      48    -     -     B   1.8  unused! *
+
+33   CORMINE1(M-104)        480   200(45) 175    -     -     B   3.6  10% edge effect	*
+36   CORMINE2(M-209)        480   400(45) 190    -     -     B   3.6   5% edge effect	*
+37   CORMINE3(M-303)        480   700(45) 160    -     -     B   3.6  10% edge effect	*
+61   CORMINE4(M-420)        480  1100(45) 140    -     -     B   3.6   5% edge effect	*
+74   CORMINE6(M-610)        480  4300     400    -     -     B   3.6  15% edge effect	*
+184  ARMMINE1(Tiny)         480   400(30) 160    -     -     B   3.6  10% edge effect	*
+186  ARMMINE3(Focused)      480  1300(30) 130    -     -     B   3.6  10% edge effect	*
+187  ARMMINE4(HE Area)      480  1500(30) 180    -     -     B   3.6   5% edge effect	*
+188  ARMMINE5(Precision)    480  2000(30) 130    -     -     B   3.6  10% edge effect	*
+
+
+The * (asterick) shows the weapon id #'s that have been freed up with the removal of that weapon.
+
+This patch frees up 42 weapons id #'s.
+These are the weapon ID#'s removed in numerical order:
+7,8,19,23,33,36,37,38,51,61,74,76,78,79,81,82,95,96,97,98,114,115,117,118,136,143,145,152,157,158,159,162,164,178,179,180,184,186,187,188,193,194
+7,8,19,143,157,158,162,164 are never used even in the original game!
+
+All of Cavedog's units use 197 weapon id #'s BEFORE this patch. (counting unused weapons id's in the game.)
+All of Cavedog's units use 155 weapon id #'s AFTER  this patch.
+
+NOTE #1: (Mobile Antinuke Weapon Removal)
+Although the 4 antinuke weapons have VASTLY different maximum ranges, ALL the antinukes WILL shoot down nukes fired into their protected zone from beyond their maximum range. The only thing the antinuke weapon range changes is how soon the antinukes fire after the nuke is fired. The shortest-ranged antinuke weapon, CORMABM_WEAPON (Core Hedgehog's weapon) has a weapon range of 22,000 pixels -- even this could cross from one side to the other of a 40 x 40 map. (The largest non-3rd party map in TA is only 40 x 40!) Since the ranges all correspond to an incredibly huge distance, and because any of the antinuke weapons WILL shoot down nukes fired from beyond their max range, I have removed ARMSCAB_WEAPON and CORMABM_WEAPON and used the original antinuke weapons (AMD_ROCKET and FMD_ROCKET) instead on the mobile antinuke vehicles.
+
+NOTE #2: (Flakker Ship Weapons Removal and Alteration)
+The missile weapon used on Arm Flakker ships (and also reused on Core's Flakker ships as well) has been modified to make them a 2-weapon unit instead of a 3-weapon unit. This was done by halving the reload time for the weapon, thus making it roughly equal to the original 2 weapons it replaces. The scripting model for the AA ships also had to be changed so the single missile weapon appeared to be firing from different turrets.
+
+NOTE #3: (Core LLT Laser Weapon Removal)
+Replace Core's LLT weapon with Arm's LLT weapon on the Core LLT. This is done to save yet another precious weapon id number, while having only a very minor effect on gameplay -- and what little effect that is should be benificial for Core. Core has a hard ENOUGH time dealing with Arm level 1 swarms without being stuck with a poorer LLT than Arm's (in multiple ways) that has a "laser beam" that is so slow you can see it travel from firing point to impact. The differance in the 2 weapons is in a weapon projectile velocity of 800 (for Core's) versis 900 (for Arm's), so only someone running at -9 speed can see the speed differance if the 2 LLT's were firing side-by-side. However, in combat this should allow the Core LLT to nail Flashes a little bit better instead of consistantly shooting behind them. See also "Slow Light" changes.
+
+NOTE #4: (Arm Hawk 2nd Missile Removal)
+The 2 different Hawk missiles (ARMVTOL_ADVMISSILE and ARMVTOL_ADVMISSILE2) have a tiny differance in top speed (559 vs 554 -- less than a 1% differance), I removed the 2nd missile because for all practical purposes they are identical. Many things in the game are rounded down to the nearest multiple of 32 (the tilesize) and speed is probably one of them.
+
+NOTE #5: (Rapier 2nd Rocket Weapon Removal)
+Rapiers, in OTA had one bomber-like property -- the first volley of a Rapier rush could often be devestating because it's fired in a single instant, instead of like a Brawler which had to chew on things awhile to actually kill something. In internet games with even medium pingtimes (around 500-1k, not uncommon from modems) Rapiers flying over an enemy base in a single volley would level almost all frontline defenses -- before the frontline defenses even had a chance to return fire, because of the lagtime. OTA Rapier rockets were notoriously innacurate though, particularly the slow one. To make matters worse, the slow rocket, which seemed to be the one it always fires first, ussually misses because it runs out of fuel and falls short of its intended target IF it was fired while on the move. (Stormtrooper syndrome: the first shot always misses because it's just a warning shot.) Simple solution, do away with the slow rocket and give the faster rocket a firerate double what it has in OTA -- plus make it fire from different firepoints on the Rapier like the 2-weapon Rapier did.
+
+What this will do is make the Rapier's first shot more likely to hit, while spreading out its damage over time instead of instantaneous arrival of 250 damage if both rockets hit (which seldom happened with its first volley but ussually happened with its 2nd and later volleys at the same nonmoving target.) Having the Rapier fire slow-moving warning shots that ussually missed (by 50+ pixels) qualifies as a game bug. I'm treating it as one and fixing it... with the added side-effect of freeing up another weapon id as well. The slow rapier rocket will become part of the old weapons file to maintain backwards compatibility with whatever 3rd party units use it however.
+
+NOTE #6: (Arm Fibber fake torpedo addition)
+This adds a NEW weapon (well, actually a previously removed weapon is added back...) that allows the Arm Fibber to tag along with attack forces and also causes it to stop sonar jamming if it gets too close to enemy units. The weapon id# was changed from #158 to #148 because that frees up more weapon id slots in a row. (leaving #'s 157-159 open)
+See Arm Fibber Sub Changes for further details...
+
+Target Fixation on Weapons Fix:
+------------------------------
+NoChaseCategory=MOBILE;
+has been added to all fixed defensive buildings' FBI files so they won't continue tracking a single enemy unit when it moves out of range. Instead, it will be free to target another enemy unit as it moves into range.
+
+Zero-tolerance Weapon Bug:
+-------------------------
+MANY units in the game have a terrible target-tracking problem because of an overprecise TOLERANCE=###; line in their weapons file. More specifically, for many original TA units (but not for any of the downloadable add-on units) there is no TOLERANCE=###; line at all! This means the turret/torso of the unit had to be precisely aimed on the center of the target before it would fire its weapon. A good example of this is the commanders' lasers, Arm Zeus, or Core AK. They would track a target but seldom fire at it if the target moved by them quickly. I might not have considered this a bug, except for the fact that Cavedog has included a TOLERANCE=###; line for all but 1 of the downloadable units released AFTER the original game came out. I added a low tolerance to all the tolerance-lacking weapons.
+
+Advanced Bombers Laser Change:
+-----------------------------
+All the impact pictures and impact sounds on advanced bombers laser have been removed, they were a major source of lag when 10+ advanced bombers attacked at once.
+
+Anti-Aircraft Missiles Change:
+-----------------------------
+Despite the obvious problem of all anti-aircraft missiles not doing extra damage to all aircraft, especially 3rd party ones, this is not really a bug. The Seaplanes found in TA:CC are an example of how Cavedog tried to work around this problem. They take less damage from anti-aircraft missiles than other Cavedog aircaft, but they have less health so it averages out. The problem is, it looks like Cavedog intended to add them to the special damage lists (and added them to the stealth fighters' missiles) but not to anything else. This is incredibly imbalancing because stealth fighters can destroy them easily - often with only 1 missile hit, while they need 4 to 5 hits to kill 1 stealth. However, they still have a weakness to flakker weapons which do full damage to them. All other weapon types kill them easier too.
+
+I removed the special damage lines for ARMSEAP, ARMSFIG, ARMSEHAK, CORHUNT, CORSEAP, CORSFIG on these weapons:
+ARMVTOL_ADVMISSILE	(ID=112)
+CORVTOL_ADVMISSILE	(ID=113)
+CORAH_WEAPON		(ID=199)
+
+Flakker Weapon Changes:
+----------------------
+It's been pointed out that flakkers are often as dangerous TO your base as it is to enemy aircraft. As a fix, I'm adding a "unitsonly=1;" line to all flakker weapons. This will prevent the flakker weapon from detonating when it hits the ground or when it hits DT. Zero-damage lines have also been added to the tall buildings that were typically affected by the flakkers - now if for some reason the flakkers do hit them, the damage the buildings take is zero. The flakker weapon names and weapon id numbers are:
+ARMFLAK_GUN		ID=42
+CORFLAK_GUN		ID=43
+ARMyork_GUN		ID=116
+CORSENT_GUN		ID=133
+
+(Note: The other flakker weapons in the game have been absorbed into the above 4 weapons, so all flakkers used in the game are affected by this change.)
+
+This may not be considered a bug, but is a big game balance issue - because what's the point of making an anti-aircraft weapon that destroys your base when it misses? This is like an antinuke that nukes your base if it misses an incomming nuke!
+
+What if the reason why flak weapons refuse to aim at stray enemy aircraft is because of their aim-to-miss logic routines? They first have to pinpoint the enemy target, then calculate (randomly) some aim-to-miss variable, then because the resulting inaccuracy is greater than their TOLERANCE the turret has to reaim, only then can the flakker fire. By the time their calculation is done, their target has moved so they have to do the calculation again. All because of this line: "accuracy=1000;" After extensive testing, I removed the "accuracy=1000;" line on the flakker weapons to combat their refusal-to-fire problem. This helps but does not remove the failure to fire problem caused by the TA engine (it's the target fixation bug all over again.)
+
+EMG weapon Changes:
+------------------
+I edited the Flash tank's, Brawler's, and Warrior's EMG weapons to not make any impact noise (soundhit=; in their weapon file) -- this should decrease cpu and soundcard lag caused by these weapons immensely. However, you should still hear them firing JUST fine.
+
+I changed their sound behavior with:
+soundtrigger=0;
+which makes only 1 firing sound per burst of shots.
+An altered sound file was made which plays the sound of an entire burst of shots as a single wave.
+
+In the 3 EMG weapons (Flash/PW, Brawler, Warrior) files, I removed:
+    startsmoke=1;
+
+Those tiny smoke puffs were very hard to see on 640 x 480 - on anything higher, nearly impossible.
+
+Also, I removed the wave for weapon impact (changing it to):
+    soundhit=;
+
+All the impacting pictures for EMG have been removed as well, they were also a major source of lag. Unfortunately, the impact smoke animation is still visible -- that can only be removed by using +SFX while ingame.
+
+That is all I have done for the lag on emg units.
+
+Landmine Explosion Changes:
+--------------------------
+OTA landmines have MUCH smaller explosions than many other units, so landmines explosion weapons have been replaced with existing explosions. My justification for this change is based on 2 possible assumptions of TA explosions by Cavedog landmine designers:
+1.That explosion radius is the Area of Effect value in pixels found in the weapons files.
+2.That the damage a landmine will inflict to units in its explosion is the value given in the landmine's explosion weapon file.
+
+Both 2 assumptions are incorrect.
+1.An explosion's area-of-effect is the diameter in pixels found in the weapons files. This reduces the area to 1/4.
+2.The damage a weapon does to a unit also depends on edge effectiveness, which can reduce the max damage value to a tiny fraction. By default, edge effectiveness is 0% -- meaning something at the very edge of such an explosion would take 0 damage. Landmines have a low 5-15% edge effectiveness. Damage falls off linearly with distance from center.
+
+All of the original landmine explosions, except for the nuclear mines, were 250 pixels or less in diameter. Even the nuke mines only had 350 (Arm) and 400 pixel diameters, while a nuke missile has a 512 pixel diameter. Plus they did 1k damage less (1.2k less for Core) and had reduced edge effectiveness (15% vs 25%) to make their smaller explosions far less explosive than a nuke missile.
+
+For the non-nuke landmines, this means that the EFFECTIVE destructive area (capable of killing most level 1 units) for even the most powerful of the original landmines is less than 100 pixels in diameter.
+
+Landmines were probably only tested at 640x480 with permanent LOS and not seriously compaired to other weapons in TA.
+
+The most devestating landmine after the nuclear landmines does 200 to 2,000 damage. A single landmine may not kill a Flash (625 armor) and definitely won't kill a full-health Bulldog (2,102 armor.) Some of the lesser landmines are lucky to kill a Flea (75 armor.)
+
+By using existing weapons and explosions in the game, I was less likely to use anything too powerful for landmine explosions. For starters, the nuclear landmines now use the EXACT same explosions as the nuclear missiles. The others are less deadly than that. Core's 2nd deadliest and expensive landmine after the nuclear mine uses the crawling bomb explosion which does less than half the damage of a nuclear missile explosion. (2.5k damage vs 5.5k damage) ARMMINE5 (Precision -- Arm's 5th landmine) has a deadlier explosion than the crawling bomb, (4.5k damage vs 2.5k damage) but concentrated into only 40% the area -- so it partially balances out.
+
+All the other landmines use explosions equal or less in area of effect than the crawling bomb explosion -- which covers about the same area as a nuclear missile explosion.  The real crawling bombs cost far less than the landmine which uses the same explosion. And the cloaking costs for landmines is the same as the originals.
+
+  Weapon                               Area of    Cost          Reload
+ID   Name                 Range Damage Effect Metal Energy Path  Time
+----------------------------------------------------------------------
+Landmine	Metal Cost	Energy Cost	Cloaking Cost
+ARMMINE1	32 M		1017 E	-7 E
+200  SMALL_BUILDING         480   900     205    -     -     B   3.6
+184  ARMMINE1(Tiny)         480   400(30) 160    -     -     B   3.6  10% edge effect	REMOVED!
+
+ARMMINE2	61 M		1909 E	-14 E
+215  CRAWL_BLASTSML         480  1200     275    -     -     B   3.6
+185  ARMMINE2(Area)         480   600(30) 200    -     -     B   3.6   5% edge effect
+
+ARMMINE3	86 M		2688 E	-19 E
+63   CORMINE5(M-515)        480  2000(30) 250    -     -     B   3.6  10% edge effect
+186  ARMMINE3(Focused)      480  1300(30) 130    -     -     B   3.6  10% edge effect	REMOVED!
+
+ARMMINE4	137 M		4294 E	-31 E
+27   ATOMIC_BLAST           480  2000     516    -     -     B   3.6
+187  ARMMINE4(HE Area)      480  1500(30) 180    -     -     B   3.6   5% edge effect	REMOVED!
+
+ARMMINE5	132 M		4135 E	-30 E
+189  ARMMINE6(Nuclear)      480  4500     350    -     -     B   3.6  15% edge effect
+188  ARMMINE5(Precision)    480  2000(30) 130    -     -     B   3.6  10% edge effect	REMOVED!
+
+ARMMINE6	498 M		22272 E	-79 E
+122  NUCLEAR_MISSILE      32000 5500(2900)512 2000 180000    L 180    25% edge effect
+189  ARMMINE6(Nuclear)      480  4500     350    -     -     B   3.6  15% edge effect
+
+CORMINE1	20 M		532 E		-5 E
+185  ARMMINE2(Area)         480   600(30) 200    -     -     B   3.6   5% edge effect
+33   CORMINE1(M-104)        480   200(45) 175    -     -     B   3.6  10% edge effect	REMOVED!
+
+CORMINE2	48 M		1156 E	-11 E
+28   ATOMIC_BLASTSML        480  1000     260    -     -     B   3.6
+36   CORMINE2(M-209)        480   400(45) 190    -     -     B   3.6   5% edge effect	REMOVED!
+
+CORMINE3	73 M		1704 E	-15 E
+201  MEDIUM_BUILDING        480  1400     325    -     -     B   3.6
+37   CORMINE3(M-303)        480   700(45) 160    -     -     B   3.6  10% edge effect	REMOVED!
+
+CORMINE4	104 M		2342 E	-21 E
+202  LARGE_BUILDING         480  1800     400    -     -     B   3.6
+61   CORMINE4(M-420)        480  1100(45) 140    -     -     B   3.6   5% edge effect	REMOVED!
+
+CORMINE5	264 M		7607 E	-70 E
+214  CRAWL_BLAST            480  2500     556    -     -     B   3.6
+63   CORMINE5(M-515)        480  2000(30) 250    -     -     B   3.6  10% edge effect
+
+CORMINE6	595 M		26172 E	-123 E
+122  NUCLEAR_MISSILE      32000 5500(2900)512 2000 180000    L 180    25% edge effect
+74   CORMINE6(M-610)        480  4300     400    -     -     B   3.6  15% edge effect	REMOVED!
+
+Still-used landmine explosion weapons:
+185  ARMMINE2(Area)         480   600(30) 200    -     -     B   3.6   5% edge effect
+189  ARMMINE6(Nuclear)      480  4500     350    -     -     B   3.6  15% edge effect
+63   CORMINE5(M-515)        480  2000(30) 250    -     -     B   3.6  10% edge effect
+
+Core Pyro Weapon Changes:
+------------------------
+I removed the wave for weapon impact (changing it to):
+    soundhit=;
+
+These shoot 17 times every 1.2 seconds - which in theory would make them a bigger lag-producer than EMG weapons!
+This has been changed to firing a burst of 5 shots over almost exactly the same time period (0.7 sec instead of 0.68 sec) and doing the same total damage of 170 as the orginal to all units but pyros, but doing 1 extra point of damage to them for the whole burst - 35 damage instead of 34 like the original.
+
+This weapon can now pass through more than 1 unit and continue on to max range, doing damage to anything in its path.
+
+"Slow Light" Laser Weapon Changes:
+---------------------------------
+All Laser weapons have been given a weapon velocity of 1,000 -- the same as the "fastest" lasers already in the game. Light from one laser weapon should not be slower or faster than any other laser weapon. When you see a rocket or missile outrunning a laser bolt, (like on the Arm Pelican) something ISN'T right! This is also a cosmetic change, but "slow light" causes an extreme lack of believeability.
+
+Balance-wise, this will have only a marginal effect on the game -- and mostly a good one. Laser weapons will hit targets in range if they've accurately targetted them, but (because missile weapons tend to be longer ranged and cheaper than lasers) lasers will still probably be seldom used. Although this might seem to give AA capabilities to laser towers, the turret tracking speeds on most laser towers is still too low to track aircraft and I have NOT changed that! And even with 1k laser speeds, aircraft can avoid max-range laser bolts if moving at right angles to the laser turrets.
+
+Arm Stunner EMP silo weapon Changes:
+-----------------------------------
+The Arm EMP Silo's paralyzation was changed so ANY units not mentioned in its weapon damage file are affected by it - previously, they were immune. This will affect almost all 3rd party units and any new Core and Arm units not specifically mentioned as immune in the damage lists. Unless many 3rd party units are used, this should have little effect on gameplay. I didn't do the same to the Core Neutron Silo because it affects only Arm mobile units - not ALL of Arm's units. Having the Neutron damage ALL 3rd party units would be imbalancing.
+
+Torpedo Weapon Changes:
+----------------------
+The area of effect for ALL torpedo and depth charge weapons is increased to 48 (or 64 for the advanced torpedoes on the ATLs and the Core Leviathan.) This was done because sometimes torpedoes hit enemy units in the water but do NO damage. It also makes force-firing of torpedos at fibbed subs worthwhile. This may make it possible for subs to shoot their way through floating DT, but the number of torpedoes required could be 10 or more, thus making it worthwhile only if there's no other choice. 
+
+Because the edge effectiveness of all torpedo and depth charge weapons is 0, it is unlikely that units will take even minor damage from a torpedo detonating near them.
+
+
+3rd party units don't work with Bugfix?
+--------------------------------------
+Some 3rd-party units may not work with this patch without changes IF they use weapons removed by TA Bugfix. Like if a unit used MINDGUN as a weapon. I tried not to take "sides" when deleting shared weapons id #'s. If equal numbers of units used different weapons, the oldest (as in the case of ARMRL_MISSILE) weapons id # was kept or the lowest weapons id # was kept in the case of ARM_DISINTEGRATOR.
+
+To make these 3rd-party units work with TA Bugfix, place the old weapons ORG file in the totala directory and rename it a UFO file. This will ADD BACK all the removed weapons with corrections to them as well. This should allow almost ANY 3rd party unit to work with TA Bugfix. (And if it doesn't please email me.)
+
+
+Unfinished work?
+---------------
+These are game bugs that I'd like to address/fix but do NOT know how.
+MOST are because of problems buried in TA's game engine (the totala.exe file). I can change what data TA uses all I want, but if the problem's in the game engine the problem will often still occur after data changes.
+
+1.AI antinukes that work in skirmish have not been made. I've made an antinuke silo that doesn't use the stockpile=1; line in its weapon data (it is NOT included in this patch), but it still seems to require the gui file and the gaf file (for the antinuke missile itself). Also, the antinuke must build 1 fake stockpiled antinuke missile (on the build menu) before the antinuke will work - even though the stockpile=1; line is missing. The fake stockpiled antinuke missile is never deducted when the antinuke fires.
+
+2.BURSTED BOMBER BUG: Bombers could not have their bombs converted to a burst weapon -- to remove the long-string-of-bombs bug (20+ bombs in a row without pause, NOT the retargetting tactic which typically has brief pauses between bombloads) that is used by players who think it's a legitimate tactic. Bombers are powerful enough without this "tactic" especially in laggy games. I'm not talking about the multiple-targetting micromanagement strategy where bombers are ordered to bomb another target downrange after their first -- this is little more than selecting multiple targets with shift except it removes the "stupid" stage from bombers where they attempt to either stop and land or fly in a straight line.
+
+Bombers on patrol and fire at will, don't attack targets as they come into the bombers' maneuver range. The fix I tried NEVER worked right, bombers would start dropping bombs when they are damaged by an enemy unit. (This is REALLY bad if they're patrolling over your base at the time!)
+
+3.The Doomsday Machine doesn't always point it's big-blue-laser turret in the direction that the big-blue-laser fires.
+
+4.I tried changing ALL landmines found in the game from yardmap=o; to yardmap=y; - because even units that didn't know the mines were there "knew" to drive around them. The reason I changed it back was because yardmap=y; causes the landmines to be near-impossible to hit with laser weapons. Only weapons which affect an area when they impact were likely to damage the mines any.
+
+5.The Arm Spider and Arm EMP Stunner Silo problem is that paralysis does not act as a "STOP" command on units that are hit by them. And what's worse, with micromanagement, paralysis can be negated entirely on mobile units. A fix for this requires an EXE change which I cannot do! The ai's mobile attack force is almost immune to paralysis, as each new attack order the ai gives totally negates paralysis on ALL the mobile units!
+
+6.The Core Leviathan may be partially stuck out of the water and trackable like a surface ship when it's in shallow water. This I have confirmed but am unable to fix. So keep it in deep water when you have the option.
+
+7.With the removal of the "commander" category in the ARMCOM.FBI and CORCOM.FBI files, the Commanders are still selectable with CTRL+C, but CTRL+C no longer centers the viewscreen on them. However, the viewscreen can still be centered on them with the "T" key. Sometimes you don't want the viewscreen centered on the commander when you use CTRL+C. It has since turned out that the "commander" category in the ARMCOM.FBI and CORCOM.FBI files has another use as well -- it prevents players from giving their allies (or enemies) their commander in multiplayer games - especially commander dies = ends games! Because this is an important limitation, I had to add the "commander" category back to the ARMCOM.FBI and the CORCOM.FBI files.
+
+8.There's a major bug in the TA exe which causes units to not fire at enemy units, even though they should be able to. These units DO FIRE when issued a "STOP" order or when set to Hold Fire and back to Fire at Will. It seems related to the pathfinding bugs, and seems less prevalent at lower gamespeed/lower resolution. Other than that, it's no worse in TA Bugfix than in OTA. Most of my latest scripting efforts have been to find workarounds for this 1 bug. I call it the "target fixation" bug, as I believe units are trying to target out-of-range units and refuse to select new targets.
+
+9.There is a major (in my opinion!) mission bug in every mission included in TA:
+The ai will not automatically build MOST TA units added after the very first v1.0 release! Strangely, there are a handful of units that don't have this problem. These are:
+armscorp, cormabm, cornecro, corplas, corscorp, cortruck
+
+Probably can be built by the ai as well:
+armscab, armss, armgate, corgate, corbuild (but only the Core ai would be able to build it because of an anims/gui conflict!), and both the arm and core beac and dev1.
+
+NOTE: Normally most of these units aren't buildable, but once a download tdf file is added to build them the ai WILL build them!
+
+I am trying to make it so the ai can autobuild ANY allowed TA units in missions, even if they're 3rd party units. This is IF the ai is allowed to build them at all -- via the useonly files. Naturally, if the unit is grayed out the ai cannot build it. SOME 3rd party units are auto-buildable by the ai, but why is unknown.
+
+10.Practically every 2-weapon unit has been converted back to their original designs (minus the 'fancy' 2nd attack button via the d-key.) I simply could NOT get them to fire their 2nd weapons reliably otherwise. The good news, in a way, is once I redo much of TA Bugfix it will be more like OTA than the last versions were. But it'll mean getting the 2nd weapon on a unit to fire at a particular target in a group will be difficult or impossible -- same as it was in OTA.
+
+11.There remains unit scripting animation problems on the Arm maverick and both sides C-ships. These units still WORK in the game, they just sometimes animate incorrectly. I am looking into a fix for them, but the problem SEEMS unresolvable.
+
+Unitscripting is still very hard for me to do, but I'm learning/figuring out what works (and unfortunately what doesn't) little by little.
+
+Why I didn't go further:
+-----------------------
+To balance the units in TA requires first testing all the units in a less-buggy state than they are currently in the original (v3.1c patch) TA.
+(My patch is a good starting place for that... :)
+
+It is impossible to apply a uniform balance to TA because the units are so vastly different between sides (Arm vs Core) and in different categories (missile units vs ballistic units). Interestingly, very dissimilar types of units can be good at the same role -- such as raiding (destroying an opponent's outlying resources.)
+
+There's the safety-in-numbers balance issues as well, which typically is the case for long-ranged but low damage-per-second weapons. (ex: missile tower) By themselves they are weak if not very weak. But in groups of 20+ they become difficlt to counter. It is difficult to weaken the strengths of a unit while in a large group but not also weaken it when it's by itself.
+
+There is also the issue of relative balance -- a unit may be nearly useless in the hands of average players, but turn into something that is very difficult and expensive to counter in the hands of people who know some tricks with that particular unit. (Case in point is how some experts can get stealth fighters to hover behind their ground force's frontline and pummel anything the ground units spot.)
+
+Another form of relative balance is units relative to each other (assuming equally competent players.) A Maverick may have one of the highest damages-per-second of any unit in the game, but it's slaughtered by enemy units that engage it from long range (such as Slashers) -- so is it too strong period, or just too strong in a face-to-face fight?
+
+Yet another form of relative balance is whether trying to balance units for skirmish games (no lag), LAN games (low lag), or IP games (medium-high lag). Aircraft bombers in skirmish and LAN games are much more stoppable, but in IP games they become an almost unstoppable, uncounterable threat.
+
+This patch is not intended to balance units in TA unless I can reasonably assume the imbalance is caused by a game bug. And even in that case, I ussualy (but not always) try to remove the bug and stop there. There's many units that I feel are not very useful, even worthless perhaps since other units can better do whatever that unit can do. However, I'm not going to decide what changes are neccessary on unit stats to balance it with the rest of the game. I don't claim to be the best TA player there is, and as such I don't know what stats to change to balance units. It's my opinion that an "overfix" stat adjustment is far worse than no stat adjustment at all.
+
+How this file works:
+-------------------
+I wanted to make simple alterations to TA in a small file called rev32.gp3 and have TA assume it was a later patch. But when I tried rev32.gp3 TA ignores it. I am convinced that just like fixing the 8-bit limit of the weapons id #, tricking TA into thinking it's a later version (v3.2) may be just as hard.
+
+My entire modified REV31.GP3 is less than 2 megs, (previously it was much smaller, but all the little changes added up!) but if it is combined and repacked using all the data in the old REV31.GP3 it is over 5 megs.
+Previously, I had released all my changes in an TA31_fix.ufo file and included an installer that patched it into REV31.GP3, but MANY installation problems erupted because of this.
+
+I also wanted to make a patch fix that works for TA v3.1 without Core Contingency. But currently fixing TA:CC v3.1 has proven rather difficult - and with as much as I have added it's now nearly impossible to remove all TA:CC only referances.
+
+Legalese:
+--------
+You may distribute this file in any way that is legal.
+(on the internet, on a floppy, on your computer, CD, etc, etc).
+
+I relenquish all ownership of this file and would not mind seeing it used elsewhere.
+(but giving me credit as the compilier of the ideas in TA Bugfix if you use it would be nice...)
+
+Please send constructive criticism to my email address about this fix.
+
+(Now if only these fixes were the offical TA patch...)
+
+Credits:
+-------
+** Many posted messages on online BBS's about problems in TA got incorporated into TA Bugfix. I can claim discovery of VERY few of the bugs mentioned in TA by this file -- most were discovered by various TA players willing to post their findings in the hopes to help others!
+** Thanks also to anyone that has given me support on this project!
+** Special thanks to Speed, the original creator of the ai nuke silos!
+** Special thanks also to Joe D, without his programs NONE of this would be possible!
+** Special thanks to CyberKewl and Creeperman, who coded the COB scripts used in earlier versions of TA Bugfix for me!
+** Special thanks to Quitch(y) for his hard work on the Corpse Value Changes list and his many ideas!
+
+CyberKewl, webmaster of Total Annihilation Unit Creation Center (TAUCC), was a major force behind the creation of this patch. (He taught me quite a bit of unit 'cobbling'...)
+
+Creeperman has also done COB scripting work on this patch. If CyberKewl didn't do the COB on a particular unit, Creeperman probably did. I've reworked practically every script either CyberKewl or Creeperman did but it's the thought that counts -- they pointed me in the right direction and gave me help.
+Also, Mephistophiles has added both his input, time, and effort towards many fixes in the patch.
+
+Since I am sharing the fixes used in TA Bugfix with makers of UberHack, some changes appear in both TA patches. I thank the makers of UberHack (Brave Sir Robin in particular) for making an alternate form of TA for those that feel TA is hopelessly unbalanced.
+
+This text file was made by: David Sellick
+I am also known as Switeck on chat forums and message boards...
+(email: Switeck@hotmail.com)

@@ -1,0 +1,120 @@
+{
+    "actions": [
+        {
+            "install": {
+                "action": "installSDB",
+                "arguments": {
+                    "GUID": "{f078f08b-daac-4ae2-bba0-b1b7cb6b0ad5}",
+                    "sdbFile": "{app}/goggame.sdb"
+                }
+            },
+            "languages": [
+                "*"
+            ],
+            "name": "install_sdb"
+        },
+        {
+            "install": {
+                "action": "setRegistry",
+                "arguments": {
+                    "root": "HKEY_CURRENT_USER",
+                    "saveGameData": true,
+                    "subkey": "Software\\Cavedog Entertainment\\Total Annihilation",
+                    "valueData": "english",
+                    "valueName": "Language",
+                    "valueType": "string"
+                }
+            },
+            "languages": [
+                "*"
+            ],
+            "name": "registryKey1"
+        },
+        {
+            "install": {
+                "action": "setRegistry",
+                "arguments": {
+                    "root": "HKEY_LOCAL_MACHINE",
+                    "saveGameData": true,
+                    "subkey": "SOFTWARE\\Microsoft\\DirectPlay\\Applications\\Total Annihilation",
+                    "valueData": "{{99797420-F5F5-11CF-9827-00A0241496C8}",
+                    "valueName": "Guid",
+                    "valueType": "string"
+                }
+            },
+            "languages": [
+                "*"
+            ],
+            "name": "registryKey2"
+        },
+        {
+            "install": {
+                "action": "setRegistry",
+                "arguments": {
+                    "root": "HKEY_LOCAL_MACHINE",
+                    "saveGameData": true,
+                    "subkey": "SOFTWARE\\Microsoft\\DirectPlay\\Applications\\Total Annihilation",
+                    "valueData": "TOTALA.EXE",
+                    "valueName": "File",
+                    "valueType": "string"
+                }
+            },
+            "languages": [
+                "*"
+            ],
+            "name": "registryKey3"
+        },
+        {
+            "install": {
+                "action": "setRegistry",
+                "arguments": {
+                    "root": "HKEY_LOCAL_MACHINE",
+                    "saveGameData": true,
+                    "subkey": "SOFTWARE\\Microsoft\\DirectPlay\\Applications\\Total Annihilation",
+                    "valueData": "",
+                    "valueName": "CommandLine",
+                    "valueType": "string"
+                }
+            },
+            "languages": [
+                "*"
+            ],
+            "name": "registryKey4"
+        },
+        {
+            "install": {
+                "action": "setRegistry",
+                "arguments": {
+                    "root": "HKEY_LOCAL_MACHINE",
+                    "saveGameData": true,
+                    "subkey": "SOFTWARE\\Microsoft\\DirectPlay\\Applications\\Total Annihilation",
+                    "valueData": "{app}\\",
+                    "valueName": "Path",
+                    "valueType": "string"
+                }
+            },
+            "languages": [
+                "*"
+            ],
+            "name": "registryKey5"
+        },
+        {
+            "install": {
+                "action": "setRegistry",
+                "arguments": {
+                    "root": "HKEY_LOCAL_MACHINE",
+                    "saveGameData": true,
+                    "subkey": "SOFTWARE\\Microsoft\\DirectPlay\\Applications\\Total Annihilation",
+                    "valueData": "{app}\\",
+                    "valueName": "CurrentDirectory",
+                    "valueType": "string"
+                }
+            },
+            "languages": [
+                "*"
+            ],
+            "name": "registryKey6"
+        }
+    ],
+    "productId": "1207658880"
+}

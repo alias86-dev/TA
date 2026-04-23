@@ -1,0 +1,1079 @@
+TOTAL ANNIHILATION: THE CORE CONTINGENCY
+READ ME
+
+
+CONTENTS:
+·	System Requirements
+·	Installation
+·	New Units & Build Hierarchy
+·	New Maps & Worlds
+·	New Features
+·	Technical Support
+·	TAE
+·	Contacting Cavedog Entertainment
+·	Credits
+
+
+
+**SYSTEM REQUIREMENTS**
+Total Annihilation: The Core Contingency (TACC) requires the full version of Total 
+Annihilation as well as the following hardware specifications:
+
+·	Windows 95
+·	Pentium 100mHz/133 MHz recommended
+·	32MB RAM
+·	4x CD-ROM
+·	Sound Blaster compatible audio system
+·	VGA 256 color or better
+·	Mouse
+
+
+
+**INSTALLATION**
+In order to play any component of TACC you must install that component onto your 
+computer.  TACC will not read information directly from the CD-ROM.  For example, 
+if you want to use a multiplayer map included on the TACC disc, you must first 
+install the TACC multi-player map data to your hard drive.
+
+To install TACC, insert the disc into your CD-ROM drive.  Make sure the full 
+version of Total Annihilation is already installed on your machine.  The TACC 
+installation will not continue until the full version of the game is installed.  
+If Autoplay is enabled an installation screen will appear a few moments after 
+inserting the disc.  Follow the directions as prompted by the install program.  
+The installer will automatically find the appropriate Total Annihilation 
+directory so there is no need to specify a path.  
+
+If Autoplay is disabled, use Windows Explorer or the My Computer icon to locate 
+the installation executable, called Setup.exe, on your CD-ROM drive.  Double-clicking 
+Setup.exe will launch the install program.
+
+Once installed you can start the game as usual, click SINGLE and then click 
+CAMPAIGN.  'The Core Contingency' will be added to your list of available 
+campaigns.  New maps will be listed alphabetically in the SELECT MAP dialog 
+box in both Skirmish and Multiplayer.  Additionally, an icon will be added to 
+the Start menu in the Total Annihilation directory allowing you to uninstall 
+TACC.
+
+
+
+**NEW UNITS**
+(DL) = previously available as a download unit
+
+ARM UNITS
+ARM KBOTS:
+Decoy Commander
+This Tech Level 2 Kbot is an intimidating sight as it saunters into your opponent's 
+base.  The Decoy is armed with a laser instead of a disintegrator gun and has a 
+low power nanolathe.
+
+Infiltrator
+The Infiltrator is the ideal Kbot for all of your spying needs.  It is unarmed 
+but has cloaking capabilities.
+
+Marky (DL)
+The Arm's radar technology gains mobility with this Tech Level 2 Kbot.
+
+Maverick
+The Maverick carries two cannons, one holstered on each leg for quick-draw combat.
+
+Pelican
+The amphibious Pelican takes Kbot maneuverability to a new level.  The Pelican can 
+fire its laser and anti-air rockets as it skims across the water's surface.
+
+Warrior (DL)
+A rugged medium infantry Kbot with both an EMG gun and a cannon.
+
+
+ARM VEHICLES:
+Penetrator (DL)
+The Annihilator cannon mounted on a maneuverable tank.
+
+Podger
+This mine laying vehicle can change the way you defend your base.  It builds any of 
+the six following mines which vary in damage and detonation range:
+	Tiny - low damage, medium range
+	Area Mine  - low damage, large range
+	Focused Mine - medium damage, small range
+	HE Mine - medium damage, large range
+	Precision Mine - high damage, small range 
+	Nuclear Mine - nuclear explosive
+
+
+ARM SHIPS:
+Advanced Construction Sub
+The sub builds Tech Level 3 structures and units specific to its naval environment.  
+These include the Seaplane Platform and the Underwater Fusion Plant.
+
+Archer
+The Archer is designed to take out enemy aircraft with its deck-mounted Flakker and 
+anti-air missiles.
+
+Fibber
+Camouflage your naval base with this sonar-jamming submarine.  Perfect on patrols 
+or as an escort for your attacking fleet.
+
+
+ARM AIRCRAFT:
+Eagle (DL)
+Medium-range radar takes flight with this Tech Level 2 aircraft.
+
+Seahawk
+When stationary sonar look-outs aren't enough, this sonar plane increases the 
+scope of your enemy detection capabilities.
+
+
+ARM HOVERCRAFT:
+Anaconda
+Tank combat is no longer confined to the ground.  This hovertank can travel 
+over most terrain to inflict damage with its light gauss cannon.
+
+Bear 
+This transport can carry up to 6 units over land and sea.
+
+Construction Hovercraft
+Builds Level 1 and 2 fortifications and the Hovercraft Platform.
+
+Skimmer
+A quick and responsive hovercraft best used for scouting out unfamiliar terrain.  
+It is armed with a light laser.
+
+Swatter 
+Keep attacking aircraft away from your base with the Swatter, a missile-wielding, 
+anti-air hovercraft.
+
+Wombat
+This rocket-launching hovercraft can attack enemies from a distance with its 
+heavy rockets.
+
+
+ARM SEAPLANES:
+Albatross
+Based in the water, this torpedo seaplane can land beneath the waves when it isn't 
+wreaking havoc on your enemy.
+
+Construction Seaplane
+Builds Tech Level 1 and 2 units including the Hovercraft Platform.
+
+Tornado
+This sea-based unit is an effective attacker in a dogfight.
+
+
+ARM FORTIFICATIONS:
+Advanced Torpedo Launcher
+This marine defense has increased firing range and detection radius.
+
+Defender NS (DL)
+The marine version of the land-based missile tower.  A superior defense against 
+aircraft.
+
+Flakker (DL)
+Designed to take down aircraft individually or in large, attacking groups.
+
+Floating Dragon's Teeth
+These naval series perimeter fortifications limit the enemy's access to your 
+sea base.
+
+Fortification Wall (DL)
+A Tech Level 2 version of Dragon's Teeth.  The Fortification Wall adds height to 
+protect against projectile fire.
+
+Stingray (DL)
+A floating heavy laser tower effective against attacking fleets.
+
+Vulcan
+This rapid fire plasma cannon can destroy a base in seconds but it requires massive 
+amounts of energy both to build and feed its firepower.
+
+
+ARM CONSTRUCTION BUILDINGS:
+Hovercraft Platform
+Built by land-based Tech Level 2 construction units, this factory can make variety 
+of hover units.
+
+Seaplane Platform
+Only the Advanced Construction Sub can build this marine factory.  Seaplane units 
+built by the platform can land in the water when not engaged.  The Seaplane 
+Platform also builds some standard aircraft.
+
+
+ARM OTHER BUILDINGS:
+Advanced Sonar Station
+A step up from the regular Sonar Station, this advanced model nearly doubles 
+your sonar coverage.
+
+Targeting Facility
+When activated, the Targeting Facility works in conjunction with your radar and 
+allows units to automatically target and attack any enemy within radar sight and 
+weapon range.
+
+Underwater Energy Storage
+A water-tight means to increase your energy storage capacity.
+
+Underwater Fusion Plant
+Generate energy from beneath the ocean.  This unit can only be built by the 
+Advanced Construction Sub.
+
+Underwater Metal Extractor
+Extracts metal from underwater deposits.
+
+Underwater Metal Storage
+Increases metal storage capacity on worlds where land is scarce.
+
+Metal Maker NS (DL)
+A floating version of the land-based unit that uses stored energy and converts 
+it into metal.
+
+Cloakable Fusion Plant (DL)
+This advanced energy source uses some of its production to hide from your enemy.  
+Cloaking abilities can be turned on and off.
+
+Moho Metal Maker (DL)
+This energy-to-metal converter works best when fueled by a fusion plant.
+
+
+
+CORE UNITS
+CORE KBOTS:
+Decoy Commander
+The Decoy version of the Commander has nanolathing assist capabilities and can 
+distract your opponent away from your base.  It is armed with a light laser.
+
+Dominator (DL)
+A Tech Level 2 Kbot equipped with two rocket launchers with a wide blast radius.
+
+Freaker
+Known for its speed and evasive response, the Freaker is an asset for quick 
+attacks against the enemy.
+
+Gimp
+An amphibious Kbot that walks beneath the water.  Effectual in surprise land attacks.
+
+Krogoth
+This specialized experimental Kbot was created by the Core in an effort to finally 
+obliterate the Arm.  Krogoth is heavily armored and wields a variety of weapons 
+designed to take out a Commander in a few easy shots.  A special Krogoth Gantry 
+is required to build this Kbot.
+
+Parasite
+A cloaking, unarmed intelligence operative - send this spy Kbot out on scouting 
+missions into enemy territory.
+
+Sumo (DL)
+The slow and steady Sumo fires two heavy lasers from the protection of its heavy armor.
+
+Voyeur (DL)
+Although it has no weaponry, the Voyeur's mobile radar capabilities make it an 
+essential member of the Core land army.
+
+
+CORE VEHICLES:
+Leveler (DL)
+Let the Leveler's heavy cannon take care of an onslaught of enemy ground troops in 
+just a few shots.  This riot tank is excellent at dispersing crowds.
+
+Spoiler
+The Core's mine laying vehicle has the capability of building the following 
+explosive charges varying in damage and detonation range:
+	M-104 - low damage, medium range
+	M-209 - low damage, large range
+	M-303 - medium damage, medium range
+	M-420 - high damage, medium range
+	M-515 - high damage, large range 
+	M-610 - nuclear mine
+
+
+CORE SHIPS:
+Advanced Construction Sub
+This Tech Level 2 construction submarine builds Level 3 units specific to its 
+marine environment.  It is the only unit that can build the Seaplane Platform 
+and the Underwater Fusion Plant.
+
+Phantom (DL)
+This radar-jamming ship can patrol your water base and hide it from enemy detection.
+
+Shredder
+A Tech Level 2 anti-air ship whose Flakker keeps attacking squadrons at bay.
+
+
+CORE AIRCRAFT:
+Hunter
+Mobilize your sonar coverage with this airborne sonar plane.  The Hunter is unarmed.
+
+Vulture
+Although it carries no weapons, this radar plane is quick and maneuverable.
+
+
+CORE HOVERCRAFT:
+Construction Hovercraft
+A Tech Level 1 construction unit built by the Hovercraft Platform.  The 
+Construction Hovercraft can build Level 2 units and weaponry.
+
+Nixer
+Launch rockets while skimming across the land or sea with this Tech Level 2 
+hovertank.
+
+Scrubber
+The Scrubber easily navigates many types of terrain to scout out the enemy's 
+territory.
+
+Slinger
+While hovering over the water or rocky turf, the Slinger's anti-air missiles 
+keep attacking aircraft at a distance.
+
+Snapper
+This medium-sized hovertank and its plasma cannon are a menace to attacking 
+enemy units.
+
+Turtle
+Move all kinds of units over the terrain in the Turtle hovercraft transport.  
+The Turtle is unarmed and can carry 8 units.
+
+
+CORE SEAPLANES:
+Construction Seaplane
+A construction aircraft that can build Tech Level 2 units and then land under 
+the water when it's not working.
+
+Typhoon
+The Typhoon's torpedo rockets are especially useful against invading sea units.
+
+Voodoo
+This seaplane fighter, rigged with air to air missiles, is a worthy unit in combat.
+
+
+CORE FORTIFICATIONS:
+Advanced Torpedo Launcher
+The advanced version of the torpedo launcher increases both your range of vision 
+and damage.
+
+Buzzsaw
+Its long range and rapid fire capabilities make this unit a devastating spectacle 
+to your opponent.  But as the Buzzsaw's destructive abilities are expensive; 
+it's a good idea to have a team of fusion plants providing this plasma cannon 
+with power.
+
+Cobra (DL)
+An anti-air flak gun that shoots artillery shells at high speeds.  It is most 
+damaging against groups of aircraft.
+
+Floating Dragon's Teeth
+A perimeter defense for the high seas.
+
+Stinger (DL)
+A rotating turret missile tower that floats.
+
+Thunderbolt (DL)
+Although vulnerable to submarine torpedoes, this floating version of the 
+Core's heavy laser tower easily destroys attacking ships and nearby enemy land 
+units.
+
+Toaster (DL)
+The Toaster will automatically engage the enemy and then return to its heavily-
+armored protective shell underground, strong enough to survive a nuclear attack.
+
+Viper
+The Viper has all the power of the Core's laser technology in addition to heavy 
+armor when retracted below the ground.
+
+
+CORE CONSTRUCTION BUILDINGS:
+Hovercraft Platform
+Land-based construction units can build this hovercraft factory.
+
+Krogoth Gantry
+The Gantry is a specialized factory designed by the Core to build only one 
+unit, Krogoth.  The Advanced Construction Kbot can construct the Gantry.
+
+Seaplane Platform
+The water-based Seaplane Platform can only be built by the Advanced Construction 
+Sub.  This factory will manufacture both aircraft and seaplane units.
+
+
+CORE OTHER BUILDINGS:
+Advanced Sonar Station
+A Tech Level 3 version of the Sonar Station that increases your coverage 
+considerably.  It is built by the Advanced Construction Sub.
+
+Cloakable Fusion Plant
+Providing it has enough stored energy, this Tech Level 3 energy source can 
+cloak and hide from your enemy.
+
+Floating Metal Maker (DL)
+A floating, unarmed unit that converts energy into metal.
+
+Moho Metal Maker
+An advanced metal production facility that works best in conjunction with a 
+fusion plant.
+
+Targeting Facility
+Activating this unit will upgrade the targeting abilities of all of your 
+weaponry.  Units will use available radar coverage to automatically seek out 
+and fire upon enemy units.
+
+Underwater Energy Storage
+A means to increase your energy capacity and store it below the water's surface.
+
+Underwater Fusion Plant
+This sub-marine advanced energy producer can only be built by the Advanced 
+Construction Sub.
+
+Underwater Metal Extractor
+The only way to mine the underwater metal deposits is with this marine extractor.
+
+Underwater Metal Storage
+The Underwater Metal Storage is the best way to expand your metal capacity when 
+land is at a minimum.
+
+
+ARM BUILD HIERARCHY
+
+*ARM Commander
+Solar Collector		Wind Generator
+Energy Storage		Metal Storage
+Metal Extractor		Metal Maker
+Kbot Lab		Vehicle Plant
+Aircraft Plant		Shipyard
+L.L.T.			Radar Tower
+Sonar Station		Tidal Generator
+UW Energy Storage	UW Metal Storage
+UW Metal Extractor	Floating Metal Maker
+Torpedo Launcher
+
+*ARM Construction Kbot					*ARM Construction Vehicle
+Solar Collector		Wind Generator			Solar Collector		Wind Generator
+Energy Storage		Metal Storage			Energy Storage		Metal Storage
+Metal Extractor		Metal Maker			Metal Extractor		Metal Maker
+Kbot Lab		Vehicle Plant			Kbot Lab		Vehicle Plant
+Aircraft Plant		Shipyard			Aircraft Plant		Shipyard
+L.L.T.			Radar Tower			L.L.T.			Radar Tower
+Advanced Kbot Lab	Geothermal Plant		Advanced Vehicle Plant	Geothermal Plant
+Sentinel		Defender			Sentinel		Defender
+Dragon's Teeth		Guardian			Dragon's Teeth		Guardian
+Hovercraft Platform					Hovercraft Platform
+
+*ARM Construction Aircraft				*ARM Construction Ship
+Solar Collector		Wind Generator			Advanced Shipyard	Shipyard
+Energy Storage		Metal Storage			Tidal Generator		Sonar Station
+Metal Extractor		Metal Maker			Torpedo Launcher	L.L.T.
+Kbot Lab		Vehicle Plant			Defender-NS		UW Energy Storage
+Aircraft Plant		Shipyard			Floating Metal Maker	UW Metal Storage
+L.L.T.			Radar Tower			Stingray		UW Metal Extractor
+Advanced Aircraft Plant	Geothermal Plant		Floating Dragon's Teeth
+Sentinel		Defender				
+Dragon's Teeth		Guardian				
+Hovercraft Platform
+
+*ARM Construction Hovercraft
+Solar Collector		Wind Generator
+Energy Storage		Metal Storage
+Metal Extractor		Metal Maker
+Kbot Lab		Vehicle Plant
+Aircraft Plant		Shipyard
+L.L.T.			Radar Tower
+Geothermal Plant
+Sentinel		Defender
+Dragon's Teeth		Guardian
+Sonar Station		Tidal Generator
+UW Energy Storage	UW Metal Storage
+UW Metal Extractor	Floating Metal Maker
+Defender-NS		Floating Dragon's Teeth
+Stingray		Torpedo Launcher
+Hovercraft Platform
+
+*ARM Kbot Lab						*ARM Vehicle Plant
+Construction Kbot	Peewee				Construction Vehicle	Jeffy
+Rocko			Hammer				Flash			Stumpy
+Jethro							Samson			Podger
+Warrior							
+
+*ARM Aircraft Plant					*ARM Shipyard
+Construction Aircraft	Peeper				Construction Ship	Skeeter
+Freedom Fighter		Thunder				Crusader		Hulk
+Atlas							Lurker
+
+*ARM Hovercraft Platform
+Construction Hovercraft	Skimmer
+Anaconda		Swatter
+Wombat			Bear
+
+*ARM Advanced Kbot Lab					*ARM Advanced Vehicle Plant
+Adv. Construction Kbot	Zeus				Adv. Constr. Vehicle	Triton
+Fido			Invader				Bulldog			Jammer
+Eraser			Zipper				Luger			Spider
+Maverick						Seer			Merl
+Marky							Penetrator
+Pelican							Panther
+Infiltrator		Decoy Commander			
+
+*ARM Advanced Aircraft Plant				*ARM Advanced Shipyard
+Adv. Constr. Aircraft	Brawler				Adv. Construction Sub	Colossus
+Phoenix			Lancet				Piranha			Ranger
+Hawk							Conqueror		Millenium
+Eagle							Escort			Archer
+							Fibber			
+
+*ARM Advanced Construction Kbot				*ARM Advanced Construction Vehicle
+Kbot Lab		Advanced Radar			Vehicle Plant		Advanced Radar 
+Fusion Reactor		Moho Mine			Fusion Reactor		Moho Mine
+Big Bertha		Retaliator			Big Bertha		Retaliator
+Annihilator		Protector			Annihilator		Protector
+Air Repair Pad		Flakker				Air Repair Pad		Flakker
+Fortification Wall	Ambusher			Fortification Wall	Ambusher
+Cloakable Fusion 	Moho Metal Maker		Cloakable Fusion 	Moho Metal Maker
+Targeting Facility	Vulcan				Targeting Facility	Vulcan
+
+*ARM Advanced Construction Aircraft			*ARM Advanced Construction Sub
+Aircraft Plant		Advanced Radar			Shipyard		Adv. Sonar Station
+Fusion Reactor		Moho Mine			UW Fusion Plant		Adv. Torpedo 
+Big Bertha		Retaliator			Seaplane Platform
+Annihilator		Protector				
+Air Repair Pad		Flakker				
+Fortification Wall	Ambusher				
+Cloakable Fusion	Moho Metal Maker			
+Targeting Facility	Vulcan				
+
+*ARM Seaplane Platform
+Construction Seaplane	Seahawk
+Freedom Fighter		Tornado
+Lancet			Albatross
+
+*ARM Construction Seaplane
+Solar Collector		Wind Generator			
+Energy Storage		Metal Storage			
+Metal Extractor		Metal Maker			
+Kbot Lab		Vehicle Plant			
+Aircraft Plant		Shipyard				
+L.L.T.			Radar Tower			
+			Geothermal Plant			
+Sentinel		Defender				
+Dragon's Teeth		Guardian				
+Sonar Station		Tidal Generator			
+UW Energy Storage	UW Metal Storage			
+UW Metal Extractor	Floating Metal Maker			
+Defender-NS		Floating Dragon's Teeth		
+Stingray		Torpedo Launcher			
+Hovercraft Platform
+
+
+CORE BUILD HIERARCHY
+
+*CORE Commander
+Solar Collector		Wind Generator
+Energy Storage		Metal Storage
+Metal Extractor		Metal Maker
+Kbot Lab		Vehicle Plant
+Aircraft Plant		Shipyard
+Light Laser Tower	Radar Tower
+Sonar Station		Tidal Generator
+UW Energy Storage	UW Metal Storage
+UW Metal Extractor	Floating Metal Maker
+Torpedo Launcher
+
+*CORE Construction Kbot					*CORE Construction Vehicle
+Solar Collector		Wind Generator			Solar Collector		Wind Generator
+Energy Storage		Metal Storage			Energy Storage		Metal Storage
+Metal Extractor		Metal Maker			Metal Extractor		Metal Maker
+Kbot Lab		Vehicle Plant			Kbot Lab		Vehicle Plant
+Aircraft Plant		Shipyard			Aircraft Plant		Shipyard
+Light Laser Tower	Radar Tower			Light Laser Tower	Radar Tower
+Advanced Kbot Lab	Geothermal Plant		Advanced Vehicle Plant	Geothermal Plant
+Gaat Gun		Pulverizer			Gaat Gun		Pulverizer
+Dragon's Teeth		Punisher			Dragon's Teeth		Punisher
+Hovercraft Platform	Viper				Hovercraft Platform	Viper
+
+*CORE Construction Aircraft				*CORE Construction Ship
+Solar Collector		Wind Generator			Advanced Shipyard	Shipyard
+Energy Storage		Metal Storage			Tidal Generator		Sonar Station
+Metal Extractor		Metal Maker			Torpedo Launcher	Light Laser Tower
+Kbot Lab		Vehicle Plant			Stinger			UW Energy Storage
+Aircraft Plant		Shipyard			Floating Metal Maker	UW Metal Storage
+Light Laser Tower	Radar Tower			Thunderbolt		UW Metal Extractor
+Advanced Aircraft Plant	Geothermal Plant		Floating Dragon's Teeth
+Gaat Gun		Pulverizer				
+Dragon's Teeth		Punisher				
+Hovercraft Platform	Viper
+
+*CORE Construction Hovercraft
+Solar Collector		Wind Generator
+Energy Storage		Metal Storage
+Metal Extractor		Metal Maker
+Kbot Lab		Vehicle Plant
+			Shipyard
+Light Laser Tower	Radar Tower
+Adv. Aircraft Plant	Geothermal Plant
+Gaat Gun		Pulverizer
+Dragon's Teeth		Punisher
+Sonar Station		Tidal Generator
+UW Energy Storage	UW Metal Storage
+UW Metal Extractor	Floating Metal Maker
+Stinger			Floating Dragon's Teeth
+Thunderbolt		Torpedo Launcher
+Hovercraft Platform	Viper
+
+*CORE Kbot Lab						*CORE Vehicle Plant
+Construction Kbot	A.K.				Construction Vehicle	Weasel
+Storm			Thud				Instigator		Raider
+Crasher							Slasher			Spoiler
+							Leveler
+
+*CORE Aircraft Plant					*CORE Shipyard
+Construction Aircraft	Fink				Construction Ship	Searcher
+Avenger			Shadow				Enforcer		Envoy
+Valkyrie						Snake
+
+*CORE Hovercraft Platform
+Construction Hovercraft	Scrubber
+Snapper			Slinger
+Nixer			Turtle
+
+*CORE Advanced Kbot Lab					*CORE Advanced Vehicle Plant
+Adv. Construction Kbot	Pyro				Adv. Constr. Vehicle	Crock
+The Can			Roach				Reaper			Deleter
+Spectre			Freaker				Mobile Artillery	Goliath
+Morty			Dominator			Informer		Diplomat
+Voyeur			Sumo				
+Gimp						
+Parasite		Decoy Commander		
+
+*CORE Advanced Aircraft Plant				*CORE Advanced Shipyard
+Adv. Constr. Aircraft	Rapier				Adv. Construction Sub	Hive
+Hurricane		Titan				Shark			Missile Frigate
+Vamp							Executioner		Warlord
+Vulture							Phantom			Shredder
+
+*CORE Advanced Construction Kbot			*CORE Advanced Construction Vehicle
+Kbot Lab		Advanced Radar			Vehicle Plant		Advanced Radar
+Fusion Power Plant	Moho Mine			Fusion Power Plant	Moho Mine
+Intimidator		Doomsday Machine		Intimidator		Doomsday Machine
+Silencer		Fortitude Defense		Silencer		Fortitude Defense
+Air Repair Pad		Cobra				Air Repair Pad		Cobra
+Fortification Wall	Toaster				Fortification Wall	Toaster
+Cloakable Fusion Plant	Moho Metal Maker		Cloakable Fusion Plant	Moho Metal Maker
+Targeting Facility	Buzzsaw				Targeting Facility	Buzzsaw
+Krogoth Gantry
+
+*CORE Advanced Construction Aircraft			*CORE Advanced Construction Sub
+Aircraft Plant		Advanced Radar			Shipyard		Adv. Sonar Station
+Fusion Power Plant	Moho Mine			UW Fusion Plant		Adv. Torpedo 
+Intimidator		Doomsday Machine		Seaplane Platform
+Silencer		Fortitude Defense			
+Air Repair Pad		Cobra				
+Fortification Wall	Toaster				
+Cloakable Fusion Plant	Moho Metal Maker			
+Targeting Facility	Buzzsaw				
+
+*CORE Seaplane Platform					*CORE Krogoth Gantry
+Construction Seaplane	Hunter				Krogoth
+Avenger			Voodoo
+Titan			Typhoon
+
+*CORE Construction Seaplane
+Solar Collector		Wind Generator			
+Energy Storage		Metal Storage			
+Metal Extractor		Metal Maker			
+Kbot Lab		Vehicle Plant			
+Aircraft Plant		Shipyard				
+Light Laser Tower	Radar Tower			
+			Geothermal Plant			
+Gaat Gun		Pulverizer				
+Dragon's Teeth		Punisher				
+Sonar Station		Tidal Generator			
+UW Energy Storage	UW Metal Storage			
+UW Metal Extractor	Floating Metal Maker			
+Stinger			Floating Dragon's Teeth		
+Thunderbolt		Torpedo Launcher			
+Hovercraft Platform	Viper
+
+
+
+**NEW MAPS & WORLDS**
+The maps included with TACC feature a combination of original Total Annihilation 
+environments as well as six new worlds, described in further detail below.  After 
+installing TACC, the maps will be integrated alphabetically into the SELECT MAP 
+dialog box available in Skirmish and Multiplayer.  All maps are designed for both 
+single and multiplayer use and vary in size and number of players.
+
+Acid World
+The most striking feature of Acid World is its unusual plant life.  The reclaimable, 
+energy-rich gasbags are tethered to the ground and float freely in response to 
+the world's high winds.  Green oceans and lakes can support sea units but the 
+corrosive acid does gradual damage to these units.  The acid does not affect 
+hover units which skim lightly above the surface.
+
+Crystal World
+An inhospitable world with sharp, jagged terrain, Crystal World offers few reclaimable 
+terrain features.  Ground units may find the ground rough and challenging to navigate.  
+Although unusual in color, the purple oceans are non-corrosive and can support sea 
+bases.
+
+Lusch World
+Like the name suggests, Lusch World features a rich, diverse topography.  Energy is 
+available from dense forests and plant life.  The terrain varies from swamps to high, 
+ragged cliffs and steep mountains.
+
+Slate World
+Access to sections of Slate World are limited by impassable clouds which only air 
+units can traverse.  There are no plant but metal is readily available from rocks and 
+deposits.  Look for the richest metal deposits in crevasses and rock fissures.
+
+Urban World
+Remnants of a decimated Arm civilization are visible throughout Urban World.  
+Reclamation of these fertile resources becomes the primary means to maintaining a 
+metal income here.  Deposits are only to be found in the city parks, which are few.  
+Metal deposits are also available underwater in the rivers and lakes.
+
+Water World
+A landless world with high, strong tides, Water World is designed for sea battles.  
+Metal can be obtained from the rich underwater deposits.  Scattered throughout the 
+water are coral reefs.  The reefs are not reclaimable but do affect unit movement.  
+Seaplanes can be an effective complement to your water base on this world.
+
+
+
+**NEW FEATURES**
+TACC includes several new features which have been added to the game.  These are 
+described in further detail here.
+
+SHORTCUT KEYS
+	CTRL + M	Select all mines
+	CTRL + P	Select all aircraft with weapons
+	CTRL + R	Select all radar, radar jammers, sonar and sonar jammers
+	CTRL + W	Select all mobile units with weapons except Commander
+
+MULTIPLAYER SHARING
+Control the resources you share with your teammates and allies using the following 
+shortcut commands, listed below.  These commands can be used in multiplayer by hitting 
+ENTER to bring up the message bar on the Main Battle Screen and typing in any of the 
+following phrases in bold type below:
+
+	+shareenergy		Shares energy
+	+sharemetal		Shares metal
+	+sharemapping		Shares map information
+
+You can also control the amount of metal and energy shared to your teammates and 
+allies by modifying these commands slightly with a numerical value.  X indicates 
+the amount of resource left in your reserve.  For example, +sharemetal 5000 will 
+assure that you have 5000 metal in your economy at all times. You cannot set the 
+amount of resources you share any higher than your current storage capacity.  
+Make sure you leave a space between the command and the numerical value.  
+
+	+setshareenergy X	Shares energy while keeping X amount for yourself
+	+setsharemetal X	Shares metal while keeping X amount for yourself
+
+SHIFT & CONSTRUCTION UNITS
+While placing your cursor over any construction unit and then holding down the SHIFT 
+key, square outlines may appear on the map.  Green squares represent the build orders 
+for the unit currently selected.  Blue squares represent the build orders for all 
+other construction units.  These squares can be used as a guideline when queuing up 
+build orders for a construction unit.
+
+SHIFT & CLOAKABLE UNITS
+Placing your cursor over a cloaked unit and then holding down the SHIFT key will display 
+a white circle.  This circle represents that unit's minimum cloaking radius.  When an 
+enemy unit moves into that radius, the cloaked unit becomes visible.
+
+SHIFT & MINES
+To view the properties of a mine, hold down SHIFT while your cursor is over the unit.  
+The stationary red circle denotes the mine's trigger area.  The animated red circle 
+represents its blast radius.  These both vary in range for each mine.
+
+FACTORIES & SQUADS
+Select a factory and assign it a squad number.  This can be done by pressing CTRL+1 
+through 9.  All units produced by that factory will automatically be assigned to the 
+same squad.
+
+KROGOTH MISSION
+The Krogoth mission is a special bonus mission designed for advanced players.  It 
+is possible to change the difficulty setting to Easy or Medium but this does not 
+affect the difficulty of the mission.
+
+
+
+**Technical Support**
+HINT LINE/STRATEGY GUIDE INFORMATION
+If you are having trouble with Total Annihilation and need a hint RIGHT NOW, please 
+call Cavedog Entertainment's Hint Line at 1-900-CAL-CAVE.  This call costs 95 cents 
+per minute.  You must have a touch tone phone, and have parental or guardian permission 
+to call.
+
+There is a 272 page full-color Strategy Guide, including maps and a Total Annihilation 
+poster, available now for only $19.95 in the USA or $26.99 in Canada plus $5.00 for 
+shipping and handling.  All customers can order this Strategy Guide by calling 
+(888) 477-9369.
+
+ASSISTANCE VIA WORLD WIDE WEB
+Get up-to-the-minute technical information at the Cavedog Entertainment web-site at 
+http://www.cavedog.com twenty-four hours a day, seven days a week.  Through this 
+site you'll have access to our FAQ documents, (Frequently Asked Questions) which 
+contain our latest troubleshooting information.  This is available on our web-site 
+at http://www.totalannihilation.com.
+
+You'll have access to our FTP (File Transfer Protocol) area where you can download 
+patches and new enhancements as soon as they become available, and an e-mail area 
+where you can leave us your tech support problems and questions if you do not find 
+your answers through the information supplied at the web addresses above.
+
+Help Via Telephone Or Fax In The United States & Canada
+For phone assistance, call Cavedog Entertainment's Tech Support at 716-871-4393.  
+We have an Interactive Voice Response and Faxback system that is available 
+twenty-four hours a day, seven days a week.  If you should need live support, we 
+are available Monday through Friday, 10:00 AM until 10:00 PM (EST).  Please note that 
+live Tech Support may be closed on major holidays.  We ask that you do the following 
+when calling: be at your computer; have your system information ready for our 
+technicians including system make and model; RAM; video and sound card data and drivers; 
+and any screen or error messages you've encountered and where (if not currently 
+displayed on your screen).  It will expedite your handling significantly.  You may also 
+fax in your Technical Support questions or problems to: (425) 806-0480.
+
+Product Return Procedures In The United States & Canada 
+In the event our technicians at 716-871-4393 determine that you will need to forward 
+materials directly to us, please include a brief letter explaining what is enclosed 
+and why.  Make sure you include the Return Merchandise Authorization Number (RMA#) 
+supplied you by the technician and your telephone number in case we need to call you.  
+Any materials not containing this RMA# will be returned to you unprocessed.  Your mail 
+should be sent to the following address:
+
+Cavedog Entertainment
+13110  NE 177th Place
+Suite # B101, Box 180
+Woodinville, WA  98072-9965
+Attn:  Customer Service
+RMA#:
+
+Warranty Policy In The United States & Canada 
+If our technicians determine that the product storage medium is found to be defective 
+within ninety (90) days of original purchase, (unless otherwise provided by applicable 
+law), Cavedog Entertainment will replace the item free of charge, to the original 
+purchaser, if the item is accompanied by the original dated receipt and packaging.  
+If you do not have the original receipt, or if the warranty period has expired, Cavedog 
+Entertainment will replace the product storage medium for a nominal fee.
+
+If your product information contains Technical Support phone numbers for Europe, you 
+must contact those phone numbers and abide by their warranty policies. 
+
+Technical Support (Europe)
+Help Via Telephone In Europe
+
+Technical Assistance: English speaking customers call 01923 209145
+
+Assistance Technique: Remarque: Notre service de soutien technique se trouve en 
+Angleterre.  Clients francophones appelez le 00 44 1923 209148
+
+Technischer Kundendienst: Beachten Sie bitte dass sich unser technischer Kundendienst 
+in England befindet.  Den deutschsprachigen Kundendienst erreichen Sie unter folgender 
+Nummer: 00 44 1923 209151.
+
+
+
+**TAE**
+The Total Annihilation Map and Mission Editor (TAE) is included with the expansion 
+pack as a bonus and is also available for download free of charge from www.cavedog.com.  
+If you experience any problems using this product, visit the Technical Support 
+section of the website.  A user-supported forum will be available to address any 
+problems or concerns you have regarding TAE.  Cavedog Entertainment provides TAE 
+"as is" and no warranty or support is included.
+
+TAE is the same tool used by the Cavedog development team to create the missions 
+and maps in Total Annihilation and TACC.  TAE must be installed separately from the 
+expansion pack.  For a detailed description of TAE's features and functions, please 
+refer to the help file included with the editor.  Some basic information about TAE is 
+outlined below.
+
+TAE INSTALLATION
+To install TAE, use Windows Explorer to locate the installation executable called 
+TAEsetup.exe on your TACC CD-ROM, located in the TAE subdirectory.  Double-click 
+TAEsetup.exe to install the editor.  Follow the dialog boxes as prompted by the 
+install program.  TAE must be installed in the same directory as Total Annihilation.
+
+TAE SYSTEM REQUIREMENTS
+The Total Annihilation Map and Mission Editor requires:
+	Windows 95
+	Standard Two Button Mouse
+	Full version of Total Annihilation
+
+For maps that are 10 by 10 or less:
+	Pentium 120
+	32 Megs of RAM
+
+For maps that are 20 by 20 or less:
+	Pentium 166
+	64 Megs of RAM
+
+For maps that are 30 by 30 or less:
+	Pentium 200
+	64 Megs of RAM
+
+For maps that are 40 by 40 or less:
+	Pentium 200
+	128 Megs of RAM
+
+
+
+**Contacting Cavedog Entertainment**
+Ordering Our Products
+If you'd like to order our products and merchandise or want to check on a 
+previous order, please call our Order Dept at 888-477-9369.  If you're unable 
+to dial an 800#, please call 425-867-2597.  You may also fax your order to 
+425-489-3446.  Webslingers can order through http://www.cavedog.com.
+
+
+
+**Credits**
+
+Project Leader
+Chris Taylor
+
+Lead Artist
+Clayton Kauzlaric
+
+Co-Project Leader & Mission Designer
+Nathan Doster
+
+Associate Producer
+Jacob McMahon
+
+Producer
+Kellyn Beeck
+
+Executive Producer
+Ron Gilbert
+
+Programmers
+Bruce Dawson
+Bartosz Kijanka
+Steve Miale
+Rick Saenz
+Kevin Smith
+
+Background Artists
+John Baron
+Kevin Chung
+Mike Denlinger
+Peter Fries
+Jarrett Holderby
+Clayton Kauzlaric
+Mark West
+
+Unit Artists
+Rebecca Coffman
+Dan Cole
+Clay Corbisier
+John Gronquist
+Bob Koshi
+Steve Thompson
+
+Interface Art
+Mark DiGiacomo
+Peter Fries
+
+Map Designs
+John Baron
+Nathan Doster
+Clayton Kauzlaric
+Garrett Link
+Mark West
+
+Unit Designs
+Nathan Doster
+Jacob McMahon
+Chris Taylor
+
+Network Programming
+Rick Lambright
+Kurt Pfeifer
+David Satnik
+
+Total Annihilation Engine
+Brian Brown
+Bruce Dawson
+Bartosz Kijanka
+Jason King
+Jonathan Mavor
+Jeff Petkau
+Rick Saenz
+Kevin Smith
+Chris Taylor
+
+Assistant Producer
+Steve Kuo
+
+Production Assistants
+Shane Hendrix
+Steve Snow
+
+Sound Design
+Frank Bry
+
+Musical Composition
+Jeremy Soule
+
+Writer
+Dave Grossman
+
+Foreign Languages
+Ingrid Berendt
+
+Quality Assurance Manager
+David Nixon
+
+Quality Assurance Lead
+Ruth A. Lopez
+
+Testing
+Patty Bradley-Bunn
+Kyle Casperson
+Kevin Collar
+Eric "Frog" Elders
+Sharon Evans
+Eric Fjellanger
+Shannon Hill
+Bob Lenth
+Brad Lyons
+Bryan Macdonald
+Emily Mannon
+Elizabeth McClean
+Brian Moore
+Joe Mullenix
+Phillip M. Nelson
+Randy Ochs
+Wade Racine
+Theresa Robinson
+Caroline Sherley
+Matt Skau
+Eric Snyder
+Casey D. Stein
+Jason "Crash" Stiney
+TJ Wright
+
+
+Special Thanks
+Shelley Day
+Scott Wallin
+Joyce McNeil
+Zibby Wilder
+Frank Rogan
+Michael Felicetty
+Ralph Giuffre
+Monika Hoshide
+John Uppendahl
+Marci Knutsen
+Eric Boston
+Patricia Lonergan
+Janet Willis
+Betsy Warren
+Sam Linse
+Cullen Hadersberger
+Jennifer Martin
+Christin Jamieson
+and
+Krogoth
+
+
+
+
+
+This program is protected by United States federal and international copyright laws.
+
+All trademarks mentioned in this document are the property of their respective owners.
+
+Copyright 1998 Humongous Entertainment, Inc.

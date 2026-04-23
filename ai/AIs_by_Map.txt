@@ -1,0 +1,195 @@
+Here's a list of what AI is used by all of the TACC maps *AND* downloadable maps, pulled from the OTA files. For third-party maps, you'll have to check the "aiprofile=;" line in the OTA file to be sure.
+
+Don't bother with Urban maps;  the AI will never play very well on those, IMO.
+
+In the REV31.GP3 patch, there are extra ai profiles that are not used on any of the maps in the original game. (but perhaps they should!) These are:
+ACID (*ONLY* used in Core Contingency!)
+HOVER (*ONLY* used in Core Contingency!)
+METAL (*ONLY* used in Core Contingency!)
+URBAN (*ONLY* used in Core Contingency!)
+WATERWRLD (*ONLY* used in Core Contingency!)
+
+As you can see from my many suggestions in parenthesis, many of the maps need different and possibly more specialized ai profiles -- like a partial-water map that has very weak tides but strong winds.
+
+ACID
+Acid Foursome (should use Default)
+Acid Trip
+Checker Ponds (should use Default)
+Gasbag Forests (possibly use a wind-based ai?)
+Surface Meltdown (should use Default)
+
+AIRBATTLE
+Biggie Biggs (possibly use a wind-based ai?)
+Cluster Freak (possibly use a wind-based ai?) (VERY high winds!)
+Higher Ground (possibly use a wind-based ai?)
+Lusch Puppy
+Ooooweeee (possibly use a wind-based ai?)
+Slate Gordon (possibly use a wind-based ai?)
+Temblorian Mist (possibly use a wind-based ai?)
+
+DEFAULT
+Comet Catcher
+Crystal Maze
+Crystal Treasure Island (water on map, perhaps it needs Airbattle or Seabattle?)
+Gasplant Plain (possibly use a wind-based ai?)
+Lake Shore (water on map, tides suck - also wind-based ai?)
+Moon Quartet
+Plains and Passes (possibly use a wind-based ai?)
+Polar Range (Hailstorms!)
+Show Down (possibly use a wind-based ai?)
+Slated Fate
+Trout Farm (perhaps Urban?) (possibly use a wind-based ai?)
+
+HOVER
+Assault on Suburbia (possibly use a wind-based ai?)
+Acid Pools (possibly use a wind-based ai?)
+The Bayou
+Cavedog Links CC (possibly use a wind-based ai?)
+Dire Straits
+Expanded Confluence
+Ice Scream (possibly use a wind-based ai?)
+John's Pass (possibly use a wind-based ai?)
+Luschaven
+Red River (possibly use a wind-based ai?)
+Red River North (possibly use a wind-based ai?)
+Sector 410b
+
+METAL
+Core Prime Industrial Area
+Block Wars
+
+SEABATTLE
+The Barrier Reef (possibly use a wind-based ai?)
+Crater Islands
+Crystal Cracked
+Crystal Isles
+East Indeez (possibly use a wind-based ai?)
+Flooded Glaciers (possibly use a wind-based ai?)
+Metal Isles (SHOULD use SeaMetal)
+Ror Shock
+Sail Away (possibly use a wind-based ai?)
+Pillopeens (possibly use a wind-based ai?)
+
+URBAN
+Eastside Westside (possibly use a wind-based ai?)
+Steel Jungle
+Town & Country
+
+WATERWORLD (Waterwrld)
+Brain Coral
+Icy Bergs
+Polyp Fields
+
+
+Maps that came with the original TA game:
+
+AIRBATTLE
+Evad River Confluence
+Kill the Middle
+Lava & Two Hills
+Over Crude Water (possibly use Krogoth?!)
+The Desert Triad
+Two Continents
+
+BLANK (DEFAULT?)
+Ashap Plateau
+Etorrep Glacier (possibly use a wind-based ai?)
+Fox Holes
+Great Divide
+Hundred Isles (SHOULD use SEABATTLE or WATERWRLD!)
+King of the Hill (possibly use a wind-based ai?)
+Painted Desert
+Red Triangle (possibly use SEABATTLE?)
+Ring Atoll (possibly use SEABATTLE?)
+Seven Islands (SHOULD be SeaMetal!)
+The Pass (possibly use URBAN?)
+Yerrot Mountains
+
+DEFAULT
+Dark Side
+Full Moon
+Greenhaven
+Lava Alley
+Lava Highground
+Lava Mania (possibly use a wind-based ai?)
+Lava Run
+Metal Heck (SHOULD be METAL!)
+Pincushion
+Red Hot Lava
+Red Planet
+Rock Alley
+Sherwood
+The Cold Place (possibly use a wind-based ai?) (VERY high winds!)
+
+SEABATTLE
+Anteer Strait
+Caldera's Rim
+Coast to Coast
+Gods of War
+Shore to Shore
+
+
+Primary factors in choosing an ai for a map:
+
+1.type of terrain: acid/waterworld/island/continent/land
+2.how much metal: low metal/nonmetal/metal (2 or fewer metal spots per screen = low metal)
+3.restrictive (mountains, trees, acid, lava)/open for free movement of ground units
+4.wind levels: wind/solar (wind = 3000 or higher avg windspeed) = wind/solar map?
+5.map size: <8 x 8 map/12 x 12 map/>20 x 20 map (small, medium, large map)
+6.unit max: <150 unit max/250 unit max/400+ unit max (small, medium, large unit max)
+
+1.Acid/Continent/Island/Land/laVa/Waterworld
+2.Low/Nonmetal/Metal
+3.Restrictive/Open
+4.Low/Windy
+5.Tiny/Small/Medium/Large/Huge
+6.Small/Medium/Large unit max
+
+		1	2	3	4	5	6	Good Example map:
+Nasty water/restrictive movement:
+ACID		A	N	R	L	*	*	Acid Trip
+HOVER		?	N	R	L	?	*	The Bayou
+??????	C	M	R	L	*	*	Over Crude Water
+??????	*	N	R	L	*	*	Temblorian Mist
+
+Scare land water maps:
+WATERWRLD	W	L	R	L	*	*	Brain Coral
+SEABATTLE	I	N	R	L	*	*	Hundred Isles
+
+Big island water maps:
+URBAN		C	L	R	L	*	*	Town & Country
+HOVER		C	N	R	L	L	*	Two Continents
+SEAMETAL	C	M	R	L	*	*	Metal Isles, Seven Islands
+
+Mostly land, but too much water to ignore map:
+KROGOTH	C	M	O	L	L	L	Krogoth Encounter
+HOVER?	I/C	N	O	L	*	*	Ring Atoll
+
+Land maps:
+DEFAULT	L	N	O	L	*	*	The Great Divide
+METAL		L	M	O	L	*	*	Metal Heck
+
+Windy land maps:
+WIND		L	N	O	W	*	*	The Cold Place
+WINDMET	L	M	O	W	*	*	Metal Heck 2
+
+* means doesn't matter
+
+The standard ai profiles:
+(presumes)
+ACID		= MOSTLY acid map, nonmetal, low winds, open terrain, medium map
+AIRBATTLE	= continent map *OR* restrictive terrain, nonmetal, low winds, large map
+DEFAULT	= land map, nonmetal, open terrain, low winds, medium map
+HOVER		= continent map, nonmetal, open terrain, low winds, medium map
+KROGOTH	= continent map, metal, open terrain, low winds, huge map, high unit max
+METAL		= land map, metal, open terrain, low winds, medium map
+SEABATTLE	= island map, nonmetal, open terrain, low winds, medium map
+URBAN		= continent map, low metal, open terrain, low winds, large map
+WATERWRLD	= waterworld map, low metal, open terrain, low winds, medium map
+
+My special ai profiles:
+(presumes)
+SEAMETAL	= continent map, metal, open terrain, low winds, medium map
+WIND		= land map, nonmetal, open terrain, high winds, medium map
+WINDMET	= land map, metal, open terrain, high winds, medium map
+HOVERWIN	= continent map, nonmetal, open terrain, high winds, medium map

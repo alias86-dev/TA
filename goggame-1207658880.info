@@ -1,0 +1,69 @@
+{
+    "buildId": "51382171937168451",
+    "clientId": "49108974524722269",
+    "gameId": "1207658880",
+    "language": "English",
+    "languages": [
+        "en-US"
+    ],
+    "name": "Total Annihilation Commander Pack",
+    "playTasks": [
+        {
+            "category": "game",
+            "compatibilityFlags": "DISABLEDWM HIGHDPIAWARE RUNASADMIN",
+            "isPrimary": true,
+            "languages": [
+                "*"
+            ],
+            "name": "Total Annihilation Commander Pack",
+            "path": "TotalA.exe",
+            "type": "FileTask"
+        },
+        {
+            "category": "document",
+            "languages": [
+                "en-US"
+            ],
+            "name": "Manual",
+            "path": "Manual.pdf",
+            "type": "FileTask"
+        },
+        {
+            "category": "document",
+            "languages": [
+                "en-US"
+            ],
+            "name": "Readme",
+            "path": "Readme.txt",
+            "type": "FileTask"
+        },
+        {
+            "category": "document",
+            "languages": [
+                "en-US"
+            ],
+            "link": "http://www.gog.com/support/total_anihilation_commander_pack",
+            "name": "Support",
+            "type": "URLTask"
+        },
+        {
+            "category": "document",
+            "languages": [
+                "*"
+            ],
+            "name": "Readme - Editor",
+            "path": "TAEread.txt",
+            "type": "FileTask"
+        },
+        {
+            "languages": [
+                "*"
+            ],
+            "name": "Editor",
+            "path": "TAE.exe",
+            "type": "FileTask"
+        }
+    ],
+    "rootGameId": "1207658880",
+    "version": 1
+}

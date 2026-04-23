@@ -1,0 +1,60 @@
+TOTAL ANNIHILATION READ ME
+DOWNLOADABLE UNIT - CORE Hedgehog
+
+CORE Hedgehog - UNIT DESCRIPTION
+For 1583 metal and 98000 energy, the CORE Advanced Vehicle
+Plant can build the Hedgehog.  The Hedgehog is a mobile 
+version of the Fortitude.  
+
+INSTALLING THE NEW UNIT
+After downloading the new unit, double-click to extract
+the unit file.  The unit file (unitname.UFO) will be
+placed in the c:\cavedog\Totala folder unless otherwise 
+specified.  The unit file must be located in the same 
+directory as Totala.exe.  After the unit is installed, 
+it will appear on the appropriate build menus the next time 
+the game is launched.
+
+**You must have Total Annihilation version v3.1 or 
+greater in order to use a downloaded unit.  You can download
+the most recent patch for Total Annihilation from 
+www.totalannihilation.com.**
+
+USING THE NEW UNIT
+After having installed v3.1 or greater as well as the 
+new unit file, the downloaded unit will be available on the 
+build menus in Skirmish and Multiplayer mode.  The new unit 
+will not be available while playing missions.
+
+When using the new unit in a multi-player game, all players
+must have the downloaded unit installed.  If one player
+does not have the new unit available to them, none of the 
+players will be able to use the new unit for that 
+multi-player game.
+
+
+
+LEGAL INFORMATION
+
+Copyright*1997 Humongous Entertainment.
+
+You may use, copy and distribute (by web download of the 
+unmodified zipped file only) this program only if you:
+
+(1) include this notice on any copy and don't charge for 
+any copy or distribution
+
+(2) do not reverse engineer (except to the extent such 
+cannot be prohibited)
+
+(3) agree that this program is provided on an "as is", 
+no warranty basis and 
+
+(4) agree that Humongous Entertainment has no liability 
+(because the program is provided without charge).
+
+
+
+
+
+

@@ -1,0 +1,403 @@
+Note: The Total Annihilation Map and Mission Editor is unsupported software.
+
+
+1.0 Introduction
+The Total Annihilation Map and Mission Editor (TAE) is the internal map editor used by the developers of Total Annihilation to make the 3D maps included in the game.  The editor is designed to allow the user to make maps and missions for use in Total Annihilation. This manual is designed to help walk you through making maps and to answer some general questions.
+
+1.1  System Requirements
+	The Total Annihilation Map and Mission Editor will always require:
+		Windows 95
+		Standard Two Button Mouse
+		Full install of Total Annihilation
+
+For maps that are 10 by 10 or less:
+Pentium 120
+	32 Megs of RAM
+
+For maps that are 20 by 20 or less:
+	Pentium 166
+	64 Megs of RAM
+
+For maps that are 30 by 30 or less:
+	Pentium 200
+	64 Megs of RAM
+
+For maps that are 40 by 40 or less:
+	Pentium 200
+	128 Megs of RAM
+	
+
+2.0 The Interface - A Quick Look:
+The Total Annihilation Map and Mission Editor is separated into three different parts: the Selection window, the Editing window, and the toolbar along the top.
+
+2.1 The Selection Window
+The program is controlled by the Selection Window which takes up the left third or so of the screen. Here is where you'll see the visual representations of what you'll be putting into your Total Annihilation maps and missions.  You can resize the window by dragging the right edge of it to the left or right to make it smaller or larger.  By deselecting the "tack" icon at the top of the window, you can make the Selection Window overlap the Editing window, which is really just a matter of preference.  Additionally, the arrow with lines button will make the window automatically hide if untacked and your cursor is not on the window; you can get the window back by either moving your cursor to the left hand side, or at any time by hitting Backspace. Take a look at the tabs along the bottom of the menu.  They are: Missions, Sections, Features, Units, and Specials.
+
+2.1.1Missions
+The default tab should be 'Missions.'  This is the area that tracks the files you are creating.  This creates a directory tree much like you would be used to seeing in Windows.  The folder at the top of the list is the actual name of your file.  This is what will be storing everything that you do from here.
+
+Note that there are two distinct sections to the Missions Tab, the 'Map' and the 'Schemas.'  Each of these carries it's own importance.  The 'Map' section is where all of the actual map and terrain information is stored.  The 'Schemas' (whether Hard, Medium, Easy, or Multiplayer) are where the different modes that your map can be run in are established.  Information such as starting points, units, and extra features depending on schema difficulty are stored here.  More information on each of these can be found below.
+
+2.1.2 Sections
+An important feature of the interface is the 'Sections' tab.  This is where the pieces to your map are stored.  The Selection window is filled with tabs.  The tabs at the top of the window tell you what world's map sections you are looking at.  We're calling them World Tabs.  
+
+Suppose you are trying to build a map based on the Arm's homeworld of Empyrrean.  See the World Tab labeled "GreenWorld?"  Click on it.  What you should see now are all the sections used by the Total Annihilation developers to make maps for this world type.  They are divided into categories based on land type.  Here, you'll find different sections for coastlines, islands, plains, water, and hills (labeled Coast, Island, Flat, Water, and Misc.).  These are your building blocks.  We'll talk about putting them down onto the map in section 3.  If you are using the "Lite" version you will only have a few map sections.  You will be able to obtain a larger selection by downloading some of the other world sections from www.totalannihilation.com
+
+2.1.3 Features
+All across the universe of Total Annihilation are landscape features: metal deposits, trees that burn, rocks that break down into rubble, strange alien plant life, etc.  These are all found under the 'Features' tab.  Go there now.  Again, you can see the World Tabs that were in the last segment of this document.  Remember, World Tabs are there to make the breakdown of your world easier.
+
+Sort through the World Tabs.  You should see a few things in there that don't have much to do with the worlds.  The 'Corpses' tab would be one of these.  This tab, for instance, is used to show the evidence of the long-running struggle between the Core and the Arm, leaving the scrapped metal littering the landscape. 
+
+To follow the earlier example, click on the 'Green World' Tab.  Along the side, you should see the tabs that break this section down even further, into trees, rocks, shrubs, steam vents, smudges, and scars.  Click on each of these in turn, and examine the features you can place.  Actual placement of features will be explained in section 3.11.
+
+2.1.4 Units
+This section is used in missions only. Units placed in the Multiplayer schema will not appear when the map is run.
+
+The Units section is where you get to find all the units in the original game (and any additional official units you may have installed) and place them onto a map for missions you build.  In the Selection window, you can see the wireframe of each individual unit.  There are tabs along the top for choosing which allegiance of units you're looking for, and more tabs that break the units down into type (tanks, ships, planes, defensive structures, construction units, etc.).
+
+We'll go into a more detailed explanation of placing units and programming their actions in sections 4.2 and 4.3.
+
+2.1.5 Specials
+This is a simple one.  The 'Specials' section is what you use to place starting points on your map. Starting points are pretty self explanatory; they are where the Commanders start in a multiplayer game.  Remember to place all 10 of the starting positions on the map even if the map you are making wasn't meant to support all 10.  Starting points are explained in detail in section 3.12.
+
+2.2  The Editing Window
+This large window takes up the rightmost 2/3 of your screen.  This is the place where you'll see all of your labor take form into a Total Annihilation map.
+
+2.2.1  Borders
+The dotted blue lines along the bottom and right sides of your working area in the Editing Window are where the edges of the map are.  The area beyond these lines will not be seen in your Total Annihilation maps, but it is necessary to fill in with terrain.  This terrain does not need to match the terrain inside the borders, but should still be filled.
+
+2.2.2  The Numbers: What do they mean?
+Take a look at the very bottom of your Editing Window.  See the number windows down there.  This is the Status Bar.  Pay attention to it, as the numbers contained are very important.  From left to right:
+- Co-ordinates and Height:  The x and y values tell you the co-ordinates of the tip of your pointer in pixels.  This will be very handy later, when designing missions and programming the movements of units.  Remember to watch these numbers.  Immediately to the right of the x and y co-ordinates is the h (height) value.  This will tell you the terrain height at your cursor location.
+- 'Cell': This operates the same as the co-ordinate numbers, but instead of pixels, it marks your location on the grid in cells. The default grid size is 32 pixels for one Cell. We'll go more in depth with this in section 3.1.
+-'Sects': This little number informs you of the file size that your sections are taking up.  Most of the size of a map is taken up by sections.  
+-'Total':  This number will tell you the total file size of your map (sections plus features). The more different features you use, the more space the map will take up, and the more memory it will take to run.
+-'Memory': Here is where you'll see how much memory a system will need in order to run your map.  The larger your map gets, and the more terrain that goes into it, the more a computer will need in the RAM department to run it.
+-'X x Y7 Map': Map dimensions in screens (1 screen = 512 pixels x 512 pixels)
+
+2.3  The Toolbar
+Now, let's take a quick look at what all the little buttons at the top of the screen do.  These are divided into two sections: Filters and Tools.  These buttons can be selected easily from the keyboard by using the Function keys, F1 through F12.
+
+	First Grouping:
+		F1 = View Features
+	F2 = View Units
+	F3 = View Special
+	F4 = View Void
+
+	Second Grouping:
+	F5 = View Map
+	F6 = View Grid
+	F7 = View Contours
+
+	Third Grouping:
+		F8 = Default/Arrow Tool
+	F9 = Select Tool
+	F10 = Lasso Tool
+	F11 = Map Height Adjustment Tool
+	F12 = Void Tool
+
+2.3.1  Filters
+These toggle buttons change how you view your map.  Say, for instance, that your map is covered with huge forests that are starting to drag down your refresh time.  Just click on the "View Features" to turn them off, and you'll notice your refresh speed up.  These can be handy buttons to use in the overall creation of your map.  The first set of four is pretty easy to understand, but what about the second three?  Let's take a closer look:
+-'View Map': This is one of the most useful things to know about in T.A.E.  Turning this option on will give you a grid across the map.  Anything that is above sea-level will be shown in white grid, with anything below in red.  Also, the 'View Map' feature allows for the user to take a look at the footprints of features and units on the map.
+-'View Grid': The grid, composed of larger squares than the 'map' above, is used mostly in editing. By default, the size of one grid square is equal to that of four one by one footprint squares.  Also, one grid square is the smallest unit that can be used in the cut/copy and paste procedures of editing (section 3.6).  You can make the grid size larger if you wish.
+-'View Contour': This toggle button will show the contour lines of your Total Annihilation map.  The contour lines show the slopes and heights of hills and valleys in your map.  These can be adjusted by the 'Map Tool' talked about in section 2.3.2.
+-'View void'.  Filters out translucent purple voided areas (described in section 3.10).
+
+2.3.2  Tools
+The rightmost five buttons in your toolbar are the actual editing tools to T.A.E.  Here they are from left to right:
+-Default Tool: The arrow-pointer is used for the selection of items on your map.  It can be used to select individual or units on your map for making adjustments or deletion.  Just click on a feature to select it; or draw a box to select a group of features.
+-Selection Tool: Used in terrain editing, this tool selects a portion of map for copying or deletion.
+-'Lasso' Tool: Like the box tool, this is used for editing.  Use of the lasso is explained further in section 3.7
+-'Map' Tool: Used for varying the heights on your map, the map tool should be used in combination with the 'View Contour' mentioned above.  This tool is explained in depth in section 3.8.
+-'Void' Tool: Void is the term used for a place on your map where land units cannot go.  Void was used in the making of many maps of the Core's homeworld of Core Prime in order to produce the sharp corners and sheer faces that units could not climb.  Usage of void is mentioned in section 3.10.
+
+2.4  The Properties Box
+Let's take a moment to look at one of the most useful tools you'll come across in your usage of T.A.E.  The properties box can be used to get information about the individual pieces of your Total Annihilation map.  Hit Alt+Enter to bring it up.  There are five major places where this tool can be used.
+
+2.4.1  Schema Properties
+	This box contains information about your map as it pertains to your schema.  Here is where you can change the type of map it is that you are creating (whether it be for easy, medium or hard missions, or a multiplayer/skirmish map), the resources of the player and the AI in a mission, and the use of Meteors on your map.
+
+2.4.2  Map Properties
+This helpful box allows you to make changes in how the map performs in your missions or during multiplayer/skirmish.  It's a big one, so we'll break it down now.  Take a look at the tabs along the top.
+	-General: When your map appears in the 'select map' box within the game, this is the information that will appear to the player.  Things such as name, description, and optimal number of players can be flagged here to show in the game.
+	-Files: Here is where you select files that go with your map (more specifically, your mission).  Things such as a mission briefing, narrative file, and victory screen can be set here.  An example of each is provided when you install T.A.E.
+	-Map: Wind speed and tidal strength can be set here, as can the amount of gravity on a planet.  Also, the world your map is based on can be selected.  The world selected changes which planetscape will be spinning before the player during the mission briefing.
+	-Scoring: The way scores are accumulated in TA can be altered here.  More weight can be added to the points given for a kill, and a time modifier can be added.
+	-Use Only Units: If you want to restrict a player from using certain units in your missions, here's where it's done.
+	-Victory/Defeat Conditions:  Here is where you would set what sort of conditions have to be met to win or lose a mission.
+The Map Properties dialog is discussed more fully in section 3.13.1.
+
+2.4.3 Section Properties
+	Clicking on a section in the Sections area of the Selection Window will tell you the size of that section in cells.
+
+2.4.4 Feature Properties
+	Clicking on a feature in the Features area of the Selection Window will tell you the size of that feature's footprint in plots.
+
+2.4.5 Unit Properties
+	Selecting a unit in the Units area of the Selection Window will tell you the full name of a unit, a description of that unit, and the size of it's footprint.  More about the Properties Window and individual unit properties is covered in depth in section 4.3.
+
+3.0  Building a Multiplayer Map
+Several things need to be decided when constructing a Multiplayer map.  First, what type of terrain is to be used? What is the map going to look like, roughly?  How rich in resources is it going to be?  Sketching these things out on some scrap paper before you begin can save a lot of time.  Once these questions are answered, then the construction can begin.  This section deals with the process of making your plan into a Total Annihilation Multiplayer map.
+
+3.1 Map Size and Scale
+512x512 is about the size of one "screen" in Total Annihilation's 640x480 default screen resolution (more or less), and makes a good point of reference. This will give you a basic idea of how large your map will be.
+
+In the editing window if the view grid is turned on the grids will be shown in light white lines.  Important note: one cell is the smallest unit of area that can be edited with the select tool.  
+
+3.1.1  Footprints
+Each unit in the game takes up a particular amount of space.  This space is called the footprint.  The smallest footprints are only one fourth of a cell in size, also called one plot (trees have a one plot footprint).	Footprints can be seen using the View Map filter.  (see 2.3.1 for more about filters).
+
+3.2 A Word About Memory
+In the status bar there are three values that need to be looked at as the map is being built; the "Sects" value, the "Total" value and the "Memory" value.  The Total is the amount of disk space the map file will actually take up, and the Memory value is the minimum amount of memory a player's machine will need in order to run the map in the game.  This is important to watch as the maps can grow significantly in size as features (and units for missions, discussed in section 4.0) are placed onto the terrain, however the greatest use of memory is in the use of different map sections (as shown by the "Sects" value).  A map that re-uses a few map sections over a very large area can be quite reasonable, memory-wise (e.g. Greenhaven).
+
+3.3  Borders
+It is very important that the area to the right and bottom are completely filled in with sections.  The reason for this is to keep problems from occurring when loading the map, or when the airplanes maneuver off the edge of the screen.  Though this area won't show up on the radar map or on the main battle screen in TA, it still should be treated as part of the map.
+
+3.4  Choosing a World
+Choosing the terrain type for the world is a simple task.  Look at the different sections and choose one that most fits the plan for the map.  Once the terrain type has been chosen, we strongly advise that the features used match as well.  Look at the tab at the top of the features area; choose the name matching the chosen terrain type being used.
+
+3.5  Placing Sections
+The Sections tab shows the different terrain types available choose one set to work with as your world environment (i.e. "Lava" or "Metal").  Once that is done, the large sections can be double left clicked to place it into the top left corner of  the Editing Window.  This Section can then be moved around by holding the left mouse button on the section and dragging it onto the desired position on the map.  Clicking off the edge of the section locks it into place.
+
+
+3.5.1  The Fill Function
+When making a larger map, it's nice to sometimes be able to fill the map with one section or portion of a section before getting down to the little details.  This can mean making the whole map water, or just flat green space, or whatever you'd like your default "background" to be.  For this, we have the Fill function.  Simply select the piece of terrain you'd like to fill the map with with the Select or Lasso tools, and select Fill from the Edit submenu (or hit Ctrl+F).  Be careful, this will replace all terrain on the current map, so if you want to do this, make sure you do it before placing anything else you'll care about.
+
+3.5.2 Deselecting an Area
+Got the whole map selected and nowhere to click to deselect it?  Ctrl+D will deselect your selected area. You can also use the Deselect command from the drop down menu item called Edit.
+
+	3.5.3 Copying Selected Areas
+If you have a selected area that you'd like to place down multiple times, You can hold down the Ctrl key while dragging the area to make a copy of it, such that the selection will remain where placed, but you'll be able to move the area again to another place.  Great for placing multiple copies of the same hill or island.
+
+3.6  Copying and Moving Parts of Sections
+Using the various tools available, the sections can be edited to form the terrain truly desired.  The second tool (represented by a dashed square) is the "Select Tool".  It will allow selection of a boxed area by holding the left mouse button and dragging from one corner to it's diagonal opposite.  Once the area is selected, it can then be copied, or cut and then pasted into a different area of the map.  When the paste command is activated, the copied area will appear in the upper left of the editing window, it can then be moved around (like a mini section) with the crossed arrows cursor to the desired position. Pressing the delete key will erase it.  Left clicking outside the image will place it in the map.  Once a map section is locked into place you cannot undo the placement!  Make sure, when placing a map section, when you unlock it you place it in the correct spot.  
+
+3.7  The Lasso 
+Next there is the Lasso tool.  This allows variation in the shape to be used.  By clicking on positions surrounding your area selection, you can control the exact shape..  Then once the lasso is closed by using a right-click or left-clicking next to the lasso starting point, the section behaves the same way as when using the select tool.
+
+3.8 Height
+The Map tool is used to adjust the altitude of the map in small areas.  Height changes can be made in this way at points where plot corners connect (use the View Map filter).  By holding the left mouse button, the altitude is increased; the right mouse button has the opposite effect.  Smoothing out larger areas can be accomplished by holding down Shift and left-clicking; this will even out areas lower than the one chosen, evening the edges.  Edges of selected regions which do not match up (+/- 16h) are visually indicated by red crosshatch on white border.  Tab will automatically raise or lower a selected region based off the surrounding area to make the selected area match.  This will force the elevation into place.  Please note that you can change elevations in the game but they may not match the graphic.  There is no way to change the look of the graphic.  If you force a height adjustment the graphic will no longer match the elevation (ie. you could get a tank driving up an imaginary hill).
+
+3.9  Water
+A number of options are available to modify the behavior of water in a multiplayer map or mission.  Sea level can be made completely impassible by ground units (as in lava worlds), water can be made to do damage of varying amounts (acid worlds) or the water can be set not to splash (for situations in which the areas below sea level aren't really water). This is accomplished by going to the missions tab in the Selection Window, clicking on the schema file type and then press Alt+Enter.  This will bring up a Schemas Properties window.  There are a number of Tabs in this window which are covered in the Schemas topic (3.13).  The options to affect water are under the Map tab.  Here you will find a number of fairly self-explanatory check-boxes.  It is important to note that all areas of a map that are below the height set as "sea level" are considered to be water".
+
+3.10  Void
+The Void is a feature that can be placed on maps to restrict unit movement.  Ground units may not enter an area marked as the Void.  This feature is to prevent ground units from attempting to drive up walls and other areas where they might be viewed at odd and disconcerting angles, especially useful on the sharp corners and edges of Metal worlds.
+
+3.11  Placing Features
+Placing individual items on the map is a bit different from placing the sections.  Select the tab that has the same name as the "Section" type that you used for the foundation of your map (ie. "Lava" or "Metal").  A feature can be placed simply by holding the left mouse button and dragging the object from the Selection Window to the Editing Window, or by right clicking with the Default Tool selected.  Once an object is placed, it is fixed into position and there is no further need to move it around.  If the object didn't appear as intended, change to the Default Tool and click on the object (groups of features can be selected by dwaring a box with the Default Tool).  While the object is selected, press the delete key to remove it from the Editing window.  Now also is the time to use the View Map filter.  It will show the smallest area available for placing features.  Trees will have a footprint size of one, so only one tree per plot is allowed.  As features are placed keep in mind that Kbots and vehicles have larger footprints and will need to be able to move through the terrain features that are on the map so it helps to spread things out a bit.  
+	
+3.11.1 A Note about Where the Features Information goes
+When looking at the Selection Window there are a couple of places that the features information can be placed.  Taking a look over at the Missions tab of the Selection window, you'll notice that either one of your schemas or your Map item has a big green X on it; this is the place your placed features are currently being stored.  Double-clicking on another schema will change this.  The Map file is intended to hold basic map information and usually you'll want to keep your features information here; otherwise you'll have to place features all over again for different levels of difficulty and/or multiplayer play setups.  Sometimes you'll want to place features in schemas though, such as putting in more metal deposits on the easy version of a mission map, for instance.
+	
+3.11.2  Key features 
+There are some key features to keep in mind for the map to keep it playable. Metal deposits (for nonmetal worlds) are vital to keep resources flowing. Without them a map will be quite hard to play on.  Try to balance the amount of deposits available to keep things interesting; pay special attention to the amounts of metal you have around starting points.  Will there be any steam vents on the world?  If so, few and far between is best or too much cheap energy will be available.  If the world is an old battlefield are there any corpses left?  And finally, use of rocks and foliage to spice things up.  Is there a bit of a forest?  Perhaps some rubble from a hillside?  These are all things to keep in mind as the map is being filled out.
+	
+3.11.3  Random Feature Placement
+One of the most time consuming aspects of creating a Total Annihilation map is the placement of features.  While individual placement of metal deposits and steam vents isn't much of a chore (you'll want to keep the amount of those features limited and strategic) the placement of trees and building a forest can take quite some time.  Fortunately, there's a function available that can save a lot of effort: random feature placement.
+
+To randomly place features in an area, first select the area you'd like to place the features in, using either the Select Tool or the Lasso; make sure that you have selected the feature you'd like to place.  If you want to select a different feature density, you can do so through the Edit submenu, or by simply pressing one of the number keys 1 to 0 for 1 through 10 density.  The feature density is basically logarithmic, which is to say setting 8 is about twice as dense as setting 7, which is twice a dense as setting 6, etc.  Finally, place the features by selecting the Randomly Place Feature item from the Edit submenu (or use Ctrl+R).  This makes creating forests a breeze.
+
+3.12  Starting Points (Specials)
+The Specials tab is where the Commander starting points are found.  These are a must on the Multiplayer schema; without them the map will always give error messages when trying to load.  You should always place all 10 starting points, regardless of if your map is designed for fewer.  Placement of starting points can make the difference between a really fun map and a not-so-fun one, so be careful!  In Multiplayer play, only the first X starting points will be used in a game of X players (e.g. starting points 1 2 3 and 4 will be used in a 4 player game).  When used during the setup of the mission, the player one starting point is used to show where the overhead "camera" will start at.  The default is set to the upper-left corner of the map, so if your forces start elsewhere, make sure the starting point is where you want to view first.  It is good practice to place the starting point in the area of your Commander, if you have one.  If not, try placing it in the middle of your forces.
+
+3.13  The Missions Tab (Schemas and the Map Item)	
+The Missions tab contains all basic information about the maps that you're currently editing.  Each map has it's own "Schemas" folder.  The Map item contains information about the map as a whole, whereas the Schemas are specific to particular uses of the map (information specific to multiplayer games or to a mission's various difficulty levels).  Feature information can be stored in any one of these files, potentially making a map very different when used for a mission then when used for a multiplayer game (as discussed above in 3.11.1).  
+
+3.13.1  Schemas
+Access the Schemas editing window for a selected schema by pressing Alt+Enter.  There are three tabs in this window: General, Initialization, and Meteors.  General is where the AI difficulty setting and AI strategy are set.  Under "Type" use Multiplayer for multiplayer maps.  Under Initialization, the statistic that needs to be looked at is surface metal.  If for example a metal world is being built, then the metal that is available at any given spot on the surface of the planet is going to be very high.  This means that the number for surface metal needs to be adjusted to reflect that decision (usually 255).  On worlds not made of metal, then the default settings should apply.  The "Meteors" tab settings determine if there will be meteor showers on the map (this feature is more commonly used in missions than on multiplayer maps, and is discussed in detail section 4.4.3).
+
+3.13.2  Map Properties Dialog
+In the map item properties another set of tabs need to have information put into them for the map to function properly.  They are: General, Files, Map, Scoring, Use Only Units, Victory Conditions, and Defeat conditions.  Most of the information contained within these fields is used for the missions, but there is a certain amount to be set up for the multiplayer maps as well.  Four of the tabs are specifically for missions and will be covered in 4.7; these are "Files", "Use Only Units", "Victory Conditions", and "Defeat Conditions".  
+
+-The General tab is used to note how many players the map is for and to give the map a name and description.  Simply type in the name and short description desired for the map, and check the box next to the number of players that are recommended for that map.  Ensure that the "Mapping" and "Line of Sight" boxes are checked to ensure that those options will function in the game when those settings are chosen.  The "Max Units" box if for use in missions, not multiplayer maps (where in the maximum number of units can be specified in the Battle Room).
+
+-The Map tab shows choices that will effect different aspects of the gameplay.  The Wind Speed settings will directly effect how well wind generators function, Water Level sets how far above '0' height the water will be.  If the water is set high, there can be landmasses set below water level, like an indented crater of a volcanic island for example.  Gravity only affects how far artillery shots will go.  With lower gravity, they will travel greater distances, and higher gravity will shorten the range.  One side note, 0 gravity is not recommended; it makes artillery completely useless.   Tidal Strength will adjust the power output of Tidal.  For the World field, put in the world type that the map is based on. The "Sea Level is impassable" option is discussed in section 3.9: Water.  
+
+-The Scoring tab will effect the victory screen scores.  The Kill Multiplier % will set the relative desire to charge in and destroy the enemy, or the desire to minimize losses.  At 50% the setting is one peewee lost and one killed equates to no change in victory points.  To set it at 75% means that one kill to one loss will be slight points, and 	to set it at lower than 50% there will be a net loss in the same situation.  The time multiplier will give or take away points as time passes in the game, based on if the value is positive or negative.  If this number is positive, the player gains that number in points for every second they survive in your map.  A negative number represents a death clock, which takes away from the overall score of the player if they take a long time in the mission.
+
+3.14 The Radar Map
+The radar map is the little box that appears in the upper left of the Total Annihilation game.  In terms of the editor program the radar map must be updated to reflect any changes made to the terrain.  The way to do this is to go to the Mission menu, and scroll down to the "Render Radar" command.  Then there will be a screen asking if this was the intended action with a warning that it might take some time.  Once the update has been completed the radar map can be viewed by hitting Alt+R.  It is very important to update the Radar Map after all work on the terrain map is done, so that the image on the radar during the game is correct.
+	
+ 3.15 Optimizing Map Sections
+Before your map is ready to use, it is a good idea to optimize the map sections.  This should be used as one of the last steps in the mapmaking process.  When this is done the editor removes duplicate textures, decreasing the amount of memory required for the map.  Always save the map before you use this feature, as sometimes the editor can remove an important texture or two.  Go to your Missions menu and select Optimize Map to do this.
+
+
+4.0  Building a Mission
+The process of building a mission begins in the same manner as that of building a multiplayer map, and all the same steps have to be observed initially.  We recommend that you start building your missions on paper before trying to build them in T.A.E.; a lot of building a good mission is figuring out what the objectives are, what type and strength of the opposition will be, how the terrain will affect the battle and so on.  Sketch it out a little before diving in.
+
+Once your map is constructed, you can start setting up the player's and the enemy's forces.
+
+4.1 Starting Positions in Missions
+Starting points are specific to Schemas, and while all starting points should be specified for the Multiplayer play schema, they are unnecessary for mission schemas.  All units that the Player has available must be placed down manually, including the Commander.  Instead of deciding the starting point of your Commander, the starting point 1 determines the first thing the player sees when starting the mission.  It is the location of the 'camera.'
+
+4.2 Placing Units
+Once you have an idea of what kinds of enemies you'll have the player facing, you can start to place them.  Placing units is simple: just find the unit that you want to place, make sure you have the Default Tool selected, click the left mouse button and hold it, then drag and drop the unit wherever you want it.  It will appear on your map in wireframe.  The color of the unit will correspond to the color of the player controlling it.  By default, this is Player 1, but you can change the default Player setting using the Player submenu.  Units belonging to Player 1 will belong to the human player; other Players' units are controlled by the A.I.  Note that the A.I "Players" will not fight amongst themselves.
+
+4.3 Unit Properties
+Once the unit is placed, there are a number of things that can be done with it, all of which are controlled from the "Unit Properties" box.  This can be reached through the View submenu when the unit is selected, or simply by pressing Alt+Enter.  Below is a listing of the options and what they do:
+	
+4.3.1 General properties
+Allows you to change the unit's position on the map one pixel at a time (using X and Y coordinates just as they are on your status bar).  You can also change which player controls the unit, the direction (Angle) the unit is facing, its starting health, and number of kills the unit has (remember, 5+ kills makes it a veteran unit).  Any unit can be also assigned a Unique Name.  This makes it possible for the AI to recognize specific units to a variety of ends, whether it be to have other units defend it, attack it, hold fire until it is attacked, or a number of other options, all of which will be discussed in 4.5, Unit Commands.
+
+
+4.3.2 Initialization Properties
+The "Initialization" tab describes how the AI deals with the unit when it is first created.  Initial Group works much like setting a unique name, except that it allows a group of units to be referenced rather than just one.  Enemy Does Not Target Unit means that the unit will not be targeted by the AI player's units (though it will still be targeted by your units). 
+
+4.3.2.1 Initial Mission Commands
+The Initial Mission selection is the true heart of mission creation.    Most missions created do not rely on the AI to handle the battle, rather, everything is carefully planned ahead.  Having units wait until they are attacked, having groups of units attack at the same time, having them target specific units, even roving patrols, are all commands that are set here.  Giving all (or most) of your enemy units a series of commands that interact and mesh to make an appropriate defense (and offense) is what mission creation is all about.  If a Unit is given no initial commands, or runs out of commands, the AI will take over, if it is a Computer controlled Unit (anything other than Player 1).  If it is a Player controlled Unit and you want the Player to be able to interrupt the initial commands, insert a "s" (to make it selectable)  in the initial command list.
+  
+What follows is a list of the available commands; use a comma to separate commands.  Remember that all unit references should be to the unit's name, not the unit's description (e.g. CORTL not Core Torpedo Launcher).
+
+m X Y		
+Tells the Unit to move to coordinates X and Y as measured in pixels; see "Location" on the Status Bar at the bottom of the program window.
+
+p X Y
+Tells the unit to patrol from the coordinate at which it is presently to the coordinate that follows the "p" and back again. If only one coordinate is given the computer will assume the starting point to be the second point in the command list. If you give two points (p X Y  X Y), the unit will patrol between those two points. If you give three points, the Unit will patrol between those three points in the order given, etc. You can specify any number of points in this way. The patrol command should be at the end of the command list, since once on patrol, it will ignore all later commands.
+
+a UNITNAME
+Tells the Unit to attack the nearest specified Unit. This could be either a Unit Type (for example "a ARMCOM") or a unique identifier (for example "a FRED"). If there are no units of the specified Type, the AI will take control of the unit.
+
+w SECONDS
+Tells Unit to wait at its present location for the specified number of seconds before continuing with the command list. You can specify fractional seconds (e.g. "w 0.5").
+
+b UNITTYPE X Y
+Mobile Construction Units only. Tells the Construction Unit (or Commander) to build a Unit of the specified Type at location X Y.
+
+b UNITTYPE n
+Construction Building. Tells the Construction Building to build n Units of type UNITTYPE on its construction pad.
+
+d	Destroys the Unit instantly.
+
+s	Makes the Unit selectable even though the initial command list isn't completed yet, allowing the 
+AI or player to take control of the Unit.
+
+i UNITNAME
+Place this Unit in the specified transport. (e.g. "i ARMSHIP" or if there is more than one transport give the transport a unique identifier e.g. "i JAKE"). 
+
+u XY
+You can then tell the transport where to unload the unit that it carries by designating u XY. 
+
+wa
+In the initial mission list will wait until the unit is attacked.
+
+"wa otherunit" will wait until otherunit is attacked. This works like the "i" mission--otherunit identifies a specific unit, not a general type of unit.  In order for this command to work, 'otherunit' must be given a unique name as mentioned in section 4.3.1.
+
+Example:  Let's say for a moment, that you're in the middle of creating an Arm mission, for which the goal is to get your squad of Zeus into the enemy's base and take out their fusion plant.  While setting up the defenses, you might program a fleet of Rapier gunships to wait until the Arm lightning-chuckers have destroyed a radar tower abandoned in the middle of a valley, move to co-ordinates 513, 700, followed by a run on the Arm Commander, nestled in it's camp.  To spring your little trap, you would need to do the following setup.
+	-Place radar tower with unique name (e.g. "TRAP")
+	-Place Rapier units, each with the following initial command string:
+		wa TRAP, a ARMZEUS, m 513 700, a ARMCOM
+-It's very important to make sure that you've provided the player with at least one Zeus unit to start with.  If there is no Zeus units on the map, the Rapiers will simply skip that command and go straight after the Commander.  Upon destruction of the radar tower by any other unit than a Zeus, the Rapiers will still search out the Zeus and try to kill it.
+
+
+4.3.3 AI Properties
+This final tab deals with how the enemy AI deals with the unit throughout the game, and is again fairly simple.  Priority Target Of AI will make free units looking for something to attack head for that unit first, and any other unit with that property set.  Mission Critical Unit is a setting for use with Victory Conditions (discussed in section 4.x), meaning that if that unit is destroyed, the mission is lost.  Finally "AI Should Ignore UNIT" means pretty much what it says.. the AI will act as though the unit does not exist (even if being attacked by it!).
+
+4.4 Schemas
+Schemas are a vital part of creating multiplayer missions; a separate one must be created for each difficulty level that you wish the mission to have.  They determine such varied factors as the player and enemies' initial metal and energy, the AI's playing style, available surface metal, and meteors, if any.  To create a new schema or delete an old one, use the Mission menu.  A green X will appear over the schema that you are currently editing.  To change which schema you're editing, just double-click on the desired schema.  Note that units must be placed separately for each schema, and you can place features in the schemas rather than the Map item if you wish to have them different for different difficulty levels (e.g. more metal deposits on Easy).  Make sure that you do not delete all of the schemas from the editor!
+
+4.4.1 General
+Multiple schemas are required for different difficulty levels.  If a player tries to run your mission in a difficulty level that isn't available, the game will choose the closest available level, choosing the easier level if possible.  This is also the place where the AI profile is chosen.  Play around with the different profiles, and find the one that works best for your mission.
+
+4.4.2 Initialization
+In addition to setting the surface and Moho metal (which can be different for each difficulty level, and is discussed in 3.13), this is where the player and AI's initial energy and metal are set.  This amount is the amount that the Commander can store, and changing these is probably the easiest way to alter how difficult (or easy!) a mission can be..
+
+4.4.3 Meteors
+Meteors are a random "catastrophic" event that can be added into missions.  In order to activate them, set Weapon Type to "meteor" (no quotes), and set the three numbers available to something higher than zero.  Duration and Interval are measured in seconds, density is the number of meteors, and Radius is measured in pixels.  Remember that adding meteors adds a dangerous, unpredictable element to the game.
+
+4.5 Map Item Properties 
+There are a few functions of the Map item that are relevant to missions that aren't to multiplayer maps (discussed in 3.13.1); Files, Use Only Units, and Victory and Defeat conditions.  In the General tab there are two check-boxes and one entry field: "Mapping", "Line of Sight" and "Max Units".  These are not relevant in Multiplayer matches because whether or not they are used is a matter of choice; but in a mission, it's up to the mission designer.  If you want to have everything revealed in your mission, just leave the "Mapping" box unchecked; similarly, if you'd like Line of Sight to be permanent, leave the Line Of Sight box unchecked.  Finally, if you would like to limit your player to fewer units than normal or increase the maximum, you can change this in the "Max Units" box (these options work just like the options in multiplayer play).
+
+4.5.1 Files
+This is where you define the files that will round out your mission briefing and finale.  If you are making a mission you should have all of the following files, and you must have a glamour shot or the game will crash once the mission is successfully completed.  You can specify a text file that will be your mission's briefing, a .wav (audio) file that will be the narration for your mission's briefing, and a glamour shot and sound (a 640x480 size .pcx format picture file and .wav sound file that will be shown and played when the mission is successfully completed). The briefing and narration files must be placed in a sub-subdirectory (which is to say, 2 levels down) of your \totala directory, \camps\briefs (i.e. for most people, this will be c:\cavedog\totala\camps\briefs) and the glamour shot must be in another sub-subdirectory, \bitmaps\glamour (thus for most people, c:\cavedog\totala\bitmaps\glamour).  You can browse for these files using the "..." button at the end of the entry field.
+
+4.5.2 Use Only Units
+It is possible to bar certain units from being used in a mission.  To do this, simply uncheck the box next to the unit you wish to be unavailable.  Remember this will restrict both the A.I. and the player from building unchecked units.
+
+4.5.3 Victory and Defeat conditions
+These tabs select what determines a successful or failed mission.  Keep in mind that all the victory conditions must be met for a Victory to occur, but only one defeat condition met will result in defeat.  All these conditions are pretty self-explanatory.  Just keep in mind that all time units are in seconds, all measurements are in pixels and you must use unit names when referring to units rather than the descriptions (e.g.: CORTL rather than Core Torpedo Launcher).
+
+4.6 Campaigns
+Now that you have your mission all built, you just need a way to get to it in the game.  For this, you need to construct a Campaign.  A campaign can consist of just one mission, or many.  All you need to do to create a campaign is create a new directory inside of your Total Annihilation directory, called "camps" (usually resulting in c:\cavedog\totala\camps ).  Here, create a text file; call it whatever you want your campaign to be called, and instead of the .txt extension, make it a .tdf file instead.  Then edit the file, and make it look something like this:
+
+[HEADER]
+	{
+	campaignside=ARM;
+	}
+
+[MISSION0]
+	{
+	missionfile=My Mission.ufo;
+	missionname=My very first mission;
+	}
+
+[MISSION1]
+	{
+	missionfile=My Other Mission.ufo;
+	missionname=My very second mission;
+	}
+
+Of course, your file should have the name of your mission in the "missionfile=" category.  The "missionname=" is what shows up as the name of the mission in the campaign screen.  You can add more missions in the same format by simply calling them [MISSION2] [MISSION3] and so on.  Note that two missions are shown here only for example purposes; if you like you can have just one.  And you can change ARM to CORE if you'd like, as well.
+
+
+Glossary of Terms
+
+Altitude-  A Section's height in relation to sea level, denoted by contour lines around various terrain features such as hills and mountains.  When using the View Grid Map Filter, everything considered to be below sea level is shown in red, while areas above sea level are shown in white.  (3.8)
+
+Cells- One Cell is equal to one grid square with the grid set to 32x32 pixels.
+
+Default Tool- Used to select features in the Editing Window to be manipulated with other commands or tools.  See also Tool Buttons.   (2.3.2)
+
+Editing Window-  Window on the right side of the program showing the sections, features, and starting points already added into the current map project.  This window is where adjustments are made.   (2.2)
+
+Features-  Individual objects used to create interesting variation to terrain, including: Rocks, trees, foliage, ground smudges, and the like.   (2.1.3)
+
+Feature Filters-  The set of four buttons in the Toolbar (first set from the left) which change the visual information concerning features displayed in the Editing Window.  (2.3.1)
+
+Footprints-  The amount of space a unit or feature takes up on the map.  A 2x2 footprint covers an area of the map equal to 32x32 pixels.  (3.1.1)
+
+Height-  See Altitude.
+
+Lasso Tool-  Used to select areas of the map that are not rectangular in shape.  See also Tool Buttons. (3.7)
+
+Map Filters-  The set of three buttons in the Toolbar (second set from the left) which change the visual grid, and contour information concerning displayed in the Editing Window.  (2.3.1)
+
+Map Tool-  Used to raise and lower the altitude of terrain points on the map with the left and right mouse buttons.  See also Tool Buttons.   (3.8)
+
+Plots- One plot  is equal to one Footprint.
+
+Select Tool-  Used to select rectangular sections of terrain in the Editing Window to be manipulated with other commands or tools.  See also Tool Buttons.  (2.3.2)
+
+Radar Map-  The small bitmap that appears in the upper left corner of the screen during game play.  The Radar Map is a miniature representation of the terrain present on the actual map.  (3.14)
+
+Screen-  The size of the screen shown during game play while in the default 640 x 480 resolution.  It is also, 512 pixels by 512 pixels.
+
+Selection Window-  Window on the left side of the program window that contains all the raw materials used in creating a map for either a campaign mission, of simply a multiplayer landscape.  (2.1)
+
+Starting Points-  The ten features (numbered one through ten) that are placed on the map to mark the spot(s) where the Commander(s) will appear at the beginning of the game.  (3.12)
+
+Status Bar-  The bar below the Editing Window which denotes (from left to right) the cursor's  x/y coordinates in terms of pixels, the cursor's coordinates in terms of sects on the Editing Window, the amount of memory taken up by the sections used, size of the file when saved to disk, and the amount of memory required to run the map during the game.  (2.2.2)
+
+Tabs- File folder style click points along the side and bottom of the selection window denoting which information is being currently looked at and allowing easy access to other selections of information.
+
+Toolbar-  The selection of buttons in the editor's interface located above the Selection Window and the Editing Window.  The Toolbar contains (from left to right) four Feature Filter Buttons, three Map Filter Buttons and four Tool Buttons.  (2.3)
+
+Tool Buttons-  The set of five buttons in the Toolbar (third set from the left) which change the function of the cursor in the Editing Window.  (2.3.2)
+
+Unit Description- The more complete way to refer to a unit, e.g. Core Torpedo Launcher.  As opposed to Unit Name.  
+
+Unit Name- The short form that is used internally in T.A.E. to refer to a unit, e.g. CORTL.  Compare to Unit Description
+
+Void Tool- Used to create areas on the map where ground units are forbidden to enter.  See also Tool Buttons.  (2.3.2)
+
+World Tabs-  File folder style tabs along the top of the selection window denoting the various worlds Sections and Features) available for use.
+
+
+
+TAE CREDITS
+
+Programming: Jason King, Rick Saenz, Jon Mavor
+
+Documentation and Testing:  Eric "Frog" Elders, Brad Lyons, Randy Ochs, Jason "Crash" Stiney
+
+Also thanks to: Chris Taylor, Jacob McMahon, Steve Kuo, Nathan Doster, Rick Smith and Steve Snow.

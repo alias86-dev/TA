@@ -1,0 +1,76 @@
+=============================================
+Total Annihilation Units Compilation Pack FAQ
+=============================================
+Last Revised : 30th August 2002
+
+NOTICE : Please ensure that you DO NOT have any other 3rd party units installed or even any downloadable cavedog units such as Necro, FARK, etc or else TA will crash.
+
+NOTICE 2 : Several TAUCP users have reported that TAUCP is NOT compatible with the TA:BT Expansion Pack while others have no problems at all. I suggest that you try installing TA in this order :
+
+1) TA
+2) TA:CC (if you have it)
+3) TA 3.1 Patch
+4) TAUCP
+
+and :
+5) 3do Files (only if you don't have TA:CC)
+
+and try playing TAUCP. If it works, then TA:BT is causing the problem. As i do NOT have TA:BT, i am unable to test TAUCP with TA:BT.
+
+Q: After installing TAUCP, i get a bunch of maps - COOL ! But when i try them, i get an error message, what's wrong?
+A: Those are not really maps, they are actually map profiles that define the correct AI profile to use so that you'll get a better AI. Most of the maps you see are from TA, TA:CC and probably TA:BT as well. Some are mission maps.
+A2: If you don't see a preview screenshot when selecting the map, it means you don't have that map. Most of them are from TA, TA:CC and probably TA:BT (both missions and multiplayer maps).
+
+Q: Why isn't the flea included in TAUCP?
+A: Do you really use that unit? If many people are using that unit, i won't mind including it and removing other units, just let me know at the TAUCP Central discussion forums about this.
+
+Q: Why the large file size?
+A: TAUCP has over 230 3rd party units, that is why it's over 15 megs in size.
+
+Q: How do i get up to 10 players in a skirmish game as shown in the TAUCP Frontend?
+A: To get up to 10 players in a skirmish game, do this :
+
+When in the skirmish room, type asterisk (shift+8), after that type the roman 
+numeral number of the amount of players you want. 
+
+For example, if you want 10 players in skirmish mode, you'd type "x", and for five players you'd type "v". 
+
+1 = i ; 2 = ii ; 3 = iii ; 4 = iv ; 5 = v ; 6 = vi ; 7 = vii ; 8 = viii ; 9 = ix ; 
+10 = x. 
+
+Q: TAUCP's frontend doesn't seem to set the starting resources at all !
+A: If you are running the frontend on Win NT, Win 2000 or Win XP Operating Systems, you need to be an administrator in order for the frontend to work, because the frontend reads and writes values to the Windows Registry.
+
+Q: When i play TA on Windows 2000 or Windows XP, i only hear some sounds, what's wrong?
+A: TA is a very old game and it does not support full sound acceleration. You need to decrease your sound playback sound acceleration via the Sounds & Audio Devices in the control panel (or anything similar). Click on the advanced button in the Sound Playback section and click on the performance tab. Reduce the hardware acceleration to BASIC acceleration.
+
+Q: Is TAUCP compatible with TAMEC's HPI Pack?
+A: Yes, TAUCP has been tested with TAMEC's latest HPI PACK and no known problems were found.
+
+Q: Why didn't you include <insert unit name here> in TAUCP?
+A: There are too many 3rd party units around, what you see here in TAUCP are mostly quality units that have been personally hand-picked. If you feel that a certain unit should be added to TAUCP, let me know through the forums. You should provide the URL to where the unit can be found.
+
+Q: I get an error like "missing x from anims" while loading a savegame, what gives?
+A: This is fairly normal when you are upgrading TAUCP to a newer version, some units get removed which will cause such errors to occur. You should then delete that old savegame as it will not work with the new version of TAUCP.
+
+Q: The TAUCP Frontend gives me an error message when i try to run it.
+A: You need the Visual Basic 6 Service Pack 5 runtime files. You can get it at TAUCP Central - http://www.planetannihilation.com/taucp
+
+Q: I think i've found a bug that crashes TA.
+A: If you have found a bug, first try to recall what you did that may have crashed TA. If possible try to be clear and concise, include a savegame if you have to. Then post your details to the discussion forums or mail it directly to me at mlbl@planetannihilation.com
+
+Q: Is TAUCP multiplayer compatible?
+A: It should be, as long as all players have the same version of TAUCP and the same AI profile the game should work fine.
+
+Q: TAUCP doesn't work at all !
+A: Under rare circumstances, if TAUCP doesn't work, you can choose to delete your TA folder AFTER uninstalling, then do a full reinstall OR you can install another copy of TA with TAUCP and see if it works.
+
+Q: Is TAUCP compatible with Boneyards?
+A: No, if you have Boneyards installed, TAUCP will not work at all.
+
+Q: Why is TAUCP free? Is spyware installed or something?
+A: The reason why TAUCP is free is because i'm not allowed to sell it as it'll be against the law to do so and not to mention that the 3rd party units in TAUCP were distributed by their original authors for FREE without any charge.
+   TAUCP does not contain spyware unlike some 'FreeWare' applications on the Internet that spy on your surfing habits and stuff like that.
+
+If you have any further questions that are not covered in this FAQ, please proceed to the discussion forums at TAUCP Central and ask your question(s) there:
+http://www.planetannihilation.com/taucp

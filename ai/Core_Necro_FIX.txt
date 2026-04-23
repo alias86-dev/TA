@@ -1,0 +1,16 @@
+The Core Necro fix in the file:
+CorNecro_FIXED.ufo
+should be placed in your totala directory, and the original CorNecro.ufo moved to a different location so there's no conflict.
+
+Changes made from the original Necro:
+1.Name change from "Ressurrection Kbot" to "Necro".
+2.Added builddistance=70; to the necro.tdf file, so it doesn't have to be touching units and wreckage to repair them.
+3.Removed bogus attack button information in the necro.tdf file.
+4.Fixed necro's unit script so that the guard factory bug (where the necro gets "STUCK" repairing units built by the plant) happens less frequently. (Total elimination of this bug is nearly impossible though, because what triggers the bug may in fact be an error in totala.exe.)
+
+
+Core's Necro is still only a so-so Arm FARK substitute. Although it is cheaper than the FARK, it has far less armor (paper thin, in fact), doesn't make any resources (the FARK makes +0.5m/s and +17e/s), assists factories at a slower rate than the FARK, and has a slower top speed. But at least with this fix, it can ressurect and repair correctly FAR more often than the original could! And if you don't have any wrecakge around to rez, it can guard a factory or c-unit in a pinch too.
+
+
+Comments?
+email them to: Switeck@homtail.com

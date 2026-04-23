@@ -1,0 +1,9 @@
+---- start -----------------
+Recorder version:3.9.2.416
+Running in Win9x compatibility mode
+Couldnt read INI settings
+DLL.DirectPlayLobbyCreateA
+ + lpGUID : {}
+TLobby.Create
+LOBBY.GetConnectionSettings
+---- end -------------------
